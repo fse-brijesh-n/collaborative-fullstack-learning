@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc, #00c853);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+        #container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Makes it responsive on smaller screens */
+}
+
+        h1 {
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #00c853, #6a11cb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        input:focus {
+            outline: none;
+            border: 2px solid #00e676;
+        }
+
+        button {
+            background: linear-gradient(to right, #6a11cb, #00c853);
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #00c853, #6a11cb);
+            transform: scale(1.05);
+        }
+
+        #root {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            color: #fff;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        hr {
+            width: 80%;
+            margin: 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    
+
+    <!-- Flex container -->
+    <div id="container">
+        <div id="root"><h3>Submited Data</h3></div>
+        <form id="formdata">
+            <caption> <h3>Registration Form</h3></caption>
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" placeholder="First Name" required>
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" placeholder="Last Name" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="At least 8 characters" required>
+            <button id="submit" type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        const myForm = document.getElementById('formdata');
+
+        myForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fname = e.target.firstname.value.trim();
+            const lname = e.target.lastname.value.trim();
+            const mail = e.target.email.value;
+            const pass = e.target.password.value;
+
+            if (fname === "") {
+                alert("Enter the First Name");
+                e.target.firstname.style.borderColor = 'red';
+                return;
+            }
+            if (lname === "") {
+                alert("Enter the Last Name");
+                e.target.lastname.style.borderColor = 'red';
+                return;
+            }
+            if (pass.length < 8) {
+                alert("Password must be at least 8 characters");
+                e.target.password.style.borderColor = 'red';
+                return;
+            }
+
+            const myFormDataRoot = document.getElementById("root");
+            const myul = document.createElement('ul');
+            ['firstname', 'lastname', 'email', 'password'].forEach(field => {
+                const li = document.createElement('li');
+                li.innerText = e.target[field].value;
+                myul.appendChild(li);
+            });
+
+            myFormDataRoot.innerHTML = ''; // Clear previous content
+            myFormDataRoot.appendChild(myul);
+            alert("User Registered Successfully");
+
+            const formData = {
+                firstname: fname,
+                lastname: lname,
+                email: mail,
+                password: pass
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                console.log(result);
+           
+                
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Failed to register. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>

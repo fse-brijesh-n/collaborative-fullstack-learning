@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flyte: Premium Helicopter Service for Urban Mobility</title>
+  <link rel="stylesheet" href="resources/css/model.css" />
+</head>
+<body>
+  
+
+  <div id="landing-container"></div>
+ 
+
+  <div id="modal-container"></div>
+
+  <!-- Include JavaScript files -->
+  <script src="resources/js/login-model.js"></script>
+  <script src="resources/js/register-model.js"></script>
+  <script src="api-integration/login.js"></script>
+  <script src="api-integration/register.js"></script>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", async () => {
+          // Fetch and inject the landing page content
+          const landingContent = await fetch("pages/landing.html").then(res => res.text());
+      document.getElementById("landing-container").innerHTML = landingContent;
+      // Fetch the form HTML dynamically
+      const loginForm = await fetch("form/login-form-model.html").then(res => res.text());
+      const registerForm = await fetch("form/register-form-model.html").then(res => res.text());
+
+      // Inject the fetched HTML into the modal container
+      document.getElementById("modal-container").innerHTML = loginForm + registerForm;
+
+      // Initialize the modal behavior and API integrations
+      initLoginModal();
+      initRegisterModal();
+
+      // Get the form elements after they are injected into the DOM
+      const loginFormElement = document.querySelector('.model-login .myForm');
+      const registerFormElement = document.querySelector('.model-enroll .myForm');
+
+      // Ensure the forms exist before proceeding
+      if (loginFormElement && registerFormElement) {
+        const loginSubmit = loginFormElement.querySelector('button[type="submit"]');
+        const registerSubmit = registerFormElement.querySelector('button[type="submit"]');
+
+        let loginApiAttached = false;
+        let registerApiAttached = false;
+
+        // Add event listeners for login form submission
+        loginSubmit.addEventListener('click', () => {
+          if (!loginApiAttached) {
+            loginApiHandler(loginFormElement);
+            loginApiAttached = true;
+          }
+        });
+
+        // Add event listeners for register form submission
+        registerSubmit.addEventListener('click', () => {
+          if (!registerApiAttached) {
+            registerApiHandler(registerFormElement);
+            registerApiAttached = true;
+          }
+        });
+      } else {
+        console.error('Form elements not found!');
+      }
+    });
+  </script>
+
+</body>
+</html>
