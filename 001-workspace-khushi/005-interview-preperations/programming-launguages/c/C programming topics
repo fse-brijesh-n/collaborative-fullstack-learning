@@ -1,0 +1,630 @@
+C Programming – Complete Beginner to Advanced Guide
+
+This guide is structured to take you from absolute beginner to advanced/expert level in C. Each section builds on the previous one, and code examples illustrate every concept. Use it for learning, revision, and interview preparation.
+
+---
+
+Part 1: Beginner (Fundamentals)
+
+1.1 What is C?
+
+· A general-purpose, procedural programming language.
+· Created by Dennis Ritchie in 1972.
+· Compiled language → source code is translated into machine code.
+· Basis of modern operating systems (Unix, Linux, Windows kernel parts) and embedded systems.
+
+1.2 Your First Program
+
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+```
+
+· #include <stdio.h> – includes the Standard Input/Output library.
+· int main() – the entry point of every C program.
+· printf – prints formatted text to the console.
+· return 0 – signals successful execution to the operating system.
+
+1.3 Basic Data Types
+
+Type Typical Size Example Values
+int 4 bytes -2, 0, 42
+float 4 bytes 3.14f, -0.001f
+double 8 bytes 3.1415926535
+char 1 byte 'A', 'z', '\n'
+void – (absence of type)
+
+Variables must be declared with a type:
+
+```c
+int age = 30;
+float price = 19.99;
+char grade = 'A';
+```
+
+1.4 Input and Output
+
+```c
+int num;
+printf("Enter a number: ");
+scanf("%d", &num);          // & means "address of"
+printf("You entered: %d\n", num);
+```
+
+· %d – integer
+· %f – float/double
+· %c – character
+· %s – string (character array)
+
+1.5 Operators
+
+· Arithmetic: +, -, *, /, % (modulo)
+· Relational: ==, !=, <, >, <=, >=
+· Logical: &&, ||, !
+· Assignment: =, +=, -=, *=, /=, %=
+· Increment/Decrement: ++, --
+
+```c
+int a = 5, b = 2;
+int sum = a + b;        // 7
+int mod = a % b;        // 1
+int c = (a > b) && (a != 0);  // 1 (true)
+a++;                    // a becomes 6
+```
+
+1.6 Control Flow
+
+if-else
+
+```c
+if (age >= 18) {
+    printf("Adult\n");
+} else {
+    printf("Minor\n");
+}
+```
+
+switch
+
+```c
+switch (grade) {
+    case 'A': printf("Excellent\n"); break;
+    case 'B': printf("Good\n"); break;
+    default:  printf("Try harder\n");
+}
+```
+
+Loops
+
+```c
+for (int i = 0; i < 5; i++) {
+    printf("%d ", i);
+}
+while (x > 0) {
+    // ...
+}
+do {
+    // ...
+} while (condition);
+```
+
+· break – exits the loop immediately.
+· continue – skips to the next iteration.
+
+1.7 Functions
+
+· A block of code that performs a task.
+· Declaration (prototype): tells the compiler about the function's existence.
+· Definition: contains the actual body.
+
+```c
+// Declaration
+int add(int a, int b);
+
+// Definition
+int add(int a, int b) {
+    return a + b;
+}
+```
+
+Call by value: a copy of the argument is passed (changes inside the function do not affect the original).
+
+1.8 Arrays
+
+```c
+int numbers[5] = {10, 20, 30, 40, 50};
+numbers[0] = 15;                     // change first element
+printf("%d\n", numbers[2]);          // 30
+```
+
+· Index starts at 0.
+· Array size must be a constant (or dynamic allocation for runtime size).
+· When passed to a function, an array decays to a pointer (size information lost).
+
+1.9 Strings (Basics)
+
+A string is an array of char terminated by '\0' (null character).
+
+```c
+char name[] = "Alice";  // automatically null-terminated
+printf("%s", name);     // prints "Alice"
+```
+
+Input a string (beware of buffer overflow):
+
+```c
+char str[20];
+scanf("%s", str);       // stops at whitespace
+fgets(str, 20, stdin);  // safer, reads up to 19 chars + null
+```
+
+---
+
+Part 2: Intermediate (Core Concepts)
+
+2.1 Pointers – The Foundation
+
+A pointer stores the memory address of another variable.
+
+```c
+int x = 10;
+int *ptr = &x;      // ptr holds the address of x
+*ptr = 20;          // dereference: change x to 20
+```
+
+· & – address-of operator.
+· * – dereference operator (access the value at the address).
+
+2.2 Pointer Arithmetic
+
+Adding an integer to a pointer advances it by n * sizeof(type).
+
+```c
+int arr[] = {1, 2, 3};
+int *p = arr;       // points to arr[0]
+p++;                // now points to arr[1]
+printf("%d", *(p+1)); // prints arr[2]
+```
+
+2.3 Dynamic Memory Allocation
+
+Allocate memory at runtime using malloc, calloc, realloc, and free it with free.
+
+```c
+#include <stdlib.h>
+int *arr = (int*) malloc(5 * sizeof(int));
+if (arr == NULL) { /* handle error */ }
+arr[0] = 100;
+free(arr);          // always free to avoid memory leak
+```
+
+· calloc(n, size) allocates and zero-initialises.
+· realloc(ptr, newSize) changes the size of the allocated block.
+
+2.4 Structures
+
+Group related variables of different types.
+
+```c
+struct Student {
+    char name[50];
+    int id;
+    float gpa;
+};
+
+struct Student s1 = {"Alice", 101, 3.8};
+s1.gpa = 3.9;
+struct Student *sp = &s1;
+sp->id = 102;       // arrow operator for pointers
+```
+
+· Structures can be copied by assignment (s2 = s1), but be careful with embedded pointers (shallow copy).
+
+2.5 Typedef
+
+Create an alias for a type:
+
+```c
+typedef struct Student {
+    char name[50];
+    int id;
+    float gpa;
+} Student;
+
+Student s;
+```
+
+2.6 File I/O
+
+```c
+FILE *fp = fopen("data.txt", "w");
+if (fp == NULL) {
+    perror("Error opening file");
+    return 1;
+}
+fprintf(fp, "Hello, file!\n");
+fclose(fp);
+```
+
+· Modes: "r" (read), "w" (write), "a" (append), "r+", "w+", "a+".
+· Reading: fscanf, fgets, fread.
+· Binary mode: "rb", "wb".
+
+2.7 Preprocessor Directives
+
+· #include – insert a header file.
+· #define – macros.
+· Conditional compilation: #ifdef, #ifndef, #if, #else, #endif.
+
+```c
+#define PI 3.14159
+#define MAX(a,b) ((a) > (b) ? (a) : (b))
+```
+
+2.8 Recursion
+
+A function calling itself. Must have a base case.
+
+```c
+int factorial(int n) {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+}
+```
+
+Recursion can be replaced by iteration and often consumes more stack memory.
+
+2.9 Multi‑file Programs
+
+· Header files (.h) contain declarations and type definitions.
+· Source files (.c) contain function definitions.
+· Compile together: gcc main.c utils.c -o program.
+
+Header guard:
+
+```c
+#ifndef MYHEADER_H
+#define MYHEADER_H
+// ... declarations
+#endif
+```
+
+---
+
+Part 3: Advanced (Low‑Level & Complex Topics)
+
+3.1 Memory Layout of a C Program
+
+Every process has a structured address space:
+
+```
+High address
+┌─────────────┐
+│  Stack      │ ← grows downward (local variables, function frames)
+├─────────────┤
+│  Heap       │ ← grows upward (dynamic memory)
+├─────────────┤
+│  BSS        │ ← uninitialised global/static data (zeroed)
+├─────────────┤
+│  Data       │ ← initialised global/static data
+├─────────────┤
+│  Text       │ ← code (read‑only)
+└─────────────┘
+Low address
+```
+
+Understanding this helps debug stack overflows, memory leaks, and pointer errors.
+
+3.2 Pointers – Advanced
+
+Double pointers (int **) – pointers to pointers, used for modifying a pointer argument.
+
+```c
+void allocate(int **p) {
+    *p = malloc(sizeof(int));
+}
+int *ptr = NULL;
+allocate(&ptr);
+```
+
+Function pointers – store the address of a function.
+
+```c
+int add(int a, int b) { return a + b; }
+int (*fp)(int, int) = add;  // or = &add
+int result = fp(3, 4);
+```
+
+Use case: callback functions, state machines, qsort.
+
+Void pointers (void *) – generic pointer, can point to any data type; cannot be dereferenced directly.
+
+Const and pointers:
+
+· const int *p – can’t modify the pointed value.
+· int * const p – pointer itself is constant.
+· const int * const p – both pointer and value are constant.
+
+3.3 Bit Manipulation
+
+Operators: & (AND), | (OR), ^ (XOR), ~ (NOT), <<, >>.
+
+```c
+unsigned int flags = 0;
+flags |= (1 << 3);   // set bit 3
+flags &= ~(1 << 3);  // clear bit 3
+flags ^= (1 << 2);   // toggle bit 2
+if (flags & (1 << 3)) { /* bit 3 set? */ }
+```
+
+Common tasks: counting set bits, checking power of two, swapping integers with XOR.
+
+3.4 Structures – Padding & Alignment
+
+Compilers add padding bytes to align members to their natural boundaries. This can make the structure size larger than the sum of its members.
+
+· To minimise padding, order members from largest to smallest.
+· offsetof(struct_name, member) gives the offset.
+· Use __attribute__((packed)) in GCC to remove padding (may hurt performance).
+
+3.5 Unions
+
+A union overlays members in the same memory. Only one member holds a meaningful value at a time.
+
+```c
+union Data {
+    int i;
+    float f;
+    char str[20];
+};
+union Data d;
+d.i = 10;   // now d.f is garbage
+```
+
+3.6 Dynamic Memory – Deep Internals
+
+· The heap manager (e.g., glibc’s malloc) uses data structures (free lists, bins) to track free blocks.
+· Allocated blocks carry a header (size + flags) just before the returned pointer.
+· free must be called exactly once per malloc; double‑free and use‑after‑free are undefined behaviour.
+
+3.7 String Handling (Advanced)
+
+Implement your own strcpy, strlen, strcat, etc. – a common interview task.
+
+```c
+char* my_strcpy(char *dest, const char *src) {
+    char *start = dest;
+    while ((*dest++ = *src++));
+    return start;
+}
+```
+
+Always ensure buffers are large enough and properly null‑terminated.
+
+3.8 Input / Output Under the Hood
+
+· FILE * is a typedef for a structure containing the file descriptor, buffer, flags, etc.
+· Three buffering modes: fully buffered, line buffered, unbuffered.
+· setvbuf can change buffering behaviour.
+
+3.9 Preprocessor – Macros & Conditional Compilation
+
+· Macros: textual substitution; beware of side effects.
+· # (stringizing) and ## (token pasting) operators.
+· Predefined macros: __LINE__, __FILE__, __DATE__, __STDC__.
+· Include guards and #pragma once.
+
+3.10 static and extern Keywords
+
+· static global variable/function: internal linkage (visible only within the translation unit).
+· static local variable: persistent across function calls.
+· extern: declares a variable/function defined in another file.
+
+---
+
+Part 4: Expert (Undefined Behaviour, Portability, Concurrency, Deep Internals)
+
+4.1 Undefined, Unspecified, and Implementation‑Defined Behaviour
+
+· Undefined behaviour: the standard imposes no requirements – anything can happen (e.g., signed integer overflow, dividing by zero, dereferencing NULL, out‑of‑bounds array access, modifying a string literal). The compiler may assume UB never occurs and optimise accordingly.
+· Unspecified behaviour: multiple possibilities, the compiler may choose (e.g., evaluation order of function arguments).
+· Implementation‑defined behaviour: similar to unspecified, but the compiler must document its choice (e.g., size of int, sign of char).
+
+Knowing UB is crucial for writing robust, portable C code and for interview scenarios.
+
+4.2 Advanced Pointer Declarations (The “Right‑Left” Rule)
+
+Parse complex declarations like:
+
+```c
+int *(*(*arr[5])(int))[10];
+// arr is an array[5] of pointers to functions taking int and returning pointer to array[10] of pointer to int
+```
+
+Learn to read such declarations using the spiral/right‑left rule.
+
+4.3 The restrict Keyword (C99)
+
+A promise to the compiler that for the lifetime of the pointer, only it (or a pointer derived from it) will be used to access the pointed object. Enables aggressive optimisations.
+
+```c
+void memcpy(void *restrict dest, const void *restrict src, size_t n);
+```
+
+4.4 Inline Assembly
+
+Not part of standard C, but supported via compiler extensions (GCC’s __asm__). Used for hardware‑specific instructions.
+
+4.5 Multithreading
+
+POSIX threads (pthread) or C11 <threads.h>. Topics include:
+
+· Race conditions and data races.
+· Mutexes, condition variables.
+· Atomic operations (<stdatomic.h> in C11).
+
+```c
+#include <pthread.h>
+pthread_t thread;
+pthread_create(&thread, NULL, thread_func, NULL);
+pthread_join(thread, NULL);
+```
+
+volatile does not guarantee atomicity or ordering.
+
+4.6 Setjmp / Longjmp
+
+Non‑local jumps that can be used for error handling in C. They skip normal stack unwinding; very dangerous and rarely used in modern code.
+
+4.7 Custom Allocators
+
+For performance‑sensitive applications, you can create memory pools using a large static buffer and a free list to avoid malloc overhead.
+
+4.8 Debugging & Analysis Tools
+
+· gdb: breakpoints, stack traces, watchpoints.
+· Valgrind: memory leaks, invalid accesses.
+· AddressSanitizer (-fsanitize=address): detects memory corruption.
+· UndefinedBehaviourSanitizer (-fsanitize=undefined): catches UB at runtime.
+· perf / gprof: performance profiling.
+
+4.9 Writing Portable Code
+
+· Use fixed‑width types from <stdint.h>.
+· Avoid assumptions about size of int, sign of char.
+· Don’t rely on implementation‑defined behaviour.
+· Test on multiple compilers/platforms.
+
+---
+
+Part 5: Data Structures & Algorithms in C (Interview Essentials)
+
+5.1 Linked List
+
+```c
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+struct Node* insertHead(struct Node *head, int data) {
+    struct Node *newNode = malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->next = head;
+    return newNode;
+}
+
+void reverse(struct Node **head) {
+    struct Node *prev = NULL, *current = *head, *next;
+    while (current) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    *head = prev;
+}
+```
+
+5.2 Stack (Array & Linked List)
+
+```c
+// Array-based stack
+#define MAX 100
+int stack[MAX];
+int top = -1;
+void push(int x) { stack[++top] = x; }
+int pop() { return stack[top--]; }
+```
+
+5.3 Queue (Circular Buffer)
+
+```c
+#define SIZE 10
+int queue[SIZE], front = 0, rear = -1, count = 0;
+void enqueue(int x) {
+    if (count == SIZE) return; // full
+    rear = (rear + 1) % SIZE;
+    queue[rear] = x;
+    count++;
+}
+int dequeue() {
+    if (count == 0) return -1; // empty
+    int x = queue[front];
+    front = (front + 1) % SIZE;
+    count--;
+    return x;
+}
+```
+
+5.4 Binary Search Tree
+
+```c
+struct TreeNode {
+    int data;
+    struct TreeNode *left, *right;
+};
+struct TreeNode* insert(struct TreeNode *root, int key) {
+    if (!root) {
+        root = malloc(sizeof(struct TreeNode));
+        root->data = key; root->left = root->right = NULL;
+        return root;
+    }
+    if (key < root->data) root->left = insert(root->left, key);
+    else root->right = insert(root->right, key);
+    return root;
+}
+```
+
+5.5 Sorting & Searching
+
+· qsort from <stdlib.h> can be used with a custom comparator.
+· Binary search: bsearch or a custom loop.
+· Implement QuickSort, MergeSort, InsertionSort.
+
+5.6 Common Interview Problems
+
+· Reverse a string in place.
+· Check palindrome.
+· Find missing number in an array of 1 to N.
+· Compute factorial, Fibonacci (iterative & recursive).
+· Implement atoi / itoa.
+· Bitwise operations: count set bits, swap odd/even bits.
+· Remove duplicates from a sorted array.
+· Detect cycle in a linked list (Floyd’s algorithm).
+
+---
+
+Part 6: Best Practices & The Standard Library
+
+6.1 Coding Style & Safety
+
+· Use meaningful names, consistent indentation.
+· Always initialise variables.
+· Check return values of malloc, fopen, etc.
+· Use const wherever applicable.
+· Avoid gets(); use fgets instead.
+· Use snprintf over sprintf.
+· Compile with high warning levels (-Wall -Wextra -Wpedantic).
+
+6.2 Standard Library Quick Reference
+
+Header Purpose
+<stdio.h> I/O operations
+<stdlib.h> Memory allocation, conversion, sort, exit
+<string.h> String manipulation
+<math.h> Math functions
+<ctype.h> Character classification
+<time.h> Date and time
+<assert.h> Runtime assertions
+<errno.h> Error codes
+<stdint.h> Fixed-width integers
+<stdbool.h> Boolean type
+
+---
+
+This guide systematically progresses from zero knowledge to advanced, expert‑level concepts. Mastery of these topics will prepare you for any C programming interview and real‑world systems programming.

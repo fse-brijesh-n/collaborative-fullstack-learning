@@ -1,0 +1,1 @@
+Bin and src folder is the part of 35 AWT

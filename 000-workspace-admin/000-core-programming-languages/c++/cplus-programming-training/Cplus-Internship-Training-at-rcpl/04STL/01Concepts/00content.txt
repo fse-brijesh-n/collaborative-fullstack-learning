@@ -1,0 +1,122 @@
+1. Containers
+Containers store objects and are implemented as classes. There are several types of containers:
+
+Sequence Containers: Maintain the ordering of elements.
+
+vector: A dynamic array.
+deque: A double-ended queue.
+list: A doubly linked list.
+forward_list: A singly linked list.
+array: A fixed-size array.
+Associative Containers: Provide fast retrieval based on keys.
+
+set: A collection of unique elements, sorted by key.
+map: A collection of key-value pairs, with unique keys, sorted by key.
+multiset: A collection of elements, which can have duplicates, sorted by key.
+multimap: A collection of key-value pairs, where keys can be duplicated.
+Unordered Associative Containers: Provide fast retrieval based on keys using hash tables.
+
+unordered_set: A collection of unique elements, unordered.
+unordered_map: A collection of key-value pairs, with unique keys, unordered.
+unordered_multiset: A collection of elements, which can have duplicates, unordered.
+unordered_multimap: A collection of key-value pairs, where keys can be duplicated, unordered.
+Container Adapters: Provide a different interface for existing containers.
+
+stack: A LIFO (Last In, First Out) container adapter.
+queue: A FIFO (First In, First Out) container adapter.
+priority_queue: A container adapter that provides constant time access to the largest element.
+2. Iterators
+Iterators are used to access the elements of containers. They work similarly to pointers and are used to traverse through the container.
+
+Types of Iterators:
+iterator: Basic iterator.
+const_iterator: Read-only iterator.
+reverse_iterator: Iterates in reverse order.
+iterator_traits: Provides type information about iterators.
+3. Algorithms
+STL provides a wide range of algorithms that can be used on containers. They operate through iterators.
+
+Common Algorithms:
+sort(): Sorts elements.
+find(): Finds an element.
+count(): Counts occurrences of an element.
+accumulate(): Computes the sum of elements.
+transform(): Applies a function to a range of elements.
+binary_search(): Checks if an element exists in a sorted range.
+
+for_each
+find_if: #include <algorithm>
+#include <vector>
+
+int main() {
+    std::vector<int> numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    auto it = std::find_if(numbers.begin(), numbers.end(),
+        [](int x) { return x > 5; });
+
+    if (it != numbers.end()) {
+        std::cout << "First number greater than 5: " << *it << std::endl;
+    }
+
+    return 0;
+}
+sort:#include <algorithm>
+#include <vector>
+
+int main() {
+    std::vector<std::string> names = {"John", "Alice", "Bob", "Charlie", "David"};
+
+    std::sort(names.begin(), names.end(),
+        [](const std::string& a, const std::string& b) {
+            return a.length() < b.length();
+        });
+
+    for (const auto& name : names) {
+        std::cout << name << std::endl;
+    }
+
+    return 0;
+}
+count_if:#include <algorithm>
+#include <vector>
+
+int main() {
+    std::vector<int> numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    int count = std::count_if(numbers.begin(), numbers.end(),
+        [](int x) { return x % 2 == 0; });
+
+    std::cout << "Number of even numbers: " << count << std::endl;
+
+    return 0;
+}
+unique:#include <algorithm>
+#include <vector>
+
+int main() {
+    std::vector<int> numbers = {1, 2, 2, 3, 3, 3, 4, 4, 4, 4};
+
+    auto it = std::unique(numbers.begin(), numbers.end(),
+        [](int a, int b) { return a == b; });
+
+    numbers.erase(it, numbers.end());
+
+    for (const auto& num : numbers) {
+        std::cout << num << std::endl;
+    }
+
+    return 0;
+}
+accumulate:#include <numeric>
+#include <vector>
+
+int main() {
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+    int sum = std::accumulate(numbers.begin(), numbers.end(),
+        0, [](int a, int b) { return a + b; });
+
+    std::cout << "Sum of numbers: " << sum << std::endl;
+
+    return 0;
+}

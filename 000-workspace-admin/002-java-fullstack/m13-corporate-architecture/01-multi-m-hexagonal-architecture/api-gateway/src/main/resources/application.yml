@@ -1,0 +1,53 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+      routes:
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+        - id: batch-processing-service
+          uri: lb://batch-processing-service
+          predicates:
+            - Path=/batch/**
+          filters:
+            - StripPrefix=1
+        - id: document-service
+          uri: lb://document-service
+          predicates:
+            - Path=/documents/**
+          filters:
+            - StripPrefix=1
+        - id: logging-service
+          uri: lb://logging-service
+          predicates:
+            - Path=/logs/**
+          filters:
+            - StripPrefix=1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka/}
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    org.springframework.cloud.gateway: INFO

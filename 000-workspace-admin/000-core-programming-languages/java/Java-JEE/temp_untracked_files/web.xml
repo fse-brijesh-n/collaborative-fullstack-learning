@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+ 
+  <servlet-mapping>
+  	
+  <servlet-name>myLog</servlet-name>
+  <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>myLog</servlet-name>
+  	<servlet-class>MyServlet</servlet-class>
+  </servlet>
+  
+</web-app>

@@ -1,0 +1,563 @@
+Master Interview Syllabus & Complete Q&A
+
+Based solely on the interview history, here is an exhaustive syllabus that breaks down every topic into its smallest sub‑topics, followed by precise answers to each of the 110+ questions.
+
+---
+
+Syllabus – Topic‑Wise Deep Dive (Beginner → Advanced)
+
+1. Java Core & Java 8
+
+· Streams API
+  · Creating streams (collection.stream(), Arrays.stream(), Stream.of())
+  · Intermediate operations (filter, map, flatMap, sorted, distinct, peek, limit, skip) – lazy
+  · Terminal operations (collect, forEach, reduce, count, findFirst, anyMatch) – eager
+  · Collectors:
+    · toList(), toSet(), toMap(), joining()
+    · groupingBy(classifier) → Map<K, List<V>>
+    · groupingBy(classifier, downstreamCollector) e.g., groupingBy(..., counting()) → Map<K, Long>
+    · groupingBy(classifier, mapFactory, downstreamCollector) for custom map type
+  · Collectors.toList() in parallel streams: preserves encounter order if the stream is ordered (e.g., from a List), implementation not guaranteed (usually ArrayList)
+  · parallelStream(): uses ForkJoinPool, beware of shared mutable state
+· Exceptions
+  · Checked (Exception subclasses except RuntimeException) vs Unchecked (RuntimeException, Error)
+  · try-catch-finally; finally always executes
+  · Suppressed exceptions: when finally throws, the original exception becomes suppressed (accessible via getSuppressed())
+· Functional Interfaces
+  · @FunctionalInterface annotation – optional, ensures single abstract method
+  · Built‑in: Predicate<T>, Consumer<T>, Function<T,R>, Supplier<T>
+  · Composing predicates: Predicate.and(), or(), negate() vs writing one monolithic lambda – readability/maintainability
+· Supplier in parallel streams: Supplier.get() provides a new instance per call, allowing per‑thread accumulators (thread‑safe)
+
+2. Spring Boot
+
+· Starters
+  · Concept: curated dependency sets (spring-boot-starter-web, etc.)
+  · Risks: dependency bloat, version conflicts, unexpected auto‑configuration
+· Bean Configuration
+  · @Component (classpath scanning) vs @Bean (explicit declaration in @Configuration)
+  · @Autowired, @Qualifier, @Primary
+  · Scope: singleton (default), prototype, request, session
+· Singleton Pitfalls
+  · Single instance shared across all threads → mutable state causes race conditions (e.g., HashMap as cache)
+  · Fix: use ConcurrentHashMap, or a proper caching layer (Redis, Caffeine)
+· Dependency Injection Issues
+  · NullPointerException when a constructor parameter is null: missing bean definition, the class not being a Spring component, or circular dependency
+· Web Layer
+  · @RequestParam: required by default; use defaultValue = "0" to supply a fallback
+  · PUT vs PATCH: PUT replaces entire resource (idempotent); PATCH applies partial updates
+  · @RestController = @Controller + @ResponseBody (every method returns data directly)
+
+3. Spring Data JPA & Hibernate
+
+· Fetching Strategies
+  · Lazy (loaded on first access) vs Eager (loaded immediately)
+  · Defaults: @OneToMany, @ManyToMany → LAZY; @ManyToOne, @OneToOne → EAGER
+· Associations & Mappings
+  · @OneToOne: owning side holds foreign key via @JoinColumn
+  · @ManyToMany pitfalls: hidden join table can cause cascade deadlocks → explicit join entity (e.g., UserRole) preferred
+  · Cascade types: PERSIST, MERGE, REMOVE, REFRESH, DETACH, ALL
+· Querying & N+1 Problem
+  · N+1: one query for parent, N queries for children
+  · Solutions: JOIN FETCH (per‑query), @EntityGraph (reusable), @BatchSize (batch loading)
+  · DTO Projection: select only needed fields into a DTO
+  · JOIN FETCH + pagination: Hibernate loads all rows and pages in memory → MultipleBagFetchException / ClassCastException
+    · Workaround: two‑query approach (paginate IDs first, then fetch with JOIN FETCH IN (:ids)); or cursor‑based pagination
+· Pagination
+  · Offset (LIMIT/OFFSET) – simple, but unstable when data changes (duplicate/missing records)
+  · Cursor‑based (WHERE id > :lastId ORDER BY id LIMIT :size) – stable with changing data
+  · Spring Data JPA Pagination: Pageable + Page<T> abstraction
+· Transactions
+  · @Transactional ensures atomicity; missing it causes partial commits, duplicate orders
+  · Should enforce uniqueness at DB level (constraints) and use idempotency keys for duplicate prevention
+· Performance with Large Collections
+  · Avoid mapping huge collections in JPA; query them separately with pagination
+  · Batch processing, batch fetching
+· Native Queries – result must match entity structure; otherwise ClassCastException, use @SqlResultSetMapping if needed
+· JPQL Fetch Join Pagination Bug – directly using setFirstResult/setMaxResults with fetch join on collection → in‑memory pagination; avoid it
+
+4. REST APIs
+
+· @RequestParam defaults, required flag
+· PUT vs PATCH
+· Pagination strategies: offset, cursor
+· Spring Data REST pagination with Pageable
+
+5. JUnit 5 & Mockito
+
+· JUnit 5 Assertions.assertEquals()
+· Mockito: verify(), if method not invoked → WantedButNotInvoked
+· Throwing exceptions: doThrow(...).when(mock) / when(...).thenThrow(...)
+· Verifying catch block: mock dependency to throw, then assert fallback or verify another mock
+· @RunWith(MockitoJUnitRunner.class) (JUnit 4) initializes @Mock; JUnit 5 uses @ExtendWith(MockitoExtension.class)
+
+6. Kafka
+
+· Poison message handling: DLQ, skip‑and‑log, retry with backoff then DLQ
+· Schema Registry upgrade: use FULL compatibility during transition, upgrade clients, then restore desired level
+· Nullable Avro field addition: add field with default (e.g., null), old consumers ignore extra fields
+· Schema Registry purpose: centralise schemas, enforce compatibility, version history
+· Producer key bug: null/constant key → all messages to same partition → ordering lost
+· AdminClient partition count vs UI: may show replication factor; refresh metadata
+· Under‑replicated partitions: compare replicas vs isr via describeTopics()
+· ISR: In‑Sync Replicas – replicas fully caught up with leader; acks=all waits for all ISR
+
+7. Avro
+
+· Compatibility types: BACKWARD, FORWARD, FULL
+· Nullable fields: adding a nullable union with default is forward compatible
+· Default values required for forward compatibility
+
+8. Transactions
+
+· Missing @Transactional leads to partial commits
+· Duplicate order prevention: idempotency token + unique database constraint
+· Idempotency: same result regardless of repetition
+· Retry handling: implement idempotency first, then retry with exponential backoff
+
+9. Concurrency
+
+· Singleton beans: stateless or use thread‑safe structures (ConcurrentHashMap)
+· ConcurrentHashMap: thread‑safe map with fine‑grained locking
+· Supplier in parallel streams: per‑thread instances → thread‑safe
+· Parallel stream ordering: ordered sources preserve order; unordered do not
+· Spring bean thread safety: prefer stateless; else synchronise or use @Scope("prototype")
+
+10. Performance
+
+· Large collections: paginate at DB level; avoid loading all
+· Batch processing: use chunk‑based (Spring Batch)
+· Deadlocks: consistent lock order; redesign with explicit join entities
+· Join table redesign: replace @ManyToMany with explicit entity
+· Memory: DTO projections, lazy fetch, pagination
+· Query: indexes, avoid SELECT *, @BatchSize
+· Cache: eviction policy (LRU/LFU/TTL), size limit, distributed cache
+
+11. System Design Scenarios
+
+· High‑traffic cache inconsistency → distributed cache with write‑through/invalidation
+· Bulk role deactivation → paginated batch updates
+· Fetch join pagination → two‑query approach (paginate IDs, then fetch full entities)
+· Large collection → query separately with pagination
+· Duplicate order → idempotency key + unique constraint
+· Stable pagination → cursor‑based
+· Join table redesign → explicit join entity
+· Retry‑safe APIs → idempotency
+· High concurrency transactions → optimistic locking (@Version) + retry
+
+12. API Benchmark Platform
+
+· Design: configurable test plan, worker threads, metrics collection, reporting
+· ExecutorService vs CompletableFuture: CompletableFuture for composability and non‑blocking
+· Parallel API calls: CompletableFuture.supplyAsync + allOf
+· JVM metrics: Micrometer MeterRegistry (Timers, Counters)
+· Throughput/latency: measure percentiles (p50,p95,p99) with HdrHistogram
+· Concurrent users: simulate with a thread pool firing requests
+· Kafka integration: stream benchmark results to Kafka topic for real‑time analysis
+
+13. Deployment & Production
+
+· Best practices: blue‑green/canary, external config, health checks, monitoring
+· Client vs developer account: isolate production infrastructure
+· VPS: firewall, SSH keys, Docker with non‑root user
+· Docker: multi‑stage builds, minimal images
+· Domain management: DNS A records, Nginx reverse proxy for SSL
+· CI/CD: GitHub Actions → build, test, push image, deploy via SSH
+
+14. React
+
+· Hooks: useState, useEffect, useContext, etc.
+· State management: Context API, Redux
+· Key concepts: Virtual DOM, component lifecycle (useEffect), routing (React Router)
+
+15. Database
+
+· JDBC connection: use connection pool (HikariCP)
+· Transactions: @Transactional for atomicity
+· Locking: optimistic (@Version) or pessimistic (SELECT FOR UPDATE)
+· SQL optimization: indexes, avoid SELECT *, analyse execution plans
+
+16. Miscellaneous
+
+· RGB: Red‑Green‑Blue colour model (0‑255)
+· GitHub repository: version control, collaboration, portfolio
+· Interview evaluation: problem‑solving, communication, depth
+
+---
+
+Complete Q&A
+
+Java Core & Java 8
+
+Q1. Write a Java function to group a list by its first character and return a Map.
+
+```java
+public Map<Character, List<String>> groupByFirstChar(List<String> list) {
+    return list.stream()
+        .filter(s -> s != null && !s.isEmpty())
+        .collect(Collectors.groupingBy(s -> s.charAt(0)));
+}
+```
+
+Q2. Which intermediate operation transforms stream elements?
+map() (and flatMap()).
+
+Q3. Explain intermediate vs terminal operations in Java Streams.
+Intermediate operations are lazy and return a stream; terminal operations trigger the pipeline and produce a result or side‑effect.
+
+Q4. What is Collectors.groupingBy()?
+A collector that groups elements by a classifier function into a Map. Overloads support downstream collectors and map suppliers.
+
+Q5. What happens when Collectors.groupingBy() is used with a downstream collector like Collectors.counting()?
+It counts the number of elements in each group, returning a Map<K, Long>.
+
+Q6. Explain Collectors.toList() in parallel streams. Does it guarantee list implementation or ordering?
+It preserves encounter order if the stream is ordered (e.g., from a List). The list implementation is not guaranteed (usually ArrayList).
+
+Q7. What is the output of: parallelStream().map(n -> n).collect(Collectors.toList())?
+The list contains the same elements as the source, in encounter order (since the source is ordered).
+
+Q8. Explain checked vs unchecked exceptions.
+Checked exceptions (e.g., IOException) must be caught or declared. Unchecked exceptions (RuntimeException subclasses) are not forced by the compiler.
+
+Q9. What happens if both the try block and the finally block throw exceptions?
+The finally exception overrides the original; the original becomes a suppressed exception (accessible via getSuppressed()).
+
+Q10. What is the role of @FunctionalInterface? Is it required?
+It marks an interface as functional (exactly one abstract method). Not required, but provides compile‑time safety.
+
+Q11. Explain composing predicates using Predicate.and() vs writing one large predicate.
+and() allows composing smaller, reusable predicates, improving readability. Functionally equivalent.
+
+Q12. Explain why using Supplier<StringBuilder> in parallel streams is thread‑safe.
+Each thread receives a new StringBuilder from Supplier.get(), so there is no shared mutable state.
+
+Spring Boot
+
+Q13. What are Spring Boot Starters?
+Curated dependency descriptors (e.g., spring-boot-starter-web) that bundle compatible libraries.
+
+Q14. What risks do Spring Boot Starters introduce?
+Dependency bloat, version conflicts if overridden, and unexpected auto‑configuration.
+
+Q15. @Component vs @Bean
+@Component – class‑level, detected by scanning. @Bean – method‑level in @Configuration, for explicit bean creation.
+
+Q16. Singleton beans with HashMap causing inconsistent cache values. Diagnose and fix.
+Multiple threads modify the shared HashMap → race condition. Fix: use ConcurrentHashMap or a dedicated cache (Redis/Caffeine).
+
+Q17. Constructor parameter is null at runtime causing NullPointerException. Identify the cause.
+The dependency is not a Spring bean (missing @Component, etc.) or there is no matching bean definition.
+
+Q18. How do you make @RequestParam default to zero?
+@RequestParam(defaultValue = "0") int param
+
+Q19. PUT vs PATCH.
+PUT replaces the entire resource (idempotent); PATCH applies partial updates.
+
+Q20. @RestController vs @Controller.
+@RestController = @Controller + @ResponseBody (methods return data directly, not view names).
+
+Spring Data JPA & Hibernate
+
+Q21. Lazy vs Eager Fetch.
+Lazy loads on first access; eager loads immediately with the parent.
+
+Q22. Default fetch types.
+@ManyToOne, @OneToOne → EAGER; @OneToMany, @ManyToMany → LAZY.
+
+Q23. Explain @OneToOne mapping.
+Defines a 1:1 relationship; the owning side holds @JoinColumn with the foreign key.
+
+Q24. Many‑to‑many join table causing deadlocks during bulk delete. Diagnose and redesign.
+Deadlocks from inconsistent lock order on join table. Redesign with an explicit join entity (e.g., UserRole), delete join entities first.
+
+Q25. Why does JOIN FETCH + pagination fail?
+Hibernate must load all rows and paginate in memory; can throw MultipleBagFetchException.
+
+Q26. Explain Hibernate runtime exceptions with fetch join pagination.
+QueryException or MultipleBagFetchException when using setFirstResult/setMaxResults with JOIN FETCH on a collection.
+
+Q27. How should you paginate fetched associations safely?
+Paginate parent IDs first (SELECT id … LIMIT ?), then fetch full entities with JOIN FETCH WHERE id IN (:ids). Or use @BatchSize.
+
+Q28. Why is Spring Data JPA Pagination useful?
+It standardises pagination with Pageable/Page, handling SQL LIMIT/OFFSET and total count queries.
+
+Q29. Best practices for handling very large collections in JPA.
+Do not map them as a JPA collection; instead, query the related entities separately with pagination.
+
+Q30. Missing @Transactional causes duplicate orders and partial inserts. Fix?
+Wrap the entire operation in @Transactional and enforce uniqueness at the database level (unique constraint on order reference).
+
+Q31. Offset pagination causing duplicate/missing records while data changes.
+Use cursor‑based pagination (WHERE id > :lastId ORDER BY id LIMIT :size).
+
+Q32. Native query mapped to entity throws ClassCastException.
+The native query must return exactly the columns expected by the entity. Use @SqlResultSetMapping for complex mappings.
+
+Q33. Find the bug in JPQL Fetch Join pagination.
+Using setFirstResult/setMaxResults with JOIN FETCH on a collection forces in‑memory pagination → exceptions. Avoid fetch join with pagination.
+
+Q34. Explain N+1 problem.
+One query for the parent entity, then N additional queries for each child when lazy collections are accessed.
+
+Q35. EntityGraph vs Fetch Join.
+@EntityGraph is reusable; JOIN FETCH is per‑query. Both can solve N+1.
+
+Q36. DTO Projection.
+Select only needed fields into a plain DTO object, reducing data transfer and memory usage.
+
+Q37. Batch Fetching.
+@BatchSize or hibernate.default_batch_fetch_size loads collections in batches when one is accessed, reducing N+1.
+
+Q38. Cascade types.
+PERSIST, MERGE, REMOVE, REFRESH, DETACH, ALL – control propagation of operations to child entities.
+
+Q39. Join Entity instead of @ManyToMany.
+Create an explicit entity for the join table (e.g., UserRole) to gain control over extra columns, pagination, and avoid deadlocks.
+
+REST APIs
+
+Q40. Default @RequestParam.
+Parameters are required by default; if missing, Spring throws MissingServletRequestParameterException.
+
+Q41. PUT vs PATCH. (already answered)
+
+Q42. Pagination API.
+Use Spring Data's Pageable interface and return Page<T>.
+
+Q43. Cursor Pagination.
+Uses a unique, sequential column (e.g., id) and a WHERE clause to fetch the next page stably: WHERE id > :lastId ORDER BY id LIMIT :size.
+
+Q44. Offset Pagination.
+Uses LIMIT and OFFSET; simple but can cause duplicate/missing records when data changes concurrently.
+
+JUnit 5 & Mockito
+
+Q45. Which class provides assertEquals()?
+org.junit.jupiter.api.Assertions (JUnit 5).
+
+Q46. What happens if verify() is called but the method was never invoked?
+Mockito throws WantedButNotInvoked (a MockitoAssertionError).
+
+Q47. Which Mockito method throws RuntimeException?
+doThrow(new RuntimeException()).when(mock).someMethod(); or when(mock.someMethod()).thenThrow(new RuntimeException());
+
+Q48. How do you verify catch block execution?
+Mock the dependency to throw, then verify that the fallback action or another mock was invoked.
+
+Q49. What does @RunWith(MockitoJUnitRunner.class) do?
+(JUnit 4) It initialises @Mock fields and validates Mockito usage. In JUnit 5, use @ExtendWith(MockitoExtension.class).
+
+Kafka
+
+Q50. Three approaches to handle poison messages.
+
+1. Send to Dead Letter Queue (DLQ) after retries.
+2. Skip and log the message, commit offset.
+3. Retry with exponential backoff, then DLQ.
+
+Q51. Safe Schema Registry upgrade plan.
+Temporarily set compatibility to FULL, upgrade all producers/consumers, then restore desired compatibility.
+
+Q52. Consumer failing after nullable Avro field added.
+The new field must have a default value (e.g., "default": null). Older consumers ignore the unknown field.
+
+Q53. Why does Schema Registry help?
+Centralises schemas, enforces compatibility checks, and stores schema history.
+
+Q54. Producer key bug affecting ordering.
+If the key is null or constant, all messages go to one partition → ordering across partitions is lost. Use a proper key.
+
+Q55. Kafka AdminClient reports different partition counts than UI.
+The UI may be showing replication factor rather than partitions. Refresh metadata to get correct count.
+
+Q56. Detect under‑replicated partitions.
+Use kafka-topics --describe or AdminClient.describeTopics(); compare the isr list size to the expected replication factor.
+
+Q57. ISR (In‑Sync Replica).
+The set of replicas fully caught up with the leader. With acks=all, a write succeeds only when all ISR members acknowledge it.
+
+Avro
+
+Q58. Nullable field compatibility.
+Adding a nullable field (union with null) that has a default value is forward compatible.
+
+Q59. Backward Compatibility.
+New schema can read data written with the old schema.
+
+Q60. Forward Compatibility.
+Old schema can read data written with the new schema (requires default values for new fields).
+
+Q61. Full Compatibility.
+Both backward and forward compatible.
+
+Q62. Default values.
+Every field must have a "default" to allow schema evolution (especially forward compatibility).
+
+Transactions
+
+Q63. Missing @Transactional.
+Without @Transactional, each operation runs in its own transaction → partial commits possible. Annotate the service method with @Transactional.
+
+Q64. Duplicate order prevention.
+Use an idempotency key (e.g., client‑generated UUID) together with a unique database constraint.
+
+Q65. Idempotency.
+An operation that produces the same result no matter how many times it is executed.
+
+Q66. Retry handling.
+Make the operation idempotent first, then retry with exponential backoff on transient failures.
+
+Concurrency
+
+Q67. Singleton thread safety.
+Singleton beans must be stateless or use thread‑safe structures (ConcurrentHashMap). Otherwise, race conditions occur.
+
+Q68. ConcurrentHashMap.
+A thread‑safe map that allows concurrent reads and writes without external synchronisation.
+
+Q69. Supplier in parallel streams.
+Supplier.get() returns a new instance per invocation; when used in a collector, each thread gets its own accumulator → thread‑safe.
+
+Q70. Parallel Stream ordering.
+For ordered sources (e.g., ArrayList), encounter order is preserved. For unordered sources (e.g., HashSet), order is not guaranteed.
+
+Q71. Thread safety in Spring Beans.
+Prefer stateless beans. If stateful, use @Scope("prototype") or synchronise access properly.
+
+Performance
+
+Q72. Handling very large collections.
+Paginate at the database level; never load entire collections into memory.
+
+Q73. Batch processing.
+Use Spring Batch or chunk‑based processing to reduce memory footprint.
+
+Q74. Deadlocks.
+Caused by inconsistent lock acquisition order. Ensure consistent ordering, redesign many‑to‑many with explicit join entity.
+
+Q75. Join table redesign.
+Replace @ManyToMany with an explicit join entity (e.g., UserRole) to control deletes and avoid lock issues.
+
+Q76. Memory optimization.
+Use DTO projections, lazy loading, and pagination to minimise the object graph.
+
+Q77. Query optimization.
+Add indexes, avoid SELECT *, analyse execution plans, use batch fetching (@BatchSize).
+
+Q78. Cache optimization.
+Choose an eviction policy (LRU/LFU/TTL), set size limits, and invalidate on writes.
+
+System Design Scenarios
+
+Q79. High traffic shared cache inconsistency.
+Use a distributed cache (e.g., Redis) with write‑through or cache‑aside and proper invalidation.
+
+Q80. Bulk role deactivation.
+Process users in paginated batches, updating a limited number of rows per batch.
+
+Q81. Fetch Join pagination.
+Paginate IDs first, then fetch full entities with JOIN FETCH using the IDs. Avoid fetch join with pagination.
+
+Q82. Large collection design.
+Do not map the collection in JPA; query the associated entities separately with pagination.
+
+Q83. Duplicate order creation.
+Idempotency token + unique constraint on the order reference.
+
+Q84. Stable pagination.
+Cursor‑based pagination using a unique, sequential column (WHERE id > :lastId).
+
+Q85. Join table redesign.
+Explicit join entity instead of @ManyToMany.
+
+Q86. Retry‑safe APIs.
+Implement idempotency; use a client‑generated request ID and check for duplicates.
+
+Q87. High concurrency transaction handling.
+Optimistic locking with @Version; retry on OptimisticLockException.
+
+API Benchmark Platform
+
+Q88. Design an API Benchmark Platform.
+Components: test plan (URLs, concurrency, duration), worker threads (CompletableFuture), metrics (Micrometer), results publication (Kafka or console). Store historical results for trend analysis.
+
+Q89. ExecutorService vs CompletableFuture.
+CompletableFuture offers composability, non‑blocking operations, and better exception handling.
+
+Q90. Parallel API calls.
+CompletableFuture.supplyAsync(apiCall, threadPool) and combine with allOf().
+
+Q91. Measuring JVM metrics.
+Use Micrometer MeterRegistry – record Timers for request latency, Counters for requests, Gauges for thread pool size.
+
+Q92. Throughput and latency.
+Measure in RPS and latency percentiles (p50, p95, p99) using HdrHistogram.
+
+Q93. Concurrent users.
+Simulate by submitting tasks to an ExecutorService at a controlled rate, each executing the API call.
+
+Q94. Kafka integration for benchmarking.
+Publish results (e.g., aggregated metrics per run) to a Kafka topic; downstream consumers can persist or build dashboards.
+
+Deployment & Production
+
+Q95. Production deployment best practices.
+Blue‑green/canary deployments, externalised config, health checks, centralised monitoring, and automated rollbacks.
+
+Q96. Client hosting account vs developer account.
+Use separate cloud accounts to isolate production infrastructure, security, and billing.
+
+Q97. VPS deployment.
+Secure with firewall (ufw), disable password login, use SSH keys, run Docker with a non‑root user.
+
+Q98. Docker deployment.
+Multi‑stage builds, minimal base images, run as non‑root, use Docker Compose for multi‑container apps.
+
+Q99. Domain management.
+Configure DNS A records to point to the VPS IP; set up Nginx as a reverse proxy for SSL termination.
+
+Q100. CI/CD.
+GitHub Actions workflow: on push → run tests → build Docker image → push to registry → deploy to VPS via SSH.
+
+React
+
+Q101. React Hooks.
+Functions (useState, useEffect, useContext, etc.) that add state and lifecycle features to functional components.
+
+Q102. React interview topics.
+Common topics include hooks, state management (Context/Redux), routing, performance optimisation, and testing.
+
+Q103. State management.
+React Context API for global state; Redux for complex state with predictable updates.
+
+Database
+
+Q104. JDBC connection.
+Use a connection pool (e.g., HikariCP) to manage database connections efficiently.
+
+Q105. Transactions.
+In Spring, annotate service methods with @Transactional to ensure atomicity.
+
+Q106. Locking.
+Optimistic locking via @Version; pessimistic locking via SELECT ... FOR UPDATE.
+
+Q107. SQL optimization.
+Create appropriate indexes, avoid SELECT *, use EXPLAIN to analyse queries, and batch operations.
+
+Miscellaneous
+
+Q108. RGB values.
+Red, Green, Blue colour model where each component ranges from 0 to 255.
+
+Q109. GitHub repository explanation.
+A remote repository hosts code, tracks changes, and supports collaboration through pull requests and issues.
+
+Q110. Interview evaluation questions.
+Interviewers assess your problem‑solving approach, communication clarity, technical depth, and cultural fit.
+
+---
+
+This document provides the complete syllabus and answers for every question discussed, directly based on the interview history. Good luck with your preparation!

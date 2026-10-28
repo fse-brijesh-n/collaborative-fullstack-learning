@@ -1,0 +1,125 @@
+version: "3.8"
+
+# Root Docker Compose file: builds and runs all deployable services (eureka-server,
+# api-gateway, auth-service, batch-processing-service, document-service, logging-service).
+# common-service is a shared library only and is not run as a container - it gets
+# baked into each service's image at build time via the multi-module Maven build.
+#
+# All 4 business services share the same JWT_SECRET so that a token issued by
+# auth-service can be validated by batch-processing-service, document-service and
+# logging-service. See docs/10-authentication-and-tokens.md.
+x-jwt-secret: &jwt-secret
+  JWT_SECRET: learning-project-demo-secret-key-change-me
+
+services:
+
+  eureka-server:
+    build:
+      context: .
+      dockerfile: eureka-server/Dockerfile
+    image: learning/eureka-server:1.0.0
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - microservices-net
+
+  api-gateway:
+    build:
+      context: .
+      dockerfile: api-gateway/Dockerfile
+    image: learning/api-gateway:1.0.0
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      EUREKA_URI: http://eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+    networks:
+      - microservices-net
+
+  auth-service:
+    build:
+      context: .
+      dockerfile: auth-service/Dockerfile
+    image: learning/auth-service:1.0.0
+    container_name: auth-service
+    ports:
+      - "8081:8081"
+    environment:
+      EUREKA_URI: http://eureka-server:8761/eureka/
+      <<: *jwt-secret
+    depends_on:
+      - eureka-server
+    networks:
+      - microservices-net
+
+  batch-processing-service:
+    build:
+      context: .
+      dockerfile: batch-processing-service/Dockerfile
+    image: learning/batch-processing-service:1.0.0
+    container_name: batch-processing-service
+    ports:
+      - "8082:8082"
+    environment:
+      EUREKA_URI: http://eureka-server:8761/eureka/
+      <<: *jwt-secret
+    depends_on:
+      - eureka-server
+    networks:
+      - microservices-net
+
+  document-service:
+    build:
+      context: .
+      dockerfile: document-service/Dockerfile
+    image: learning/document-service:1.0.0
+    container_name: document-service
+    ports:
+      - "8083:8083"
+    environment:
+      EUREKA_URI: http://eureka-server:8761/eureka/
+      <<: *jwt-secret
+    depends_on:
+      - eureka-server
+    networks:
+      - microservices-net
+
+  logging-service:
+    build:
+      context: .
+      dockerfile: logging-service/Dockerfile
+    image: learning/logging-service:1.0.0
+    container_name: logging-service
+    ports:
+      - "8084:8084"
+    environment:
+      EUREKA_URI: http://eureka-server:8761/eureka/
+      <<: *jwt-secret
+    depends_on:
+      - eureka-server
+    networks:
+      - microservices-net
+
+  # Static browser console for the whole system - open http://localhost:3000 after
+  # `docker compose up`. Talks directly to api-gateway (CORS enabled there, see
+  # api-gateway/src/main/resources/application.yml) so no build step/back-end is needed
+  # for the frontend itself. See docs/12-frontend.md.
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: learning/frontend:1.0.0
+    container_name: frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - api-gateway
+    networks:
+      - microservices-net
+
+networks:
+  microservices-net:
+    driver: bridge

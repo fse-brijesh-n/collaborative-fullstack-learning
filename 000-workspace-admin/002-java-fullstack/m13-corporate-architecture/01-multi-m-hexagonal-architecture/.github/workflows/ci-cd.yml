@@ -1,0 +1,110 @@
+name: CI-CD Build and Deploy (GitHub Actions)
+
+# "Single-click" deploy: trigger manually from the Actions tab (workflow_dispatch),
+# or automatically on every push to main. Only runs its build/deploy steps when
+# ci-pipeline.properties (repo root) sets ci.pipeline=github-actions - otherwise it
+# no-ops so it never conflicts with the Azure DevOps pipeline (azure-pipelines.yml).
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_OWNER: ${{ github.repository }}
+
+jobs:
+  select-pipeline:
+    runs-on: ubuntu-latest
+    outputs:
+      selected: ${{ steps.check.outputs.selected }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read ci.pipeline property from ci-pipeline.properties
+        id: check
+        shell: bash
+        run: |
+          VALUE=$(grep -oP '(?<=^ci\.pipeline=).+' ci-pipeline.properties | tr -d '[:space:]')
+          echo "Configured ci.pipeline = $VALUE"
+          echo "selected=$VALUE" >> "$GITHUB_OUTPUT"
+
+  build-test-deploy:
+    needs: select-pipeline
+    if: needs.select-pipeline.outputs.selected == 'github-actions'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      # Single command builds AND tests the whole multi-module reactor (common-service +
+      # eureka-server + api-gateway + the 4 business services). Every module has unit
+      # tests (application services with mocked ports) and full Spring Boot integration
+      # tests (real embedded server + real H2 DB + real JWT filter). A failing test
+      # fails this step and the whole pipeline - see docs/10-authentication-and-tokens.md
+      # and docs/09-troubleshooting.md for what's covered and why.
+      - name: Build and test all modules
+        run: mvn -B clean install
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build & push service images
+        shell: bash
+        run: |
+          set -e
+          SHA_TAG=${GITHUB_SHA::7}
+          for svc in eureka-server api-gateway auth-service batch-processing-service document-service logging-service; do
+            IMAGE="${REGISTRY}/${IMAGE_OWNER}/${svc}"
+            echo "Building $IMAGE"
+            docker build -f "$svc/Dockerfile" -t "$IMAGE:latest" -t "$IMAGE:${SHA_TAG}" .
+            docker push "$IMAGE:latest"
+            docker push "$IMAGE:${SHA_TAG}"
+          done
+
+      # Self-contained demo "deployment": bring the full stack up on the runner
+      # itself via Docker Compose (no external server target configured).
+      - name: Deploy stack with Docker Compose
+        run: docker compose up -d --build
+
+      - name: Wait for Eureka to become healthy
+        shell: bash
+        run: |
+          for i in $(seq 1 20); do
+            if curl -sf http://localhost:8761/actuator/health > /dev/null; then
+              echo "Eureka is up"
+              exit 0
+            fi
+            echo "Waiting for Eureka... ($i/20)"
+            sleep 5
+          done
+          echo "Eureka did not become healthy in time" >&2
+          exit 1
+
+      - name: Smoke test through API Gateway
+        shell: bash
+        run: |
+          sleep 15
+          curl -sf http://localhost:8080/actuator/health
+          curl -sf -X POST http://localhost:8080/auth/api/auth/register \
+            -H "Content-Type: application/json" \
+            -d '{"username":"ci-demo-user","password":"ci-demo-pass"}'
+
+      - name: Show running containers
+        if: always()
+        run: docker compose ps
+
+      - name: Tear down demo stack
+        if: always()
+        run: docker compose down -v

@@ -1,0 +1,29 @@
+Functional interface
+====================
+The interface that has one and only one abstract method is known as functional interface
+This feature was introduced in java 8
+Few functional interfaces are as follows
+1)ActionListener interface
+public void actionPerformed(AxctionEvent evt)
+2)Runnable interface
+public void run()
+3)Comparable interface
+public int compareTo(Object obJ)
+4)Comparator interface
+public int compare(Object obJ1,Object obj2)
+Few functional interfaces that was introduced in java
+1)Predicate interface
+2)Function interface
+3)Consumer interface
+4)Supplier interface
+etc
+Use @FunctionalInterface in interface declaration, so that compiler check whether this interface is functional interface or not
+
+
+
+
+
+
+
+
+

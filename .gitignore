@@ -1,0 +1,55 @@
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / editor metadata
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+
+# Template workspace copy and generated project metadata
+START-COPY-THIS-FOLDER-AND-PASTE-RENAME-TO-YOUR-WORKSPACE/
+**/.metadata/
+**/.settings/
+**/.classpath
+**/.project
+**/*.srt
+
+# Eclipse project metadata
+.metadata/
+.settings/
+.classpath
+.project
+
+# Java build output and test reports
+**/target/
+**/build/
+**/bin/
+**/out/
+**/surefire-reports/
+**/*.class
+**/*.log
+
+# Gradle / Maven caches
+**/.gradle/
+**/.mvn/
+
+# Node / frontend generated files
+node_modules/
+**/node_modules/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# Common generated folders
+**/.metadata/
+**/.settings/
+**/.idea/
+**/.vscode/

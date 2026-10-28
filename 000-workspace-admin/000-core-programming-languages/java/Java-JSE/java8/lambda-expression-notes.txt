@@ -1,0 +1,29 @@
+Lambda expression
+=================
+It is one of the esiest way to provide implementation of function interface.This feature was introduced in java 8
+
+Syntax
+-------
+
+(argument name)->{method body};
+If body of the method has only one command then {} is optional
+
+public interface AA
+{
+  public void sayHello(String str);
+}
+
+AA obj=(name)->System.out.println("Hello "+name);
+obj.sayHello("amit");
+or
+AA obj=(name)->{
+     String message="Hello "+name;
+     System.out.println(message);
+};
+obj.sayHello("amit");
+
+
+
+
+
+
