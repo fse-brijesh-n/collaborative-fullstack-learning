@@ -1,7 +1,149 @@
-# Complete React & Full-Stack Development Handbook  
-**Detailed Table of Contents with Subfolder Projects**
+# Full Stack Engineer — Complete Syllabus & Learning Roadmap
 
-Each subfolder listed below is a **React Vite project** (except where noted) that covers the specific concepts of that module. The projects are designed to be hands-on and incremental, building a strong foundation from prerequisites to full-stack development.
+> A comprehensive, production-oriented roadmap from **Design Thinking → AI Integration**, covering the full engineering lifecycle expected from a modern Full Stack Engineer.
+
+---
+
+## 🚀 End-to-End Engineering Path
+
+```
+Design Thinking → Figma → UX Research → Internet Fundamentals → HTML → CSS →
+JavaScript → TypeScript → React → Redux → Next.js → Node.js → Express.js →
+MongoDB → Core Java → DSA → Advanced Java → SQL → JDBC → Hibernate →
+Spring → Spring MVC → Spring Boot → JPA → Spring Security → REST APIs →
+gRPC → GraphQL → WebSocket → Kafka → RabbitMQ → Redis → Elasticsearch →
+Design Patterns → System Design → Microservices → Distributed Systems →
+Testing → Architecture → Docker → Kubernetes → CI/CD → Cloud →
+Observability → Performance Engineering → AppSec → AI Integration
+```
+---
+
+## 📋 Program Overview
+
+This repository is a **comprehensive Full Stack Engineer training and development roadmap** designed to build production-grade skills across the entire software engineering lifecycle.
+
+| Domain | Focus Areas |
+|--------|-------------|
+| Design | Design Thinking, UX Research, Figma, Wireframing, Prototyping |
+| Frontend | HTML, CSS, JavaScript, TypeScript, React, Next.js, Redux |
+| Backend | Java, Spring Ecosystem, Node.js, Express |
+| Databases | SQL, PostgreSQL, MongoDB, Redis, Elasticsearch |
+| Distributed Systems | Kafka, RabbitMQ, Microservices, Event-Driven Architecture |
+| Architecture | Clean, Hexagonal, DDD, SOLID, System Design |
+| DevOps | Docker, Kubernetes, CI/CD, GitOps, Cloud |
+| Quality | Testing, Contract Testing, Performance Testing |
+| Security | AppSec, OAuth2, OIDC, mTLS |
+| AI Integration | LLMs, RAG, Spring AI, Vector Databases, Agents |
+
+### Learning Progression
+
+| Phase | Focus | Duration |
+|-------|-------|----------|
+| Phase 0 | Design Thinking + Figma + UX | 2 weeks |
+| Phase 1 | Web Fundamentals (HTML, CSS, JS, TS) | 4 weeks |
+| Phase 2 | Frontend Engineering (React, Next.js) | 6 weeks |
+| Phase 3 | Backend Foundations (Node, Express, MongoDB) | 4 weeks |
+| Phase 4 | Java Mastery + DSA | 8 weeks |
+| Phase 5 | Database Engineering (SQL, JDBC, Hibernate) | 4 weeks |
+| Phase 6 | Spring Ecosystem | 8 weeks |
+| Phase 7 | Real-Time & Messaging (WebSocket, Kafka, Redis) | 4 weeks |
+| Phase 8 | Design Patterns + System Design | 4 weeks |
+| Phase 9 | Architecture & Microservices | 6 weeks |
+| Phase 10 | Quality Engineering | 3 weeks |
+| Phase 11 | DevOps & Cloud | 4 weeks |
+| Phase 12 | AI-Powered Applications | 3 weeks |
+| Phase 13 | Agile, Communication, Career | 5 weeks |
+| Phase 14 | Advanced (Reactive, SRE, Multi-Tenancy, Platform) | 12 weeks |
+| **Total** | **Full Stack Engineer** | **~100 weeks** |
+
+---
+
+## 🛠 Complete Technology Stack
+
+### Design & UX
+
+| Category | Technologies |
+|----------|-------------|
+| Design Tools | Figma, FigJam, Adobe XD, Sketch |
+| Prototyping | Figma Prototype, Framer, Marvel |
+| Design Systems | Material Design, Ant Design, shadcn/ui, Tailwind UI |
+| UX Research | User Interviews, Personas, Journey Maps, Heatmaps |
+| Handoff | Zeplin, Figma Inspect, Storybook |
+
+### Frontend
+
+| Category | Technologies |
+|----------|-------------|
+| Core | HTML5, CSS3, JavaScript (ES2024+), TypeScript 5+ |
+| Framework | React 18/19, Next.js 15+ |
+| State | Redux Toolkit, RTK Query, Zustand, TanStack Query |
+| Routing | React Router v7, Next.js App Router |
+| Styling | Tailwind CSS, CSS Modules, Styled Components, shadcn/ui |
+| Forms | React Hook Form, Zod, Formik |
+| Testing | Jest, React Testing Library, Playwright, Cypress |
+| Build | Vite, Turbopack, SWC, esbuild |
+| Animation | Framer Motion, GSAP, Lottie |
+
+### Java Backend
+
+| Category | Technologies |
+|----------|-------------|
+| Language | Core Java 21 (LTS), OOP, Collections, Generics, Records, Sealed Classes |
+| Functional | Streams, Lambda, Optional, CompletableFuture |
+| Concurrency | Multithreading, ExecutorService, Virtual Threads, Structured Concurrency |
+| J2EE | Servlets, JSP, JDBC |
+| ORM | Hibernate 6, JPA 3.1, Spring Data JPA |
+| Framework | Spring 6, Spring MVC, Spring Boot 3.x |
+| Security | Spring Security 6, JWT, OAuth2, OIDC |
+| Messaging | Spring Kafka, RabbitMQ, Spring Cloud Stream |
+| Real-Time | WebSocket, STOMP, SSE |
+| Build | Maven, Gradle |
+
+### Node.js Backend
+
+| Category | Technologies |
+|----------|-------------|
+| Runtime | Node.js 22+, V8, Event Loop, libuv |
+| Framework | Express.js, Fastify, NestJS |
+| Database | MongoDB, Mongoose, Prisma |
+| Auth | JWT, Passport.js, bcrypt, OAuth2 |
+| Validation | Joi, Zod, express-validator |
+| Realtime | Socket.io, ws |
+
+### Databases
+
+| Type | Technologies |
+|------|-------------|
+| Relational | PostgreSQL, MySQL, H2 |
+| NoSQL | MongoDB, Redis |
+| Search | Elasticsearch, OpenSearch |
+| Vector | Pinecone, Weaviate, pgvector, Chroma |
+| Analytics | ClickHouse, DuckDB |
+
+### DevOps & Cloud
+
+| Category | Technologies |
+|----------|-------------|
+| Containers | Docker, Docker Compose, BuildKit |
+| Orchestration | Kubernetes, Helm, Kustomize |
+| CI/CD | GitHub Actions, GitLab CI, Jenkins, ArgoCD |
+| GitOps | ArgoCD, Flux |
+| Cloud | AWS (EC2, S3, RDS, ECS, EKS, Lambda), GCP, Azure |
+| IaC | Terraform, Pulumi, Ansible |
+| Monitoring | Prometheus, Grafana, ELK/Loki, Jaeger, OpenTelemetry |
+| Service Mesh | Istio, Linkerd |
+
+### AI & ML
+
+| Category | Technologies |
+|----------|-------------|
+| LLM | OpenAI, Claude, Llama, Gemini, Mistral |
+| Framework | Spring AI, LangChain4j, LangChain |
+| Patterns | RAG, Function Calling, Agents, MCP |
+| Vector DB | Pinecone, Weaviate, pgvector, Chroma |
+| Tooling | Ollama, Hugging Face, OpenAI SDK |
+
+---
 
 ## 🔀 Engineering Workflow & Git Collaboration (Company-Grade)
 
@@ -91,8 +233,6 @@ Each subfolder listed below is a **React Vite project** (except where noted) tha
 | PATCH | Bug fix | `1.0.0 → 1.0.1` |
 
 ---
-# Frontend : React.js
----
 
 ## 📚 Module 00 — Design Thinking & Figma
 
@@ -115,8 +255,6 @@ Each subfolder listed below is a **React Vite project** (except where noted) tha
 
 ---
 
----
-
 ## 📚 Module 01 — Internet & Web Fundamentals
 
 | Sub-Module | Topics |
@@ -132,563 +270,1262 @@ Each subfolder listed below is a **React Vite project** (except where noted) tha
 
 ---
 
----
-
-## Module 02: Prerequisites · HTML · CSS · JavaScript · Projects  
-*(These projects use React Vite as a playground to practice foundational web technologies within a component environment.)*
-
-| Subfolder | Description |
-|-----------|-------------|
-| `02-01-html-basics` | Semantic HTML, forms, tables, multimedia, accessibility attributes. |
-| `02-02-css-fundamentals` | Selectors, box model, units, positioning, display, z-index. |
-| `02-03-css-flexbox-grid` | Flexbox and CSS Grid layouts with practical examples. |
-| `02-04-css-responsive-design` | Media queries, mobile-first design, fluid typography, viewport units. |
-| `02-05-css-animations-transitions` | CSS transitions, keyframe animations, transforms. |
-| `02-06-js-fundamentals` | Variables, data types, operators, control flow, loops. |
-| `02-07-js-functions-scope` | Function declarations, expressions, arrow functions, scope, closures. |
-| `02-08-js-arrays-objects` | Array methods, object manipulation, destructuring, spread/rest. |
-| `02-09-js-dom-manipulation` | DOM API, selecting elements, events, creating/removing nodes (using `useRef`/`useEffect` for demonstration). |
-| `02-10-js-async` | Callbacks, promises, async/await, fetch, error handling. |
-| `02-11-js-modules` | ES modules, import/export, default and named exports. |
-| `02-12-prereq-projects` | Small integrated projects: todo list, calculator, quiz app (built with vanilla JS concepts inside React). |
-
----
-
----
-
-## Module 03: React Setup  
-
-| Subfolder | Description |
-|-----------|-------------|
-| `001-older-way-by-nodejs-team-create-react-project_By_hand_manual` | **Manual React Setup (Older Way)** – Create a React project from scratch: install React, ReactDOM, Babel, Webpack manually; configure `webpack.config.js`, `.babelrc`; understand the underlying tooling. |
-| `002-official-way-by-react-js-team-using-npm-npx` | **Create React App (Official Way)** – Use `npx create-react-app` to bootstrap a project; explore CRA structure, scripts, and default configuration. |
-| `003-latest-way-by-vite-team-using-npm-vite` | **Vite Setup (Latest Way)** – Use `npm create vite@latest` to set up a React project with Vite; understand the speed benefits and modern configuration. |
-| `03-01-vite-setup` | Creating a Vite project, folder structure, `main.jsx`, `App.jsx`, dev server. |
-| `03-02-jsx-basics` | JSX syntax, embedding expressions, attributes, self-closing tags, comments. |
-| `03-03-components-intro` | Functional components, importing/exporting components, rendering. |
-| `03-04-reactdom-render` | `ReactDOM.createRoot`, `render`, `StrictMode`, mounting. |
-| `03-05-project-structure` | Organizing files, components folder, assets, public folder. |
-
----
-
-This now includes the three historical/setup approaches at the top, ensuring learners understand the evolution and different ways to start a React project.
-
----
-
----
- 
-## Module 04: React Fundamentals
-
-| Subfolder | Description |
-|-----------|-------------|
-| `04-00-jsx` | Deep dive into JSX rendering, JS expressions, conditional rendering, attributes, arrays, `.map()`, lists. |
-| `04-01-components-rendering` | Rendering React components, component tree, root component, importing/exporting components. |
-| `04-02-props-parent-to-child-component` | Passing data to components via props, destructuring props, prop types basics. |
-| `04-03-use-state-hook` | Introduction to `useState` hook, initializing and updating local state. |
-| `04-04-event-handling-basics` | Basic React event handling with `onClick`, `onChange`, `onSubmit`, event handler functions, and events with state. |
-| `04-05-value-child-cmpnt-fun-var-pass-as-props` | Passing values, child components, functions, and variables as props; callback props. |
-| `04-06-conditional-rendering` | Conditional rendering with `if`/`else`, ternary operators, logical `&&`, returning `null`. |
-| `04-07-functional-components` | Deep dive into functional components, default props, `props.children`. |
-| `04-08-state-basics` | `useState` in depth: batching behavior, functional updates, object/array state. |
-| `04-09-rendering-lists` | Rendering arrays with `.map()`, importance of keys, filtering/sorting lists. |
-| `04-10-fragments` | `React.Fragment`, shorthand `<>`, avoiding extra DOM nodes. |
-| `04-11-composition` | `props.children`, composition vs inheritance, slots pattern. |
-| `04-12-props-validation` | PropTypes, defaultProps, type checking for props. |
-| `04-13-form` | Handling forms in React, controlled and uncontrolled components, form state, input fields, `textarea`, `select`, checkbox, radio buttons, form submission, validation, and resetting forms. |
-| `04-14-useEffect` | Deep dive into the `useEffect` hook, side effects, dependency arrays, cleanup functions, effect execution, fetching data, and avoiding unnecessary effects. |
-| `04-15-json` | Working with JSON data in React, JSON structure, `JSON.parse()`, `JSON.stringify()`, handling API JSON responses, transforming JSON data, and rendering JSON data in components. |
-| `04-16-mock-rest-backend-fetch` | Working with **JSONPlaceholder** for consuming online mock REST APIs, practicing GET/POST/PUT/PATCH/DELETE requests, handling API responses, and testing React API integration; working separately with **JSON Server** to create and manage a local mock REST backend using `db.json`, defining custom resources and REST endpoints, serving JSON data, implementing and testing GET/POST/PUT/PATCH/DELETE requests, using query parameters for filtering and searching, and practicing complete mock API integration using the **Fetch API** without a real backend. |
-| `04-17-axios` | Making API requests in React using **Axios**, including GET/POST/PUT/PATCH/DELETE requests, request configuration, headers, request bodies, query and path parameters, handling responses, loading and error states, and integrating REST APIs with React components. |
-| `04-18-styling-css-tailwind` | Styling React applications with CSS and Tailwind CSS, CSS fundamentals, selectors, box model, layout, Flexbox, Grid, responsive design, reusable styles, Tailwind utility classes, responsive utilities, states, component styling, and building responsive React UIs. |
-| `Project: Learning & Project Repository Manager` | A generic application to manage technologies, courses, modules, submodules, topics, code folders, exercises, projects, and progress. |
-
-```
-UI:
-┌─────────────────────────────────────────────────────────┐
-│ Learning & Project Repository             + Add         │
-├─────────────────────────────────────────────────────────┤
-│ Search...          Technology ▼       Status ▼          │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│ Java                                                    │
-│ ├── Core Java                                           │
-│ │   ├── OOP                         ✓Completed          │
-│ │   ├── Collections                 ✓Completed          │
-│ │   └── Multithreading              ●In Progress        │
-│ │                                                       │
-│ Spring Boot                                             │
-│ ├── Spring Core                                         │
-│ ├── Spring MVC                                          │
-│ └── Spring Security                                     │
-│                                                         │
-│ React                                                   │
-│ ├── Fundamentals                                        │
-│ └── API Integration                                     │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
-```
----
-
-This structure now includes basic event handling before advanced prop-passing concepts, providing a granular progression from JSX fundamentals through components, props, state, events, conditional rendering, lists, composition, and props validation.
-
-
----
-
----
-
-## Module 05: Events & DOM 
-*(Expanded with additional subfolders for deeper coverage)*
-
-| Subfolder | Description |
-|-----------|-------------|
-| `05-01-event-handling` | Synthetic events, `onClick`, `onChange`, event object basics. |
-| `05-02-event-binding` | Arrow functions in render, binding in class components (brief). |
-| `05-03-passing-arguments` | Passing parameters to event handlers. |
-| `05-04-form-events-handling` | `onSubmit`, `onChange`, controlled vs uncontrolled inputs. |
-| `05-05-keyboard-mouse-events` | `onKeyDown`, `onKeyUp`, `onMouseEnter`, `onMouseLeave`. |
-| `05-06-refs-basics` | `useRef` for DOM access, reading values, focusing elements. |
-| `05-07-uncontrolled-components` | Using refs to read form values on submit. |
-| `05-08-event-propagation` | Event bubbling, capturing, `stopPropagation`, `preventDefault`, event delegation. |
-| `05-09-event-object-deep-dive` | SyntheticEvent properties, `target` vs `currentTarget`, event pooling (legacy), `persist()`. |
-| `05-10-keyboard-event-handler` | Advanced keyboard events: key combinations, `key` vs `keyCode`, global keyboard shortcuts. |
-| `05-11-dom-manipulation-useref` | Advanced `useRef` for DOM manipulation: measuring elements, managing focus, timers, imperative APIs. |
-
----
-
-This expansion provides a more granular progression from basic event handling to advanced topics like propagation, event object internals, and extensive DOM manipulation with refs.
-
----
-
----
-
-## Module 06: Components & Lifecycle 
-*(Original topics plus added subfolders for class-based CRUD, functional lifecycle, and performance optimizations mimicking shouldComponentUpdate)*
-
-| Subfolder | Description |
-|-----------|-------------|
-| `06-01-class-components` | Class syntax, `this.state`, `this.setState`, rendering. |
-| `06-02-lifecycle-methods` | `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`. |
-| `06-03-useeffect-lifecycle` | Mimicking lifecycle with `useEffect` (mount, update, unmount). |
-| `06-04-cleanup-effects` | Cleanup functions, subscriptions, timers. |
-| `06-05-error-boundaries` | Class-based error boundary component, catching errors. |
-| `06-06-higher-order-components` | HOC pattern, enhancing components. |
-| `06-07-render-props` | Render prop pattern, sharing logic. |
-| `06-08-class-components-crud-app` | **Class Component CRUD App** – Build a complete Task Manager app using class components, state, lifecycle methods, and forms. |
-| `06-09-functional-components-lifecycle` | **Functional Lifecycle Deep Dive** – Explore mount and update phases in functional components using `useEffect` and `useLayoutEffect` with various dependency arrays. |
-| `06-10-useeffect-did-mount-update` | **useEffect as componentDidMount & componentDidUpdate** – Simulate class lifecycle methods with `useEffect` dependency arrays, including infinite loop pitfalls. |
-| `06-11-component-should-update-usememo` | **useMemo for shouldComponentUpdate** – Use `useMemo` to memoize computed values and prevent unnecessary recalculations, optimizing render performance. |
-| `06-12-component-should-update-usecallback` | **useCallback for shouldComponentUpdate** – Use `useCallback` to stabilize function references and prevent unnecessary child re-renders, akin to shouldComponentUpdate. |
-
----
-
-This expanded module covers both class and functional component lifecycles, plus practical patterns for optimizing component updates with memoization hooks.
-
----
-
----
-
-## Module 07: Hooks (Real-World Focused)
-*(Filtered to include only hooks that are commonly used in production React applications)*
-
-| Subfolder | Description |
-|-----------|-------------|
-| `07-01-usestate-deep-dive` | The core state hook — lazy init, functional updates, object/array state. |
-| `07-02-useeffect-deep-dive` | Side effects, data fetching, subscriptions, cleanup, dependency arrays. |
-| `07-03-usecontext` | Consume context values; avoid prop drilling in real apps. |
-| `07-04-usereducer` | Manage complex state transitions with actions (e.g., forms, carts). |
-| `07-05-usememo-usecallback` | Prevent expensive recalculations and stabilize function references. |
-| `07-06-useref-deep-dive` | Access DOM nodes, keep mutable values, store previous values. |
-| `07-07-uselayouteffect` | Run effects synchronously after DOM mutations; measure layout, avoid flicker. |
-| `07-08-useimperativehandle` | Expose imperative methods from child components (e.g., focus, scroll). |
-| `07-09-useid` | Generate stable unique IDs for form inputs and accessibility attributes. |
-| `07-10-usetransition` | Mark non-urgent updates to keep UI responsive during heavy rendering. |
-| `07-11-usedeferredvalue` | Defer rendering of a value (e.g., search results) to keep inputs fast. |
-| `07-12-usesyncexternalstore` | Subscribe to external stores (Redux, Zustand, browser APIs) safely. |
-| `07-13-rules-of-hooks` | Understand and enforce hook rules to avoid bugs. |
-| `07-14-custom-hooks-intro` | Build reusable hooks; share logic across components. |
-| `07-15-use-previous` | Track the previous value of state or props (useful in effects). |
-| `07-16-use-local-storage` | Persist state to `localStorage` and sync across tabs. |
-| `07-17-use-debounce-throttle` | Limit how often a function runs (search inputs, scroll handlers). |
-| `07-18-use-on-click-outside` | Detect clicks outside an element — close modals, dropdowns, popovers. |
-| `07-19-use-event-listener` | Attach and clean up event listeners declaratively. |
-| `07-20-use-media-query` | Respond to CSS media queries in JavaScript for responsive layouts. |
-| `07-21-use-window-size` | Track viewport width/height for responsive components. |
-| `07-22-use-fetch` | Simple data fetching with loading, error, and cancellation. |
-| `07-23-use-form` | Manage form state, validation, and submission easily. |
-| `07-24-use-toggle` | Simple boolean state toggling (show/hide, open/close). |
-| `07-25-use-interval-timeout` | Declarative timers that clean up automatically. |
-| `07-26-use-hover` | Track hover state of an element (tooltips, effects). |
-| `07-27-use-document-title` | Update the browser tab title dynamically. |
-
----
-
-**Removed hooks (rarely used in production):**  
-- `useDebugValue` — only for custom hook library authors during development.  
-- `useInsertionEffect` — extremely niche; intended only for CSS-in-JS library internals.  
-- `useHistory` (custom undo/redo) — too specific; not generally needed in typical apps.
-
-This list focuses on hooks you will actually encounter and use in day-to-day React development, ensuring every topic is practical and immediately applicable.
-
----
-
----
-
-## Module 08: Advanced State  
-*(Renamed folder slugs and descriptions to be more meaningful, simple, and reflect real-world usage)*
-
-| Subfolder | Description |
-|-----------|-------------|
-| `08-01-shared-state-lifting-up` | **Lifting State Up** – Share state between sibling components by moving it to their common parent (real use: synced inputs, cart count). |
-| `08-02-global-state-context-reducer` | **Context + useReducer for Global State** – Combine Context API and reducer to manage app-wide state (real use: theme, user, cart). |
-| `08-03-normalizing-state-data` | **State Normalization** – Store data in flat structures keyed by ID to avoid duplication and simplify updates (real use: lists of entities like posts, users). |
-| `08-04-immutable-update-patterns` | **Immutable Updates for Objects & Arrays** – Safely update nested state using spread, map, filter without mutating (real use: adding/removing items in arrays). |
-| `08-05-immer-simplify-immutability` | **Immer for Simpler Immutable Updates** – Use the Immer library to write mutating-like syntax while producing immutable updates (real use: complex nested state). |
-| `08-06-url-state-search-params` | **URL Search Params as State** – Use `useSearchParams` to read/write query parameters; share state via URL (real use: filters, pagination, shareable links). |
-| `08-07-server-state-react-query` | **Server State with React Query** – Fetch, cache, and synchronize server data; handle loading/error/mutations (real use: API data that changes on server). |
-| `08-08-state-machines-xstate` | **Finite State Machines with XState** – Model complex UI states with explicit transitions (real use: multi-step forms, onboarding, complex UI flows). |
-
-Now every folder name clearly states its purpose, making it easier to understand what real-world problem it solves.
-
----
-
----
-
-## Module 09: Forms
-
-| Subfolder | Description |
-|-----------|-------------|
-| `09-01-controlled-forms` | Controlled inputs, text, select, checkbox, radio. |
-| `09-02-uncontrolled-forms` | Uncontrolled inputs, `defaultValue`, refs. |
-| `09-03-form-validation` | Manual validation, error messages, validation on submit. ,joi |
-| `09-04-react-hook-form` | Using React Hook Form library. |
-| `09-05-formik` | Using Formik library. |
-| `09-06-custom-form-hooks` | Building a custom `useForm` hook. |
-| `09-07-dynamic-forms` | Adding/removing fields dynamically. |
-| `09-08-file-upload` | File input, preview, uploading with FormData. |
-| `09-09-multi-step-forms` | Wizard pattern, step navigation, state per step. |
-
----
-
----
-
-## Module 10: API Integration
-
-| Subfolder | Description |
-|-----------|-------------|
-| `10-01-fetch-api` | Fetching data with `fetch` in `useEffect`, loading/error. |
-| `10-02-axios` | Axios setup, interceptors, base URL. |
-| `10-03-loading-error-states` | Handling loading, error, success UI states. |
-| `10-04-abort-controller` | Cancelling requests, cleanup. |
-| `10-05-react-query` | React Query for data fetching, caching, mutations. |
-| `10-06-swr` | SWR library for data fetching. |
-| `10-07-graphql-intro` | Apollo Client, queries, mutations. |
-| `10-08-websockets` | Real-time data with WebSockets (e.g., Socket.IO client). |
-
----
-
----
-
-## Module 11: React Router  
-*(Expanded with additional focused subfolders covering all key routing concepts)*
-
-| Subfolder | Description |
-|-----------|-------------|
-| `11-01-basic-routing` | `BrowserRouter`, `Routes`, `Route`, `Link`. |
-| `11-02-nested-routes` | Nested routes, `Outlet`, layout routes. |
-| `11-03-route-params` | `useParams`, dynamic route segments. |
-| `11-04-navigation` | `useNavigate`, `useLocation`, `NavLink` active styles. |
-| `11-05-query-params` | `useSearchParams`, reading/writing query strings. |
-| `11-06-protected-routes` | Route guards, redirect if not authenticated. |
-| `11-07-lazy-loading-routes` | Code splitting with `React.lazy`, `Suspense`. |
-| `11-08-404-handling` | Catch-all route, custom 404 page. |
-| `11-09-route-transitions` | Animating route changes with Framer Motion. |
-| `11-10-react-router-dom-anchor-vs-create-browser-router` | Compare `<a>` tags vs `createBrowserRouter` and `RouterProvider`; understand full router setup. |
-| `11-11-react-router-link` | Deep dive into `Link` component: internal navigation, state passing, replacement behavior. |
-| `11-12-react-router-navlink` | `NavLink` for active styles, `className` function, `end` prop for exact matching. |
-| `11-13-react-router-useparam-route-parameter` | Using `useParams` to read dynamic route parameters; multiple params, nested params. |
-| `11-14-react-router-uselocation-query-parameter` | Using `useLocation` to read query strings; parsing with `URLSearchParams`. |
-| `11-15-react-router-usenavigate` | Programmatic navigation with `useNavigate`; redirects, history stack, `replace`. |
-| `11-16-react-nested-router-outlet-to-child-route-renders-in-parent` | Nested routes with `Outlet`; rendering child routes inside parent layout; index routes. |
-| `11-17-react-router-not-found-route` | Dedicated 404 route with `path="*"`; custom not-found component; nested 404s. |
-| `11-18-form-handling-with-route` | Submitting forms and navigating based on results; combining form actions with routing. |
-| `11-19-react-router-browser-router` | Deep dive into `BrowserRouter` configuration, basename, history, and server requirements. |
-
-This comprehensive module now covers every fundamental and advanced React Router concept with dedicated hands-on projects, ensuring no topic is missed.
-
----
-
----
-
-## Module 12: Authentication & Authorization (Simplified)  
-*(Rewritten with simple, clear folder names and descriptions for real-world use)*
-
-| Subfolder | Description |
-|-----------|-------------|
-| `12-01-login-jwt` | User logs in, gets a token, and we send it with every request. |
-| `12-02-route-guards` | Protect pages so only logged-in users can see them. |
-| `12-03-role-based-access` | Show or hide UI based on user role (admin, editor, regular user). |
-| `12-04-token-refresh` | Keep user logged in by silently refreshing the token when it expires. |
-| `12-05-social-login` | Sign in with Google / GitHub accounts. |
-| `12-06-password-reset` | Send reset link via email, let user set a new password. |
-| `12-07-user-session-context` | Store the logged-in user data in a global context so any component can access it. |
-
-This version uses plain language and focuses on what each part does in a typical app.
-
----
-
----
-
-## Module 13: State Management  
-*(Redux Basics and Redux Toolkit broken down into focused, real-world subfolders)*
-
-| Subfolder | Description |
-|-----------|-------------|
-| `13-01-redux-store-create` | Create a Redux store — the single source of truth for your app state. |
-| `13-02-redux-actions` | Define action types and action creators — what happened in your app. |
-| `13-03-redux-reducers` | Write reducers to update state immutably when actions are dispatched. |
-| `13-04-redux-dispatch` | Dispatch actions from UI events; see how state changes flow through the store. |
-| `13-05-redux-connect` | Use `connect` in class components to map state and dispatch to props. |
-| `13-06-redux-toolkit-setup` | Configure the store with `configureStore` — modern Redux setup with sensible defaults. |
-| `13-07-redux-toolkit-slice` | Use `createSlice` to define reducers and actions in one place — less boilerplate. |
-| `13-08-redux-toolkit-hooks` | Use `useSelector` and `useDispatch` in functional components to read and update state. |
-| `13-09-redux-toolkit-async-thunks` | Handle API calls and async logic with `createAsyncThunk`. |
-| `13-10-rtk-query` | Data fetching and caching built into Redux Toolkit — automatic loading/error states. |
-| `13-11-zustand` | Tiny, fast state library — simple store, no boilerplate. Great for small/medium apps. |
-| `13-12-jotai` | Atomic state — independent pieces of state that compose easily. Good for React-first granular state. |
-| `13-13-recoil` | Facebook's state library using atoms and selectors — less common now, but similar to Jotai. |
-| `13-14-mobx` | Observable-based state — automatic tracking of what changed. Use if you like reactive, non-functional style. |
-| `13-15-context-vs-redux` | When to use built-in Context vs a full state library — compare performance, complexity, and real-world scenarios. |
-
-Now Redux is broken into individual concepts, making it easier to learn step by step and build real projects.
-
----
-
----
-
-## Module 14: Styling
-
-| Subfolder | Description |
-|-----------|-------------|
-| `14-01-css-modules` | Scoped CSS with CSS Modules. |
-| `14-02-styled-components` | CSS-in-JS with Styled Components. |
-| `14-03-emotion` | Emotion library for CSS-in-JS. |
-| `14-04-tailwind-css` | Utility-first CSS with Tailwind. |
-| `14-05-sass` | Sass preprocessor, variables, mixins. |
-| `14-06-css-in-js-comparison` | Comparing different CSS-in-JS libraries. |
-| `14-07-ui-libraries` | Material-UI, Ant Design, Chakra UI usage. |
-| `14-08-theming-dark-mode` | Theme context, CSS variables, dark mode toggle. |
-
----
-# Backend : Express.js
----
-
-## 📚 Module 1 — Node.js
+## 📚 Module 02 — HTML5
 
 | Sub-Module | Topics |
 |------------|--------|
-| 01-01 Fundamentals | Architecture, V8, Event Loop, Non-Blocking I/O, npm, package.json |
-| 01-02 Core Modules | fs, path, os, http, https, events, stream, crypto, buffer, worker_threads, child_process |
-| 01-03 Async | Callbacks, Promises, async/await, EventEmitter, Streams (Readable/Writable/Transform) |
-| 01-04 APIs | File System, HTTP Server, Env Vars, Process, Clustering, Signal Handling |
-| 01-05 Performance | Profiling, Diagnostics, Memory Leaks, perf_hooks |
+| 02-01 Fundamentals | Document Structure, Semantic Elements, Metadata, SEO, Open Graph |
+| 02-02 Forms | Input Types, Validation, ARIA, File Uploads, FormData API |
+| 02-03 Multimedia | Audio, Video, Canvas, SVG, iframe, Picture, Source |
+| 02-04 Modern APIs | Web Components, Shadow DOM, Templates, Custom Elements, Web Storage, Drag & Drop |
+| 02-05 Accessibility | WCAG 2.2, ARIA Roles, Keyboard Nav, Screen Readers, Focus Management |
+| 02-06 PWA Basics | Manifest, Service Workers, Offline, Install Prompt |
+
+**Project:** Accessible Multi-Page Website + PWA
+
+---
+
+## 📚 Module 03 — CSS3
+
+| Sub-Module | Topics |
+|------------|--------|
+| 03-01 Fundamentals | Selectors, Specificity, Box Model, Units, Variables, Cascade, Inheritance |
+| 03-02 Layout | Flexbox, Grid, Positioning, Multi-column, Container Queries, Subgrid |
+| 03-03 Responsive | Mobile-First, Media Queries, Fluid Typography, Clamp, Container Units |
+| 03-04 Modern CSS | Nesting, `:has()`, `:is()`, `:where()`, Layers, Logical Properties, `aspect-ratio`, `accent-color` |
+| 03-05 Architecture | BEM, Tailwind, CSS Modules, CSS-in-JS, Atomic CSS |
+| 03-06 Animation | Transitions, Keyframes, Transform 3D, Scroll-Driven, View Transitions |
+| 03-07 Advanced | CSS Houdini, Paint API, Scroll Snap, Custom Properties, `color-mix()` |
+
+**Project:** Responsive Admin Dashboard with Dark Mode + Animations
+
+---
+
+## 📚 Module 04 — JavaScript
+
+| Sub-Module | Topics |
+|------------|--------|
+| 04-01 Fundamentals | Variables, Data Types, Coercion, Operators, Control Flow, Strict Mode |
+| 04-02 Functions | Declarations, Arrow, Closures, IIFE, HOF, Currying, Memoization |
+| 04-03 Objects | Creation Patterns, Prototype Chain, Classes, Getters/Setters, Symbol, WeakMap/WeakSet |
+| 04-04 Arrays | map/filter/reduce, Destructuring, Spread/Rest, Iterators, Generators |
+| 04-05 Modern JS | Template Literals, Modules, Optional Chaining, Nullish Coalescing, Top-Level Await |
+| 04-06 Async | Event Loop, Callbacks, Promises, async/await, Combinators, AbortController |
+| 04-07 DOM | Selection, Traversal, Events, Delegation, Forms, MutationObserver |
+| 04-08 Browser APIs | Fetch, Storage, IndexedDB, Web Workers, IntersectionObserver, ResizeObserver, Geolocation, Clipboard |
+| 04-09 Meta Programming | Proxy, Reflect, Symbol, Decorators |
+| 04-10 Error Handling | try/catch, Custom Errors, Global Handlers, Error Boundaries |
+| 04-11 Memory | Garbage Collection, Memory Leaks, Heap Snapshots |
+
+**Project:** Task Management SPA (Vanilla JS)
+
+---
+
+## 📚 Module 05 — TypeScript
+
+| Sub-Module | Topics |
+|------------|--------|
+| 05-01 Fundamentals | Type System, Inference, Interfaces vs Types, Enums, Tuples, `any` vs `unknown` |
+| 05-02 Advanced Types | Union, Intersection, Generics, Conditional, Mapped, Template Literal, Discriminated Unions |
+| 05-03 Utility Types | Partial, Required, Pick, Omit, Record, Readonly, Exclude, Extract, ReturnType |
+| 05-04 TypeScript + React | Props, Hooks, Events, Context, Generic Components |
+| 05-05 Tooling | tsconfig, Strict Mode, Declaration Files, Type Guards, `satisfies`, `const` assertions |
+| 05-06 Advanced Patterns | Branded Types, Builder Types, Type-Level Programming |
+
+**Project:** Type-Safe API Client Library
+
+---
+
+## 📚 Module 06 — React
+
+| Sub-Module | Topics |
+|------------|--------|
+| 06-01 Fundamentals | Architecture, JSX, Components, Props, State, Lifecycle |
+| 06-02 Hooks | useState, useEffect, useContext, useReducer, useRef, useMemo, useCallback, useLayoutEffect, useId, useTransition, useDeferredValue, useSyncExternalStore, Custom Hooks |
+| 06-03 Patterns | Compound, Render Props, HOC, Controlled/Uncontrolled, Composition, Slots |
+| 06-04 State Management | Local, Context, Redux Toolkit, RTK Query, Zustand, TanStack Query, Jotai |
+| 06-05 Routing | React Router v7, Nested, Dynamic, Protected, Data Loaders, Lazy |
+| 06-06 Forms | Controlled, React Hook Form, Zod, File Uploads, Multi-step |
+| 06-07 API | Fetch, Axios, Error Handling, Cancellation, Optimistic Updates, Infinite Queries |
+| 06-08 Performance | React.memo, useMemo/useCallback, Code Splitting, Virtualization, Profiler, Concurrent Features |
+| 06-09 Testing | Jest, RTL, Hooks Testing, MSW, Integration Tests |
+| 06-10 Production | Error Boundaries, Suspense, RSC, Portals, Build Optimization |
+| 06-11 Advanced | Server Components, Streaming, Suspense Boundaries, Transitions |
+| 06-12 Animation | Framer Motion, React Spring, Layout Animations |
+
+**Project:** Enterprise React Admin Portal (JWT, RBAC, Charts, Realtime)
+
+---
+
+## 📚 Module 07 — Next.js
+
+| Sub-Module | Topics |
+|------------|--------|
+| 07-01 Fundamentals | App Router, Layouts, Server vs Client Components, File-Based Routing |
+| 07-02 Data | Server Components, Server Actions, Route Handlers, Caching, Revalidation, ISR |
+| 07-03 Advanced | Middleware, Dynamic, Parallel, Intercepting Routes, Streaming, PPR |
+| 07-04 Auth | NextAuth.js, Sessions, Protected Routes, OAuth |
+| 07-05 Optimization | Image, Font, Metadata API, SEO, Edge Runtime |
+
+**Project:** Full-Stack Blog with CMS
+
+---
+
+## 📚 Module 08 — Node.js
+
+| Sub-Module | Topics |
+|------------|--------|
+| 08-01 Fundamentals | Architecture, V8, Event Loop, Non-Blocking I/O, npm, package.json |
+| 08-02 Core Modules | fs, path, os, http, https, events, stream, crypto, buffer, worker_threads, child_process |
+| 08-03 Async | Callbacks, Promises, async/await, EventEmitter, Streams (Readable/Writable/Transform) |
+| 08-04 APIs | File System, HTTP Server, Env Vars, Process, Clustering, Signal Handling |
+| 08-05 Performance | Profiling, Diagnostics, Memory Leaks, perf_hooks |
 
 **Project:** CLI Tool & HTTP Server
 
 ---
-## 📚 Module 2 — MongoDB
+
+## 📚 Module 09 — Express.js
 
 | Sub-Module | Topics |
 |------------|--------|
-| 02-01 Fundamentals | NoSQL, Documents, Collections, BSON, Shell, CRUD |
-| 02-02 Querying | Operators, Projection, Sort, Pagination, Aggregation, Map-Reduce |
-| 02-03 Modeling | Embedded vs Referenced, Patterns, Relationships, Denormalization |
-| 02-04 Indexing | Types, Compound, Text, Geospatial, TTL, Explain |
-| 02-05 Mongoose | Schemas, Models, Validation, Middleware, Population, Virtuals |
-| 02-06 Advanced | ACID Transactions, Replica Sets, Sharding, Change Streams, Time Series |
-
-**Project:** E-Commerce Backend (Node + MongoDB)
----
-
-## 📚 Module 3 — Express.js
-
-> **3.1 → 3.9** are major phases.  
-> Each `03-xx` is a sub-module and can be built as a mini-project.  
-> Order follows dependency: each step depends on the previous one.  
-> Dependency IDs use phase-prefixed form: `3.1-03-01` = Module 3.1 / Sub-module 03-01.
-
----
-
-### 📚 Module 3.1 Fundamentals & Setup
-
-| Sub-Module | Topics |
-|------------|--------|
-| 03-01 Setup | Setup → **Mini-project:** Hello Express API. Depends: Node/HTTP. |
-| 03-02 Routing | Routing → **Mini-project:** Route playground. Depends: 3.1-03-01. |
-| 03-03 Middleware | Middleware → **Mini-project:** Logger + request ID. Depends: 3.1-03-02. |
-| 03-04 Error Handling | Error Handling → **Mini-project:** 404/500 JSON handler. Depends: 3.1-03-03. |
-| 03-05 Template Engines | Template Engines → **Mini-project:** EJS/Handlebars page. Depends: 3.1-03-04. |
-| 03-06 Express Setup | Express server, routes, middleware, basic API → **Mini-project:** Basic Express server + health route. Depends: 3.1-03-01–3.1-03-05. |
-
----
-
-### 📚 Module 3.2 REST API Design
-
-| Sub-Module | Topics |
-|------------|--------|
-| 03-01 REST Methods | Methods → **Mini-project:** Method explorer. Depends: 3.1-03-06. |
-| 03-02 Status Codes | Status Codes → **Mini-project:** Status code simulator. Depends: 3.2-03-01. |
-| 03-03 Content Negotiation | Content Negotiation → **Mini-project:** JSON/XML response. Depends: 3.2-03-02. |
-| 03-04 API Versioning | API Versioning → **Mini-project:** `/api/v1` vs `/api/v2`. Depends: 3.2-03-03. |
-
----
-
-### 📚 Module 3.3 CRUD API
-
-| Sub-Module | Topics |
-|------------|--------|
-| 03-01 CRUD — Create | Create → **Mini-project:** POST endpoint. Depends: 3.2-03-01–3.2-03-04. |
-| 03-02 CRUD — Read | Read → **Mini-project:** GET list + GET by ID. Depends: 3.3-03-01. |
-| 03-03 CRUD — Update | Update → **Mini-project:** PUT/PATCH. Depends: 3.3-03-02. |
-| 03-04 CRUD — Delete | Delete → **Mini-project:** DELETE + 204. Depends: 3.3-03-03. |
-| 03-05 CRUD — Params/Body | Params/Body → **Mini-project:** Postman/Thunder tests. Depends: 3.3-03-04. |
-
----
-
-### 📚 Module 3.4 Validation & Error Handling
-
-| Sub-Module | Topics |
-|------------|--------|
-| 03-01 Input Validation | Input Validation → **Mini-project:** Joi/Zod/express-validator schema. Depends: 3.3-03-05. |
-| 03-02 DTOs | DTOs → **Mini-project:** Request/response shaping. Depends: 3.4-03-01. |
-| 03-03 Sanitization | Sanitization → **Mini-project:** Clean user input. Depends: 3.4-03-02. |
-| 03-04 Central Error Middleware | Central Error Middleware → **Mini-project:** Unified error format. Depends: 3.4-03-03. |
-| 03-05 Async Errors | Async Errors → **Mini-project:** Async wrapper. Depends: 3.4-03-04. |
-
----
-
-### 📚 Module 3.5 MongoDB & Mongoose
-
-| Sub-Module | Topics |
-|------------|--------|
-| 03-01 MongoDB Connection | Connection → **Mini-project:** MongoDB Atlas/local connect. Depends: 3.4-03-05. |
-| 03-02 Mongoose Schema | Schema → **Mini-project:** User/Note schema. Depends: 3.5-03-01. |
-| 03-03 Mongoose Models | Models → **Mini-project:** Mongoose model CRUD. Depends: 3.5-03-02. |
-| 03-04 Relationships | Relationships → **Mini-project:** Populate author/comments. Depends: 3.5-03-03. |
-| 03-05 Indexes | Indexes → **Mini-project:** Search/filter optimization. Depends: 3.5-03-04. |
-
----
-
-### 📚 Module 3.6 Architecture
-
-| Sub-Module | Topics |
-|------------|--------|
-| 03-01 MVC | MVC → **Mini-project:** Split routes/controllers/views. Depends: 3.5-03-01–3.5-03-05. |
-| 03-02 Architecture Layers | Routes → Controllers → Services → Repositories → **Mini-project:** Layered refactor. Depends: 3.6-03-01. |
-| 03-03 Validation Layer | DTOs + Validation Layer → **Mini-project:** Schema + service validation. Depends: 3.6-03-02. |
-
----
-
-### 📚 Module 3.7 Security & Auth
-
-| Sub-Module | Topics |
-|------------|--------|
-| 03-01 User Model | User Model → **Mini-project:** Register/login schema. Depends: 3.6-03-03. |
-| 03-02 bcrypt | bcrypt → **Mini-project:** Password hashing. Depends: 3.7-03-01. |
-| 03-03 JWT | JWT → **Mini-project:** Access/refresh tokens. Depends: 3.7-03-02. |
-| 03-04 Protected Routes | Protected Routes → **Mini-project:** Auth middleware. Depends: 3.7-03-03. |
-| 03-05 Roles | Roles → **Mini-project:** Admin/user guard. Depends: 3.7-03-04. |
-| 03-06 CORS | CORS → **Mini-project:** Cross-origin config. Depends: 3.7-03-05. |
-| 03-07 Helmet | Helmet → **Mini-project:** Security headers. Depends: 3.7-03-06. |
-| 03-08 Rate Limiting | Rate Limiting → **Mini-project:** Brute-force protection. Depends: 3.7-03-07. |
-| 03-09 OAuth2 | OAuth2 → **Mini-project:** Optional provider login. Depends: 3.7-03-08. |
-
----
-
-### 📚 Module 3.8 File Upload
-
-| Sub-Module | Topics |
-|------------|--------|
-| 03-01 Multer | Multer → **Mini-project:** Single/multiple upload. Depends: 3.7-03-01–3.7-03-09. |
-| 03-02 Storage | Storage → **Mini-project:** Disk vs memory. Depends: 3.8-03-01. |
-| 03-03 File Validation | File Validation → **Mini-project:** Type/size limits. Depends: 3.8-03-02. |
-| 03-04 Static Serving | Static Serving → **Mini-project:** Serve uploaded files. Depends: 3.8-03-03. |
-| 03-05 Cloud Storage | Cloud Storage → **Mini-project:** Cloudinary/S3 optional. Depends: 3.8-03-04. |
-
----
-
-### 📚 Module 3.9 Advanced Express
-
-| Sub-Module | Topics |
-|------------|--------|
-| 03-01 Nodemailer | Nodemailer → **Mini-project:** Welcome/reset email. Depends: 3.8-03-01–3.8-03-05. |
-| 03-02 Socket.io | Socket.io → **Mini-project:** Live notifications. Depends: 3.9-03-01. |
-| 03-03 Cron | Cron → **Mini-project:** Scheduled cleanup. Depends: 3.9-03-02. |
-| 03-04 Winston/Pino | Winston/Pino → **Mini-project:** Structured logging. Depends: 3.9-03-03. |
-| 03-05 Swagger | Swagger/OpenAPI → **Mini-project:** API docs. Depends: 3.9-03-04. |
-
----
-
-## 📚 Module 4 Deployment Fullstack
-
-| Sub-Module | Topics |
-|------------|--------|
-| 04-01 Env Vars | Env Vars → **Mini-project:** Secrets/config. Depends: 3.9-03-01–3.9-03-05. |
-| 04-02 Backend Deploy | Backend Deploy → **Mini-project:** Render/Railway. Depends: 04-01. |
-| 04-03 Frontend Deploy | Frontend Deploy → **Mini-project:** Vercel/Netlify. Depends: 04-02. |
-| 04-04 MongoDB Atlas | MongoDB Atlas → **Mini-project:** Production DB. Depends: 04-03. |
-| 04-05 CORS/Cookies | CORS/Cookies → **Mini-project:** Production auth config. Depends: 04-04. |
-| 04-06 CI/CD | CI/CD → **Mini-project:** Auto deploy. Depends: 04-05. |
-| 04-07 Monitoring | Monitoring → **Mini-project:** Logs/health checks. Depends: 04-06. |
-
----
-
-**Capstone**
-
-| Sub-Module | Topics |
-|------------|--------|
-| Capstone | **Project:** Production REST API with Auth — CRUD + MongoDB + JWT + validation + uploads + Swagger + deployment. Depends: All Module 3 + Module 4. |
+| 09-01 Fundamentals | Setup, Routing, Middleware, Error Handling, Template Engines |
+| 09-02 REST | Methods, Status Codes, Content Negotiation, API Versioning |
+| 09-03 Architecture | MVC, Routes → Controllers → Services → Repositories, DTOs, Validation |
+| 09-04 Security | JWT, bcrypt, OAuth2, CORS, Helmet, Rate Limiting, Sanitization |
+| 09-05 Advanced | Multer, Nodemailer, Socket.io, Cron, Winston/Pino, Swagger |
 
 **Project:** Production REST API with Auth
 
 ---
 
-## Module Projects  
-*(Each is a larger, full-featured React Vite project integrating all previous concepts.)*
+## 📚 Module 10 — MongoDB
 
-| Subfolder | Description |
-|-----------|-------------|
-| `01-ecommerce-app` | Product listing, cart, checkout, auth, API integration. |
-| `02-social-media-dashboard` | User feed, posts, likes, comments, profiles. |
-| `03-task-management-app` | Kanban board, drag-and-drop, CRUD. |
-| `04-chat-application` | Real-time chat, WebSockets, rooms. |
-| `05-blog-platform` | Blog posts, Markdown, comments, admin panel. |
-| `06-portfolio-website` | Portfolio with animations, contact form. |
-| `07-admin-dashboard` | Data visualization, charts, tables. |
-| `08-video-streaming-app` | Video list, player, comments (YouTube clone). |
-| `09-food-delivery-app` | Menu, cart, order tracking. |
-| `10-real-estate-listing` | Listings, maps, filters. |
+| Sub-Module | Topics |
+|------------|--------|
+| 10-01 Fundamentals | NoSQL, Documents, Collections, BSON, Shell, CRUD |
+| 10-02 Querying | Operators, Projection, Sort, Pagination, Aggregation, Map-Reduce |
+| 10-03 Modeling | Embedded vs Referenced, Patterns, Relationships, Denormalization |
+| 10-04 Indexing | Types, Compound, Text, Geospatial, TTL, Explain |
+| 10-05 Mongoose | Schemas, Models, Validation, Middleware, Population, Virtuals |
+| 10-06 Advanced | ACID Transactions, Replica Sets, Sharding, Change Streams, Time Series |
+
+**Project:** E-Commerce Backend (Node + MongoDB)
 
 ---
 
-## Final Cheat Sheet  
-| Subfolder | Description |
-|-----------|-------------|
-| `cheat-sheet` | A React Vite app that displays a comprehensive cheat sheet of React concepts, hooks, patterns, and common snippets. |
+## 📚 Module 11 — Core Java
+
+| Sub-Module | Topics |
+|------------|--------|
+| 11-01 Fundamentals | JDK/JRE/JVM, Variables, Types, Operators, Control Flow, Arrays, var |
+| 11-02 OOP | Classes, Objects, Encapsulation, Inheritance, Polymorphism, Abstraction, Interfaces |
+| 11-03 Advanced OOP | Inner Classes, Static, Final, Packages, Access Modifiers, Records, Sealed Classes, Pattern Matching |
+| 11-04 Exceptions | Hierarchy, Checked/Unchecked, Custom, try-with-resources, Multi-catch |
+| 11-05 Generics | Classes, Methods, Bounded Types, Wildcards, Type Erasure |
+| 11-06 Collections | List, Set, Map, Queue, Deque, Comparable/Comparator, Concurrent Collections |
+| 11-07 Functional | Lambda, Functional Interfaces, Method Refs, Streams, Optional |
+| 11-08 Concurrency | Threads, Runnable, Callable, Synchronization, Locks, ExecutorService, CompletableFuture, Atomic, Virtual Threads, Structured Concurrency |
+| 11-09 I/O & NIO | File I/O, BufferedReader/Writer, Serialization, NIO Channels, Path/Files |
+| 11-10 JVM | Memory Model, GC (G1, ZGC), JIT, JVM Tuning, JMX |
+| 11-11 Modules (JPMS) | module-info, Requires, Exports |
+| 11-12 New Language Features | Text Blocks, Switch Expressions, Records, Sealed Classes |
+
+**Project:** Banking System with Concurrency
 
 ---
 
-## Final Interview Revision  
-| Subfolder | Description |
-|-----------|-------------|
-| `interview-revision` | A React Vite app with flashcards, key concepts, and interview questions for quick revision. |
+## 📚 Module 12 — Data Structures & Algorithms
+
+| Sub-Module | Topics |
+|------------|--------|
+| 12-01 Complexity | Big O, Time/Space, Amortized |
+| 12-02 Arrays & Strings | Two Pointers, Sliding Window, Prefix Sum, Kadane, String Manipulation |
+| 12-03 Linked Lists | Singly, Doubly, Circular, Fast/Slow, Reversal |
+| 12-04 Stacks & Queues | Stack, Queue, Deque, Monotonic Stack, Priority Queue |
+| 12-05 Hashing | Hash Tables, Collision, HashMap/HashSet, Frequency |
+| 12-06 Trees | Binary, BST, Traversals, AVL, Red-Black, Segment, Fenwick, Trie |
+| 12-07 Heaps | Min/Max, Heapify, Heap Sort, Top-K |
+| 12-08 Graphs | Representation, BFS, DFS, Topological, Dijkstra, Bellman-Ford, Floyd-Warshall, MST, Union-Find |
+| 12-09 Recursion | Patterns, Subsets, Permutations, Combinations, N-Queens, Sudoku |
+| 12-10 DP | Memoization, Tabulation, 1D/2D, Knapsack, LCS, LIS, Matrix Chain, DP on Trees |
+| 12-11 Advanced | Bit Manipulation, Greedy, Divide & Conquer, Intervals, Segment Trees, Sqrt Decomposition |
+| 12-12 Problem Patterns | Sliding Window, Two Pointers, Fast/Slow, Merge Intervals, Cyclic Sort, Top-K, K-way Merge |
+
+**Practice:** 300+ LeetCode Problems
 
 ---
 
-This structure ensures **no topic is missed** and provides a hands-on project for every concept, building from zero to full-stack proficiency.
----
+## 📚 Module 13 — Advanced Java (J2EE)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 13-01 JDBC | Architecture, DriverManager, Connection Pooling, PreparedStatement, ResultSet, Batch, Transactions |
+| 13-02 Servlets | Lifecycle, Request/Response, Sessions, Cookies, Filters, Listeners, ServletContext |
+| 13-03 JSP | Lifecycle, Scriptlets, EL, JSTL, Custom Tags |
+| 13-04 MVC | Model, View, Controller, Request Flow |
+
+**Project:** MVC Web Application (Servlet + JSP + JDBC)
 
 ---
-```
-Designed by
-Mr.Brijesh Nishad (Full Stack Engineer)
-```
+
+## 📚 Module 14 — SQL & Relational Databases
+
+| Sub-Module | Topics |
+|------------|--------|
+| 14-01 Fundamentals | Concepts, Tables, Rows, Columns, Keys, Constraints |
+| 14-02 CRUD | SELECT, INSERT, UPDATE, DELETE, UPSERT, MERGE |
+| 14-03 Querying | WHERE, ORDER BY, GROUP BY, HAVING, DISTINCT, LIMIT/OFFSET |
+| 14-04 Joins | INNER, LEFT/RIGHT, FULL OUTER, CROSS, Self |
+| 14-05 Advanced | Subqueries, CTEs, Window Functions, Views, Materialized Views, Stored Procedures, Triggers |
+| 14-06 Design | Normalization (1NF-BCNF), ER Diagrams, Relationships, Denormalization |
+| 14-07 Transactions | ACID, COMMIT/ROLLBACK, Isolation Levels, Deadlocks |
+| 14-08 Performance | Indexes, Query Optimization, EXPLAIN, Partitioning, Connection Pooling |
+| 14-09 PostgreSQL | JSON/JSONB, Arrays, Full-Text Search, Extensions, Logical Replication |
+
+**Project:** Enterprise HR Database
+
+---
+
+## 📚 Module 15 — Hibernate & JPA
+
+| Sub-Module | Topics |
+|------------|--------|
+| 15-01 ORM | Concepts, Architecture, Session/SessionFactory, Entity Lifecycle |
+| 15-02 Mapping | @Entity, @Table, @Id, @GeneratedValue, @Column, @Transient, @Embeddable |
+| 15-03 Relationships | @OneToOne, @OneToMany, @ManyToOne, @ManyToMany, Cascade, Fetch |
+| 15-04 Querying | HQL, JPQL, Criteria API, Native, Named Queries |
+| 15-05 Advanced | Caching (1st/2nd), Lazy Loading, Fetch Strategies, Batch, Interceptors, Auditing |
+| 15-06 Performance | N+1, Fetch Joins, Entity Graphs, Projections, Batching |
+
+**Project:** Employee Management System
+
+---
+
+## 📚 Module 16 — Spring Framework
+
+| Sub-Module | Topics |
+|------------|--------|
+| 16-01 Core | IoC, DI, Beans, Scopes, ApplicationContext, Bean Lifecycle |
+| 16-02 Configuration | XML, Java Config, Annotations, Component Scanning, Profiles |
+| 16-03 AOP | Aspect, Advice, Pointcuts, Join Points, Proxies |
+| 16-04 Data Access | Spring JDBC, Transaction Management, @Transactional, ORM Integration |
+| 16-05 Events | ApplicationEvent, @EventListener, Async Events |
+| 16-06 Scheduling | @Scheduled, TaskScheduler, Quartz |
+
+**Project:** Spring Core Application
+
+---
+
+## 📚 Module 17 — Spring MVC
+
+| Sub-Module | Topics |
+|------------|--------|
+| 17-01 Architecture | DispatcherServlet, Handler Mapping, View Resolver, Request Flow |
+| 17-02 Controllers | @Controller, @RestController, @RequestMapping, @GetMapping, @PostMapping, @PathVariable, @RequestParam, @RequestBody |
+| 17-03 Validation | Bean Validation, @Valid, BindingResult, Custom Validators |
+| 17-04 Exception Handling | @ExceptionHandler, @ControllerAdvice, ResponseEntity |
+| 17-05 REST | Principles, Methods, Status Codes, Content Negotiation, HATEOAS |
+
+**Project:** Spring MVC REST API
+
+---
+
+## 📚 Module 18 — Spring Boot
+
+| Sub-Module | Topics |
+|------------|--------|
+| 18-01 Fundamentals | Auto-Configuration, Starters, Embedded Server, CLI |
+| 18-02 Config | application.properties/yml, Profiles, @ConfigurationProperties, Env Vars |
+| 18-03 REST | Controllers, DTOs, Validation, Exception Handling, HATEOAS |
+| 18-04 Production | Actuator, Logging (Logback), Health, Metrics, Graceful Shutdown |
+| 18-05 Docs | OpenAPI 3, Swagger, SpringDoc |
+| 18-06 Testing | @SpringBootTest, @WebMvcTest, @DataJpaTest, MockMvc |
+| 18-07 Advanced | DevTools, Native Image (GraalVM), Virtual Threads, AOT |
+
+**Project:** Production-Ready REST API
+
+---
+
+## 📚 Module 19 — Spring Data JPA
+
+| Sub-Module | Topics |
+|------------|--------|
+| 19-01 Fundamentals | EntityManager, Persistence Context, Entity States |
+| 19-02 Repositories | JpaRepository, CrudRepository, PagingAndSorting, Derived Queries, @Query |
+| 19-03 Relationships | All Mappings, Cascade, Orphan Removal |
+| 19-04 Advanced | Specifications, Query by Example, Projections, Pagination, Sorting |
+| 19-05 Performance | Lazy vs Eager, Fetch Joins, N+1, Entity Graphs, Batch |
+| 19-06 Auditing | @CreatedDate, @LastModifiedDate, @CreatedBy |
+| 19-07 Soft Delete | @SQLDelete, @Where |
+
+**Project:** Enterprise Backend with JPA
+
+---
+
+## 📚 Module 20 — Spring Security & JWT
+
+| Sub-Module | Topics |
+|------------|--------|
+| 20-01 Fundamentals | AuthN vs AuthZ, Filter Chain, SecurityContext |
+| 20-02 Authentication | UserDetailsService, PasswordEncoder, AuthenticationManager, Provider |
+| 20-03 JWT | Structure, Generation, Validation, Filter, Refresh Tokens, Stateless |
+| 20-04 Authorization | Roles, Authorities, Method Security, @PreAuthorize, RBAC, ABAC |
+| 20-05 OAuth2 & OIDC | Flows, Resource Server, Social Login, Keycloak |
+| 20-06 Best Practices | Hashing, CORS, CSRF, Headers, Rate Limiting, mTLS |
+
+**Project:** JWT-Secured Enterprise API
+
+---
+
+## 📚 Module 21 — Full Stack Integration
+
+| Layer | Technologies |
+|-------|-------------|
+| Frontend | React + TS, Redux Toolkit, React Router, RHF, Axios Interceptors |
+| Backend | Spring Boot, Security, JPA, JWT, Validation |
+| Integration | REST, Auth Flow, Error Handling, CORS, Pagination, File Upload, Realtime |
+
+**Project:** Full Stack Enterprise Management Portal (Auth, Employee/Client/Project Mgmt, Kanban, Dashboard, RBAC, Realtime)
+
+---
+
+## 📚 Module 22 — Testing
+
+| Sub-Module | Topics |
+|------------|--------|
+| 22-01 Unit (Java) | JUnit 5, Assertions, Lifecycle, Parameterized, Test Doubles |
+| 22-02 Mocking | Mockito, Mocks/Spies/Stubs, Matchers, Verification |
+| 22-03 Spring | @SpringBootTest, @WebMvcTest, @DataJpaTest, MockMvc, TestRestTemplate |
+| 22-04 Integration | Testcontainers, PostgreSQL, Kafka, MongoDB |
+| 22-05 Frontend | Jest, RTL, User Event, MSW |
+| 22-06 E2E | Playwright, Cypress, POM |
+| 22-07 API | Postman, REST Assured, Newman |
+| 22-08 Contract | Pact, Spring Cloud Contract |
+| 22-09 Performance | JMeter, Gatling, k6 |
+| 22-10 Best Practices | AAA, Isolation, Coverage, Mutation Testing (PIT) |
+
+**Project:** Fully Tested Application (Coverage > 85%)
+
+---
+
+## 📚 Module 23 — WebSocket & Real-Time
+
+| Sub-Module | Topics |
+|------------|--------|
+| 23-01 Fundamentals | HTTP vs WS, Lifecycle, Frames |
+| 23-02 Spring WS | Config, STOMP, Broker, Topics, @MessageMapping |
+| 23-03 Security | Auth, JWT, Authorization |
+| 23-04 React | Client, STOMP.js, Realtime State, Reconnection |
+| 23-05 SSE | SSE vs WS, Spring SSE, Use Cases |
+| 23-06 Scale | Redis Pub/Sub, Broker Relay |
+
+**Project:** Real-Time Chat & Notifications
+
+---
+
+## 📚 Module 24 — Apache Kafka
+
+| Sub-Module | Topics |
+|------------|--------|
+| 24-01 Fundamentals | EDA, Brokers, Topics, Partitions, Offsets, Consumer Groups |
+| 24-02 Producers/Consumers | API, Serialization, Deserialization, Acks |
+| 24-03 Spring Kafka | KafkaTemplate, @KafkaListener, Error Handling, Retry, DLT |
+| 24-04 Advanced | Partitioning, Ordering, Exactly-Once, Transactions, Kafka Streams |
+| 24-05 Ecosystem | Kafka Connect, Schema Registry, ksqlDB |
+| 24-06 Patterns | Event Sourcing, CQRS, Saga, Outbox |
+
+**Project:** Event-Driven Order Processing
+
+---
+
+## 📚 Module 25 — RabbitMQ & Message Brokers
+
+| Sub-Module | Topics |
+|------------|--------|
+| 25-01 Fundamentals | AMQP, Exchanges, Queues, Bindings |
+| 25-02 Patterns | Work Queues, Pub/Sub, Routing, Topics, RPC |
+| 25-03 Spring AMQP | RabbitTemplate, @RabbitListener |
+| 25-04 Reliability | Acks, Nacks, Dead Letter, Idempotency |
+
+**Project:** Task Queue System
+
+---
+
+## 📚 Module 26 — Redis & Caching
+
+| Sub-Module | Topics |
+|------------|--------|
+| 26-01 Fundamentals | Why, Cache-Aside, Read/Write-Through, Write-Behind |
+| 26-02 Redis | Data Structures, Commands, Persistence, Pub/Sub, Streams, Lua |
+| 26-03 Spring Cache | @Cacheable, @CacheEvict, @CachePut, CacheManager |
+| 26-04 Advanced | TTL, Invalidation, Distributed, Stampede, Redis Cluster |
+
+**Project:** High-Performance Product Catalog
+
+---
+
+## 📚 Module 27 — Elasticsearch
+
+| Sub-Module | Topics |
+|------------|--------|
+| 27-01 Fundamentals | Index, Document, Mapping, Analyzers |
+| 27-02 Querying | Match, Term, Bool, Range, Fuzzy, Aggregations |
+| 27-03 Spring Data | Repositories, Template, Criteria |
+| 27-04 Advanced | Sharding, Replicas, ILM, Snapshots |
+
+**Project:** Full-Text Search API
+
+---
+
+## 📚 Module 28 — Design Patterns (Complete Catalog)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 28-01 Creational | Singleton, Factory Method, Abstract Factory, Builder, Prototype, Object Pool |
+| 28-02 Structural | Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy |
+| 28-03 Behavioral | Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor |
+| 28-04 Architectural | MVC, MVP, MVVM, Layered, Microkernel, SOA, Event-Driven, CQRS, Event Sourcing, Saga, Sidecar, Strangler Fig, BFF |
+| 28-05 Enterprise | Repository, Unit of Work, Data Mapper, Active Record, Identity Map, Lazy Load, DTO, Value Object, Null Object, Specification |
+| 28-06 Concurrency | Producer-Consumer, Reader-Writer, Thread Pool, Future, Actor, Reactor, Proactor |
+| 28-07 Cloud | Circuit Breaker, Retry, Bulkhead, Rate Limiter, Timeout, Cache-Aside, Ambassador, Sidecar |
+| 28-08 Anti-Patterns | God Object, Spaghetti Code, Big Ball of Mud, Golden Hammer, Premature Optimization |
+
+**Project:** Design Patterns Implementation (Java + Spring + React)
+
+---
+
+## 📚 Module 29 — Software Design Principles
+
+| Sub-Module | Topics |
+|------------|--------|
+| 29-01 SOLID | SRP, OCP, LSP, ISP, DIP |
+| 29-02 Other Principles | DRY, KISS, YAGNI, SoC, Composition over Inheritance, Law of Demeter, Principle of Least Astonishment |
+| 29-03 GRASP | Information Expert, Creator, Controller, Low Coupling, High Cohesion, Polymorphism, Pure Fabrication, Indirection, Protected Variations |
+| 29-04 Code Quality | Clean Code, Naming, Functions, Comments, Formatting, Refactoring |
+| 29-05 Code Smells | Long Method, God Class, Feature Envy, Duplicate Code, Dead Code |
+
+**Project:** Refactoring Legacy Codebase
+
+---
+
+## 📚 Module 30 — Clean Architecture
+
+| Sub-Module | Topics |
+|------------|--------|
+| 30-01 Concepts | SoC, Dependency Rule, Layers, Boundaries |
+| 30-02 Structure | domain, application, infrastructure, interface |
+| 30-03 Use Cases | Input/Output Ports, Interactors, DTOs |
+| 30-04 Benefits | Testability, Maintainability, Framework Independence, Low Coupling |
+
+**Project:** Clean Architecture Spring Boot App
+
+---
+
+## 📚 Module 31 — Hexagonal Architecture
+
+| Sub-Module | Topics |
+|------------|--------|
+| 31-01 Concepts | Ports & Adapters, Domain Core, App Services |
+| 31-02 Ports | Input (Use Cases), Output (Repos, Messaging) |
+| 31-03 Adapters | REST, Database, Kafka, External API |
+| 31-04 Testing | Mock Adapters, In-Memory Adapters |
+
+**Project:** Hexagonal E-Commerce Backend
+
+---
+
+## 📚 Module 32 — Domain-Driven Design
+
+| Sub-Module | Topics |
+|------------|--------|
+| 32-01 Strategic | Ubiquitous Language, Bounded Contexts, Context Mapping, Core/Supporting/Generic Domains |
+| 32-02 Tactical | Entities, Value Objects, Aggregates, Domain Events, Repos, Factories, Domain Services |
+| 32-03 Patterns | Aggregate Root, ACL, Repository, Specification, Event Sourcing |
+| 32-04 Modeling | Event Storming, Domain Storytelling, Context Mapping Diagrams |
+
+**Project:** DDD-Based Order Management
+
+---
+
+## 📚 Module 33 — System Design (Full Module)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 33-01 Fundamentals | Scalability, Availability, Reliability, Latency vs Throughput, Vertical vs Horizontal Scaling |
+| 33-02 Load Balancing | L4 vs L7, Algorithms (Round Robin, Least Conn, IP Hash, Consistent Hash), HAProxy, Nginx, AWS ALB/NLB |
+| 33-03 Caching | Client, CDN, Reverse Proxy, Application, Database; Cache Strategies, Eviction (LRU, LFU, FIFO) |
+| 33-04 Databases | SQL vs NoSQL, Replication, Sharding, Partitioning, CAP, PACELC, Indexing, Denormalization |
+| 33-05 Consistency | Strong, Eventual, Causal, Read-Your-Writes, Monotonic Reads |
+| 33-06 Distributed Systems | Consensus (Raft, Paxos), Leader Election, Distributed Locking, Idempotency, 2PC |
+| 33-07 Messaging | Queues, Pub/Sub, Kafka, RabbitMQ, Delivery Guarantees (At-Least-Once, Exactly-Once) |
+| 33-08 Storage | Object (S3), Block (EBS), File (EFS), Distributed FS (HDFS) |
+| 33-09 CDN & Edge | CDN, Edge Computing, Geo-Distribution, Anycast |
+| 33-10 Rate Limiting | Token Bucket, Leaky Bucket, Fixed Window, Sliding Window, Distributed |
+| 33-11 API Design | REST, GraphQL, gRPC, Pagination, Versioning, Idempotency |
+| 33-12 Observability | Logging, Metrics, Tracing, Alerting, SLI/SLO/SLA |
+| 33-13 Case Studies | URL Shortener, Twitter, Instagram, WhatsApp, Netflix, Uber, YouTube, Dropbox, Rate Limiter, Chat, Notification, Autocomplete, Web Crawler, Payment |
+| 33-14 Interview Framework | Requirements, Estimation, High-Level Design, Deep Dive, Bottlenecks, Trade-offs |
+
+**Project:** Design 5 Real-World Systems (Document + Diagrams + Trade-offs)
+
+---
+
+## 📚 Module 34 — Microservices
+
+| Sub-Module | Topics |
+|------------|--------|
+| 34-01 Fundamentals | Monolith vs Modular vs Microservices, Boundaries, Decomposition |
+| 34-02 Discovery | Eureka, Consul, Registration |
+| 34-03 API Gateway | Spring Cloud Gateway, Routing, Filters, Rate Limiting |
+| 34-04 Config | Spring Cloud Config, Centralized, Refresh |
+| 34-05 Communication | REST, gRPC, Kafka, RabbitMQ, OpenFeign |
+| 34-06 Resilience | Circuit Breaker, Retry, Timeout, Bulkhead, Fallback |
+| 34-07 Transactions | Saga, Choreography, Orchestration, Eventual Consistency |
+| 34-08 Observability | Tracing (Zipkin/Jaeger), Correlation IDs, ELK |
+| 34-09 Service Mesh | Istio, Linkerd, Sidecar, mTLS |
+| 34-10 Deployment | Blue-Green, Canary, Rolling |
+
+**Project:** Enterprise Microservices Platform
+
+---
+
+## 📚 Module 35 — Distributed Systems
+
+| Sub-Module | Topics |
+|------------|--------|
+| 35-01 Fundamentals | Scalability, Availability, Reliability, Fault Tolerance |
+| 35-02 CAP | CAP, PACELC |
+| 35-03 Consistency | Strong, Eventual, Causal |
+| 35-04 Patterns | Idempotency, Distributed Locking, Leader Election, Rate Limiting, Circuit Breaker |
+| 35-05 Reliability | Retry + Backoff, DLQ, Health Checks, Graceful Shutdown |
+| 35-06 Consensus | Raft, Paxos (concepts) |
+| 35-07 Clocks | Lamport, Vector Clocks, Hybrid Logical Clocks |
+
+---
+
+## 📚 Module 36 — API Design
+
+| Sub-Module | Topics |
+|------------|--------|
+| 36-01 REST | Resource URLs, Methods, Status, Pagination, Filtering, Sorting |
+| 36-02 Standards | DTOs, Versioning, Error Structure, Idempotency Keys, Rate Limit Headers |
+| 36-03 GraphQL | Schema, Queries, Mutations, Resolvers, DataLoader, Subscriptions |
+| 36-04 gRPC | Protobuf, Services, Streaming, Interceptors |
+| 36-05 Docs | OpenAPI 3.0, Swagger, API Blueprint |
+| 36-06 Security | API Keys, OAuth2, JWT, mTLS, HMAC |
+
+**Project:** Well-Designed Public API (REST + GraphQL + gRPC)
+
+---
+
+## 📚 Module 37 — Docker
+
+| Sub-Module | Topics |
+|------------|--------|
+| 37-01 Fundamentals | Containers vs VMs, Images, Docker Hub, Dockerfile |
+| 37-02 Best Practices | Multi-Stage, Caching, .dockerignore, Security, Distroless |
+| 37-03 Compose | Services, Networks, Volumes, Env Vars |
+| 37-04 For Java/Node | JVM Containerization, Node, Health Checks, Jib, Buildpacks |
+
+**Project:** Containerized Full Stack App
+
+---
+
+## 📚 Module 38 — Kubernetes
+
+| Sub-Module | Topics |
+|------------|--------|
+| 38-01 Fundamentals | Architecture, Pods, Services, Deployments, Namespaces |
+| 38-02 Config | ConfigMaps, Secrets, Env Vars |
+| 38-03 Networking | ClusterIP, NodePort, LoadBalancer, Ingress, Network Policies |
+| 38-04 Storage | Volumes, PV, PVC, StorageClass |
+| 38-05 Advanced | Helm, HPA, Rolling Updates, Resource Limits, Operators, Service Mesh |
+| 38-06 Security | RBAC, Service Accounts, Pod Security, Secrets |
+
+**Project:** Kubernetes-Deployed Microservices
+
+---
+
+## 📚 Module 39 — CI/CD & GitOps
+
+| Sub-Module | Topics |
+|------------|--------|
+| 39-01 Fundamentals | CI, CD, CD (Deployment) |
+| 39-02 GitHub Actions | Workflows, Jobs, Secrets, Matrix, Reusable |
+| 39-03 Jenkins | Pipelines, Jenkinsfile, Plugins |
+| 39-04 Build Tools | Maven, Gradle, npm/yarn, pnpm |
+| 39-05 GitOps | ArgoCD, Flux, Declarative Deployments |
+| 39-06 Strategies | Blue-Green, Canary, Rolling, Feature Flags |
+
+**Project:** Complete CI/CD Pipeline with ArgoCD
+
+---
+
+## 📚 Module 40 — Cloud (AWS)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 40-01 Fundamentals | IaaS/PaaS/SaaS, Regions, AZs |
+| 40-02 Compute | EC2, ECS, EKS, Lambda, Fargate |
+| 40-03 Storage | S3, EBS, EFS, Glacier |
+| 40-04 Database | RDS, Aurora, DynamoDB, ElastiCache |
+| 40-05 Networking | VPC, Subnets, SGs, Route 53, ALB/NLB |
+| 40-06 DevOps | CodePipeline, CodeBuild, CodeDeploy, CloudFormation |
+| 40-07 IaC | Terraform, Pulumi, CDK |
+| 40-08 Serverless | Lambda, API Gateway, Step Functions, SAM |
+
+**Project:** Cloud-Deployed Application
+
+---
+
+## 📚 Module 41 — Observability
+
+| Sub-Module | Topics |
+|------------|--------|
+| 41-01 Logging | Structured, Levels, ELK, Loki |
+| 41-02 Metrics | Prometheus, Grafana, Micrometer, Custom |
+| 41-03 Tracing | OpenTelemetry, Jaeger, Zipkin |
+| 41-04 Alerting | AlertManager, PagerDuty, Slack |
+| 41-05 SLO/SLI/SLA | Error Budgets, Golden Signals |
+
+**Project:** Fully Observable Application
+
+---
+
+## 📚 Module 42 — Performance Engineering
+
+| Sub-Module | Topics |
+|------------|--------|
+| 42-01 Profiling | JProfiler, VisualVM, async-profiler, Chrome DevTools |
+| 42-02 JVM Tuning | Heap, GC, JIT, Flags |
+| 42-03 Database | Query Plans, Indexes, Partitioning, Connection Pools |
+| 42-04 Load Testing | JMeter, Gatling, k6, Locust |
+| 42-05 Frontend | Lighthouse, Core Web Vitals, Bundle Analysis |
+
+**Project:** Performance Audit & Optimization Report
+
+---
+
+## 📚 Module 43 — Application Security (AppSec)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 43-01 OWASP Top 10 | Injection, Broken Auth, XSS, CSRF, SSRF, etc. |
+| 43-02 Secure Coding | Input Validation, Output Encoding, Parameterized Queries |
+| 43-03 Secrets | Vault, AWS Secrets Manager, SOPS |
+| 43-04 Scanning | SAST, DAST, SCA, SonarQube, Trivy |
+| 43-05 Compliance | GDPR, HIPAA basics |
+| 43-06 Cryptography | Symmetric, Asymmetric, Hashing, Salting, Key Management |
+
+**Project:** Security Hardening & Penetration Test Report
+
+---
+
+## 📚 Module 44 — AI Integration
+
+| Sub-Module | Topics |
+|------------|--------|
+| 44-01 LLM Fundamentals | Transformers, Tokenization, Embeddings, Context |
+| 44-02 Prompt Engineering | Patterns, Few-Shot, CoT, System Prompts |
+| 44-03 Spring AI | ChatClient, EmbeddingClient, Vector Stores, Function Calling |
+| 44-04 RAG | Loading, Chunking, Embedding, Search, Context |
+| 44-05 Vector DBs | Pinecone, Weaviate, pgvector, Chroma |
+| 44-06 Patterns | Function Calling, Agents, Memory, Guardrails |
+| 44-07 Advanced | Fine-Tuning, LoRA, MCP, Multi-Agent |
+| 44-08 Building | Chatbots, Doc Q&A, Code Assistants, Recommendations |
+
+**Project:** AI-Powered Enterprise Assistant
+
+---
+
+# 🧭 Advanced & Supplementary Modules
+
+> These modules complete the journey from **Full Stack Engineer** to **Senior / Lead / Cloud-AI Engineer**.
+
+---
+
+## 📚 Module 45 — Agile & Project Management
+
+| Sub-Module | Topics |
+|------------|--------|
+| 45-01 Agile Fundamentals | Agile Manifesto, Values, Principles, Scrum vs Kanban vs XP vs SAFe |
+| 45-02 Scrum | Roles (PO, SM, Dev), Ceremonies (Standup, Planning, Review, Retro), Artifacts |
+| 45-03 Kanban | Board Design, WIP Limits, Flow Metrics, Cycle Time, Lead Time, Cumulative Flow |
+| 45-04 Estimation | Story Points, Planning Poker, T-Shirt Sizing, Velocity, Burndown/Burnup |
+| 45-05 Backlog Management | Epics, Stories, Tasks, Acceptance Criteria, DoD, Gherkin (Given-When-Then) |
+| 45-06 Tools | Jira, Linear, Trello, Asana, Notion, Confluence |
+| 45-07 Roadmapping | Product Roadmap, Release Planning, Milestones, OKRs |
+| 45-08 DevOps Culture | Dev + Ops Collaboration, Shift-Left, Blameless Culture |
+
+**Project:** Run a 2-Week Sprint Simulation with Jira + Retrospective
+
+---
+
+## 📚 Module 46 — Engineering Communication & Soft Skills
+
+| Sub-Module | Topics |
+|------------|--------|
+| 46-01 Technical Writing | README, Docs, API Docs, Runbooks, Playbooks |
+| 46-02 ADRs | Context, Decision, Consequences, Status, Superseded |
+| 46-03 RFCs | Request for Comments, Design Docs, Peer Review |
+| 46-04 Code Review Etiquette | Constructive Feedback, Nit vs Blocking, Review SLAs |
+| 46-05 Pair Programming | Driver/Navigator, Mob Programming, Remote Pairing |
+| 46-06 Mentoring & Coaching | 1:1s, Feedback Models (SBI), Growth Plans |
+| 46-07 Stakeholder Communication | Status Updates, Escalation, Executive Summaries |
+| 46-08 Presentations | Tech Talks, Demos, Lightning Talks, Storytelling |
+| 46-09 Cross-Cultural Collaboration | Async Communication, Time Zones, Documentation-First |
+| 46-10 Negotiation & Conflict | Trade-off Discussions, Priority Alignment, Disagreement Resolution |
+
+**Project:** Write an ADR + RFC + Tech Talk for your Capstone
+
+---
+
+## 📚 Module 47 — Career & Interview Preparation
+
+| Sub-Module | Topics |
+|------------|--------|
+| 47-01 Resume & Portfolio | ATS-Friendly Resume, GitHub Profile, Personal Site, Project Showcase |
+| 47-02 LinkedIn & Networking | Profile Optimization, Cold Outreach, Referrals, Communities |
+| 47-03 DSA Interview Prep | Patterns, Mock Interviews, Timed Practice, Company Tagged Problems |
+| 47-04 System Design Interview | Framework, Estimation, Diagrams, Trade-offs, Deep Dives |
+| 47-05 Backend Interview | Java/Spring, JVM, Concurrency, DB, API, Caching, Messaging |
+| 47-06 Frontend Interview | JS/TS, React Internals, Performance, Accessibility, Browser APIs |
+| 47-07 Behavioral Interview | STAR Method, Conflict, Leadership, Failure Stories |
+| 47-08 Coding Round Strategies | Clarify, Brute Force, Optimize, Test, Complexity |
+| 47-09 Take-Home Assignments | Time Management, Documentation, Testing, Clean Code |
+| 47-10 Negotiation | Compensation, Levels (L3/L4/L5), Equity, RSU, Sign-On |
+| 47-11 Open Source | Finding Projects, Contribution Guide, First PR, Maintainership |
+| 47-12 Mock Platforms | Pramp, Interviewing.io, LeetCode Mock, Exponent |
+
+**Project:** Complete 20 Mock Interviews + Publish 3 Open-Source PRs
+
+---
+
+## 📚 Module 48 — Frontend Architecture (Advanced)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 48-01 Microfrontends | Module Federation, Single-SPA, qiankun, Runtime vs Build-Time Composition |
+| 48-02 Monorepo | Nx, Turborepo, pnpm Workspaces, Lerna, Bazel |
+| 48-03 Feature-Sliced Design | Layers, Slices, Segments, Public API, Cross-Imports |
+| 48-04 Module Boundaries | ESLint Boundaries, Dependency Cruiser, Arch Unit for JS |
+| 48-05 Design System Architecture | Tokens, Themes, Headless Components, Radix, shadcn/ui |
+| 48-06 i18n / l10n | react-i18next, ICU MessageFormat, RTL Support, Locale Routing |
+| 48-07 State Architecture | Server State vs Client State vs URL State vs Form State |
+| 48-08 Rendering Strategies | CSR, SSR, SSG, ISR, Streaming SSR, PPR, Edge Rendering |
+| 48-09 Frontend Security | CSP, XSS, CSRF, Sanitization, DOMPurify, Secure Cookies |
+| 48-10 Web Performance Budget | Bundle Budgets, Lighthouse CI, Core Web Vitals, RUM |
+
+**Project:** Microfrontend Shell with Module Federation + Design System
+
+---
+
+## 📚 Module 49 — Frontend Advanced Tooling
+
+| Sub-Module | Topics |
+|------------|--------|
+| 49-01 Data Visualization | D3.js, Recharts, Visx, Chart.js, Victory, ECharts |
+| 49-02 Storybook | Stories, Args, Controls, Addons, MDX, Chromatic Integration |
+| 49-03 Visual Regression | Chromatic, Percy, Loki, BackstopJS |
+| 49-04 WebAssembly | Wasm Basics, Rust → Wasm, AssemblyScript, Use Cases |
+| 49-05 Web Components | Lit, Stencil, Shadow DOM, Custom Elements, Interop |
+| 49-06 Canvas & WebGL | Canvas API, WebGL, Three.js, Babylon.js, PixiJS |
+| 49-07 Animation Libraries | Framer Motion, GSAP, Lottie, Rive, React Spring |
+| 49-08 PWA Advanced | Workbox, Offline Strategies, Background Sync, Push Notifications |
+| 49-09 Accessibility Tooling | axe, Pa11y, Lighthouse A11y, Screen Reader Testing |
+| 49-10 Build Analysis | webpack-bundle-analyzer, source-map-explorer, Vite Visualizer |
+
+**Project:** Interactive Analytics Dashboard with D3 + Storybook Docs
+
+---
+
+## 📚 Module 50 — Reactive & Advanced Backend
+
+| Sub-Module | Topics |
+|------------|--------|
+| 50-01 Reactive Programming | Reactive Streams, Backpressure, Publisher/Subscriber, Marble Diagrams |
+| 50-02 Project Reactor | Mono, Flux, Operators, Schedulers, Error Handling |
+| 50-03 Spring WebFlux | Router Functions, Functional Endpoints, WebClient, Reactive Security |
+| 50-04 R2DBC | Reactive SQL, Connection Pool, Transactions, Repositories |
+| 50-05 Spring Batch | Jobs, Steps, Readers, Processors, Writers, Chunking, Partitioning |
+| 50-06 Spring Integration | Channels, Adapters, Routers, Transformers, Filters |
+| 50-07 Spring Cloud Stream | Binders, Functions, Sources, Sinks, Processors |
+| 50-08 Scheduling & Orchestration | Quartz, Camunda, Temporal, Airflow concepts |
+| 50-09 Mappers & Utilities | MapStruct, ModelMapper, Lombok, Immutables |
+| 50-10 Persistence Alternatives | MyBatis, jOOQ, JDBI, QueryDSL |
+| 50-11 Connection Pooling Deep Dive | HikariCP, Tomcat JDBC, C3P0, Tuning |
+| 50-12 Caching Advanced | Caffeine, Ehcache, Hazelcast, Redis Cluster |
+
+**Project:** Reactive API with WebFlux + R2DBC + WebClient
+
+---
+
+## 📚 Module 51 — Database Migrations & DevOps
+
+| Sub-Module | Topics |
+|------------|--------|
+| 51-01 Schema Versioning | Why Migrations, Immutable Changes, Ordering |
+| 51-02 Flyway | Migrations, Baselines, Callbacks, Repeatable, Undo |
+| 51-03 Liquibase | Changesets, Changes, Rollback, Contexts, Labels |
+| 51-04 Migration Strategies | Expand-Contract, Backward-Compatible Changes, Zero-Downtime |
+| 51-05 Test Data | Testcontainers, Faker, Data Faker, Snapshots |
+| 51-06 Rollback Strategies | Forward-Only, Feature Flags, Blue-Green DB |
+| 51-07 Multi-Environment | Dev, Test, Staging, Prod, DR |
+| 51-08 Backup & Restore | pg_dump, mysqldump, Snapshots, PITR |
+
+**Project:** Zero-Downtime DB Migration with Flyway + Testcontainers
+
+---
+
+## 📚 Module 52 — Database Advanced (DBA-Level)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 52-01 Replication | Master-Slave, Master-Master, Logical, Physical, Streaming |
+| 52-02 Sharding | Range, Hash, Directory, Geo, Application vs DB-Level |
+| 52-03 Partitioning | Range, List, Hash, Composite, Partition Pruning |
+| 52-04 Backup & Recovery | Full, Incremental, Differential, PITR, WAL, Binlog |
+| 52-05 Disaster Recovery | RPO, RTO, Multi-Region, Failover, Chaos Drills |
+| 52-06 Connection Pooling | PgBouncer, ProxySQL, HikariCP, Pool Sizing |
+| 52-07 Query Tuning | EXPLAIN ANALYZE, Index Advisor, Statistics, VACUUM |
+| 52-08 High Availability | Patroni, Galera, PostgreSQL HA, MySQL Group Replication |
+| 52-09 NoSQL Advanced | MongoDB Sharding, Cassandra, DynamoDB, ScyllaDB |
+| 52-10 Data Warehousing | Star Schema, Snowflake, Redshift, BigQuery, ClickHouse |
+
+**Project:** Multi-Region PostgreSQL Setup with Failover Drill
+
+---
+
+## 📚 Module 53 — Multi-Tenancy
+
+| Sub-Module | Topics |
+|------------|--------|
+| 53-01 Fundamentals | SaaS Models, Tenant Isolation, Noisy Neighbor |
+| 53-02 Isolation Strategies | Shared DB / Shared Schema, Shared DB / Separate Schema, Separate DB |
+| 53-03 Row-Level Security | PostgreSQL RLS, Policies, Tenant Context |
+| 53-04 Tenant Resolution | Subdomain, Header, JWT Claim, Path |
+| 53-05 Data Partitioning | Per-Tenant Partitions, Sharding by Tenant |
+| 53-06 Caching per Tenant | Namespaced Keys, Redis DBs, Cache Isolation |
+| 53-07 Billing & Metering | Usage Tracking, Tiered Plans, Stripe Metering |
+| 53-08 Tenant Onboarding | Provisioning, Migrations, Seeding, Offboarding |
+| 53-09 Security | Cross-Tenant Leaks, Testing Isolation, Auditing |
+
+**Project:** Multi-Tenant SaaS with RLS + Tenant-Aware Caching
+
+---
+
+## 📚 Module 54 — SRE & Incident Management
+
+| Sub-Module | Topics |
+|------------|--------|
+| 54-01 SRE Fundamentals | SLO, SLI, SLA, Error Budgets, Toil Reduction |
+| 54-02 Monitoring vs Observability | Metrics, Logs, Traces, Events, Profiles |
+| 54-03 Incident Response | Severity Levels, Roles (IC, Comms), Escalation |
+| 54-04 Runbooks & Playbooks | On-Call Guides, Standard Operating Procedures |
+| 54-05 Postmortems | Blameless, Timeline, Root Cause, Action Items, 5 Whys |
+| 54-06 On-Call Practices | Rotation, Handoff, Alert Fatigue, Paging Policies |
+| 54-07 Chaos Engineering | Chaos Monkey, Litmus, Gremlin, Game Days |
+| 54-08 Capacity Planning | Load Forecasting, Autoscaling, Headroom |
+| 54-09 Reliability Patterns | Retries, Backoff, Timeouts, Circuit Breakers |
+| 54-10 Continuous Profiling | Pyroscope, Parca, async-profiler, eBPF |
+
+**Project:** Run a Game Day + Publish a Blameless Postmortem
+
+---
+
+## 📚 Module 55 — DevOps & Platform Engineering (Advanced)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 55-01 CI Tools Deep Dive | GitHub Actions, GitLab CI, CircleCI, Jenkins, Tekton |
+| 55-02 Artifact Repos | Nexus, Artifactory, GitHub Packages, Docker Registry |
+| 55-03 Container Registries | ECR, GCR, ACR, Harbor, GHCR |
+| 55-04 Kustomize | Overlays, Patches, Bases, Variants |
+| 55-05 Policy as Code | OPA, Gatekeeper, Kyverno, Conftest |
+| 55-06 Secrets in CI/CD | Sealed Secrets, External Secrets, Vault, SOPS |
+| 55-07 Progressive Delivery | Argo Rollouts, Flagger, Feature Flags (Unleash, LaunchDarkly) |
+| 55-08 Environment Management | Ephemeral Envs, Preview Envs, Sandbox, Prod Parity |
+| 55-09 Platform Engineering | IDPs, Backstage, Golden Paths, Self-Service |
+| 55-10 Cost Optimization | FinOps, Rightsizing, Spot Instances, Reserved, Savings Plans |
+
+**Project:** Self-Service Platform with Backstage + ArgoCD + Kustomize
+
+---
+
+## 📚 Module 56 — Cloud Advanced (AWS / GCP / Azure)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 56-01 AWS Deep Dive | IAM, VPC, Transit Gateway, Direct Connect, Organizations |
+| 56-02 AWS Messaging | SQS, SNS, EventBridge, Kinesis, MSK, Step Functions |
+| 56-03 AWS Security | KMS, Secrets Manager, WAF, Shield, GuardDuty, Config |
+| 56-04 AWS Networking | CloudFront, Route 53, Global Accelerator, PrivateLink |
+| 56-05 AWS Containers | ECS, EKS, Fargate, App Runner, ECR |
+| 56-06 AWS Serverless | Lambda, API Gateway, DynamoDB, SAM, CDK |
+| 56-07 GCP Essentials | GKE, Cloud Run, Pub/Sub, BigQuery, Firestore, Cloud Functions |
+| 56-08 Azure Essentials | AKS, Functions, Cosmos DB, Service Bus, App Service |
+| 56-09 Multi-Cloud | Portability, Abstraction, Terraform Multi-Provider |
+| 56-10 FinOps | Cost Explorer, Budgets, Tagging, Chargeback, Showback |
+
+**Project:** Deploy Same App to AWS + GCP + Azure with Terraform
+
+---
+
+## 📚 Module 57 — Advanced Security & Compliance
+
+| Sub-Module | Topics |
+|------------|--------|
+| 57-01 Identity Protocols | SAML 2.0, OAuth2, OIDC, SCIM, WS-Federation |
+| 57-02 MFA & Passwordless | TOTP, WebAuthn, Passkeys, FIDO2, Magic Links |
+| 57-03 Threat Modeling | STRIDE, DREAD, Attack Trees, Data Flow Diagrams |
+| 57-04 Secure SDLC | Threat Modeling, Secure Design, Secure Coding, Security Testing |
+| 57-05 Secrets Scanning | Gitleaks, TruffleHog, GitGuardian, pre-commit hooks |
+| 57-06 OWASP ASVS | Verification Levels, Controls, Testing Guide |
+| 57-07 Compliance | GDPR, HIPAA, SOC 2, ISO 27001, PCI DSS, DPDP |
+| 57-08 Cryptography Ops | Key Rotation, KMS, HSM, Envelope Encryption |
+| 57-09 Supply Chain Security | SBOM, Sigstore, Cosign, SLSA, Dependency Scanning |
+| 57-10 API Security | Rate Limiting, Bot Detection, API Gateway WAF, mTLS |
+| 57-11 Pentesting Basics | Recon, Enumeration, Exploitation, Reporting |
+| 57-12 Zero Trust | BeyondCorp, Identity-Aware Proxy, Microsegmentation |
+
+**Project:** Threat Model + SBOM + Signed Artifacts for Capstone
+
+---
+
+## 📚 Module 58 — Testing (Advanced)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 58-01 Visual Regression | Chromatic, Percy, BackstopJS, Loki |
+| 58-02 Fuzz Testing | AFL, libFuzzer, Jazzer, Property-Based (jqwik, fast-check) |
+| 58-03 Soak & Spike | Long-Running Tests, Memory Leaks, Sudden Load |
+| 58-04 WireMock / MockServer | Stubs, Record-Playback, Fault Injection |
+| 58-05 Test Data Management | Faker, Fixtures, Factories, Anonymization |
+| 58-06 Accessibility Testing | axe, Pa11y, WAVE, Screen Readers, WCAG Audits |
+| 58-07 Cross-Browser Testing | BrowserStack, Sauce Labs, LambdaTest, Playwright Matrix |
+| 58-08 Security Testing | ZAP, Burp Suite, Dependency-Check, Snyk |
+| 58-09 Chaos Testing | Litmus, Chaos Mesh, Gremlin, ToxiProxy |
+| 58-10 Test Pyramid vs Trophy | Unit, Integration, Contract, E2E, Manual |
+| 58-11 Shift-Left & Shift-Right | Pre-Commit, CI Gates, Canary, Synthetic Monitoring |
+
+**Project:** Full Testing Suite (Unit → Contract → E2E → Load → Security)
+
+---
+
+## 📚 Module 59 — Messaging & Streaming (Advanced)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 59-01 Cloud Messaging | AWS SQS, SNS, EventBridge, GCP Pub/Sub, Azure Service Bus |
+| 59-02 Apache Pulsar | Topics, Subscriptions, Multi-Tenancy, Tiered Storage |
+| 59-03 ActiveMQ / Artemis | JMS, Queues, Topics, Persistence |
+| 59-04 Apache Flink | Stream Processing, Windows, State, Checkpointing |
+| 59-05 Spark Streaming | Micro-Batch, Structured Streaming, Kafka Integration |
+| 59-06 Debezium (CDC) | Change Data Capture, Connectors, Outbox, Snapshot |
+| 59-07 Kafka Connect | Source/Sink Connectors, Transformations, Schema Registry |
+| 59-08 Event Mesh | Multi-Cluster Kafka, MirrorMaker, Confluent Replicator |
+| 59-09 Backpressure & Flow Control | Reactive Streams, Credit-Based, Buffering |
+| 59-10 Dead Letter & Retry | DLQ Design, Retry Topics, Poison Pills |
+
+**Project:** CDC Pipeline with Debezium + Kafka + Flink + Elasticsearch
+
+---
+
+## 📚 Module 60 — Payments, Notifications & Integrations
+
+| Sub-Module | Topics |
+|------------|--------|
+| 60-01 Payment Gateways | Stripe, Razorpay, PayPal, Adyen, Square |
+| 60-02 Payment Flows | One-Time, Subscriptions, Invoices, Refunds, Disputes |
+| 60-03 PCI Compliance | SAQ A, Tokenization, Vaulting, 3DS |
+| 60-04 Email | SendGrid, SES, Mailgun, Postmark, Templates, DKIM/SPF/DMARC |
+| 60-05 SMS | Twilio, SNS, MSG91, OTP Flows, Delivery Receipts |
+| 60-06 Push Notifications | FCM, APNs, OneSignal, Topics, Segments |
+| 60-07 Webhooks | Design, Signing, Retries, Idempotency, Verification |
+| 60-08 Third-Party APIs | OAuth Integration, Rate Limits, Circuit Breakers |
+| 60-09 File Storage | S3, Cloudinary, UploadThing, Presigned URLs |
+| 60-10 Reporting & Docs | PDF (iText, PDFBox), Excel (POI), JasperReports |
+
+**Project:** Subscription Billing + Multi-Channel Notifications
+
+---
+
+## 📚 Module 61 — Architecture (Advanced)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 61-01 Onion Architecture | Layers, Dependencies, Domain-Centric |
+| 61-02 Vertical Slice Architecture | Feature Folders, CQRS-Aligned, MediatR Pattern |
+| 61-03 Modular Monolith | Modules, Boundaries, In-Process Events, Future Split |
+| 61-04 CQRS Deep Dive | Command/Query Separation, Read Models, Projections |
+| 61-05 Event Sourcing Deep Dive | Event Store, Snapshots, Replay, Projections |
+| 61-06 BFF Pattern | Backend for Frontend, GraphQL Gateway, Aggregation |
+| 61-07 Strangler Fig | Incremental Migration, Routing, Coexistence |
+| 61-08 Sidecar & Ambassador | Service Mesh Sidecars, Cross-Cutting Concerns |
+| 61-09 Cell-Based Architecture | Cells, Bulkheads, Blast Radius, Isolation |
+| 61-10 Architecture Decision Records | When to Use, Format, Examples |
+| 61-11 Fitness Functions | ArchUnit, dependency-cruiser, Automated Guards |
+| 61-12 Trade-off Analysis | ATAM, Quality Attributes, Scenarios |
+
+**Project:** Modular Monolith → Microservices Migration Playbook
+
+---
+
+## 📚 Module 62 — AI & LLM (Advanced / Production)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 62-01 LLMOps | Prompt Versioning, Eval Pipelines, A/B Testing, Monitoring |
+| 62-02 RAG Evaluation | Faithfulness, Relevance, Context Precision, RAGAS |
+| 62-03 Prompt Security | Prompt Injection, Jailbreaks, Guardrails, PII Redaction |
+| 62-04 AI Security | Model Theft, Data Poisoning, Adversarial Inputs |
+| 62-05 Multi-Modal | Vision, Audio, Video, Whisper, GPT-4o, Gemini |
+| 62-06 Fine-Tuning | LoRA, QLoRA, PEFT, RLHF, DPO basics |
+| 62-07 Local Models | Ollama, llama.cpp, vLLM, LM Studio, Quantization |
+| 62-08 Cost & Latency | Token Optimization, Streaming, Batching, Caching, Distillation |
+| 62-09 Agents & Tools | MCP, Function Calling, ReAct, Plan-and-Execute, Multi-Agent |
+| 62-10 Responsible AI | Bias, Fairness, Transparency, Explainability, Governance |
+| 62-11 MLOps Basics | Feature Stores, Model Registry, Drift, Retraining |
+| 62-12 AI Observability | LangSmith, LangFuse, Helicone, Arize, Phoenix |
+
+**Project:** Production RAG Chatbot with Eval + Guardrails + Observability
+
+---
+
+## 📚 Module 63 — Observability (Advanced)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 63-01 OpenTelemetry Deep Dive | SDK, Collector, Instrumentation, OTLP |
+| 63-02 Error Tracking | Sentry, Rollbar, Bugsnag, GlitchTip |
+| 63-03 Continuous Profiling | Pyroscope, Parca, Polar Signals |
+| 63-04 Log Aggregation | Loki, Fluent Bit, Vector, OpenSearch |
+| 63-05 Dashboards as Code | Grafana Provisioning, JSONNET, Terraform |
+| 63-06 Synthetic Monitoring | Checkly, Grafana Synthetic, Datadog Synthetics |
+| 63-07 RUM | Real User Monitoring, Session Replay, Web Vitals |
+| 63-08 Alerting as Code | Prometheus Rules, AlertManager Config, Runbook URLs |
+| 63-09 Trace Sampling | Head-Based, Tail-Based, Adaptive |
+| 63-10 Distributed Debugging | Correlated Logs, Traces, Metrics, Exemplars |
+
+**Project:** End-to-End Observability Stack (OTel + Prometheus + Loki + Tempo + Grafana)
+
+---
+
+## 📚 Module 64 — API Design (Advanced)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 64-01 AsyncAPI | Event-Driven APIs, Spec, Codegen |
+| 64-02 GraphQL Federation | Apollo Federation, Subgraphs, Supergraph, Schema Stitching |
+| 64-03 Webhooks Deep Dive | Delivery Semantics, Retries, Signing, Idempotency |
+| 64-04 API Versioning Strategies | URI, Header, Media Type, Deprecation Policies |
+| 64-05 API Gateways | Kong, APISIX, Ambassador, Tyk, AWS API Gateway |
+| 64-06 API Monetization | Tiers, Metering, Billing, Developer Portal |
+| 64-07 API Governance | Style Guides, Spectral Linting, Breaking Change Detection |
+| 64-08 API Documentation Portals | Redoc, Stoplight, Docusaurus, Dev Portal |
+| 64-09 API Contracts | Consumer-Driven Contracts, Pact Broker |
+| 64-10 gRPC Advanced | Streaming, Interceptors, Deadlines, Reflection, Load Balancing |
+
+**Project:** Federated GraphQL + AsyncAPI + API Gateway + Contract Tests
+
+---
+
+## 📚 Module 65 — Search (Advanced)
+
+| Sub-Module | Topics |
+|------------|--------|
+| 65-01 OpenSearch | Fork, Compatibility, Migration from Elasticsearch |
+| 65-02 Vector Search | Embeddings, k-NN, HNSW, IVF, PQ |
+| 65-03 Hybrid Search | BM25 + Vector, RRF, Reranking |
+| 65-04 Relevancy Tuning | Boost, Function Score, Learning to Rank |
+| 65-05 Search Analytics | Query Logs, CTR, Zero-Result Queries |
+| 65-06 Synonym & Analyzer | Custom Analyzers, Synonyms, Stemming, Stop Words |
+| 65-07 Index Lifecycle | ILM, Hot/Warm/Cold, Rollover, Shrink, Force Merge |
+| 65-08 Cross-Cluster Search | CCS, Remote Clusters, Federation |
+| 65-09 Observability Search | Logs, Metrics, Traces Storage, Retention |
+
+**Project:** Hybrid Search with Elasticsearch + Vector + Reranker
+
+---
+
+## 📚 Module 66 — Build & Tooling Deep Dive
+
+| Sub-Module | Topics |
+|------------|--------|
+| 66-01 Maven Deep Dive | POM, Parent POM, BOM, Profiles, Plugins, Lifecycle, Enforcer |
+| 66-02 Gradle Deep Dive | Groovy vs Kotlin DSL, Build Cache, Configuration Cache, Composite Builds |
+| 66-03 Monorepo Builds | Nx, Turborepo, Bazel, Remote Caching, Affected Builds |
+| 66-04 Dependency Management | Version Catalogs, Constraints, Dependency Locking |
+| 66-05 Static Analysis | SonarQube, Checkstyle, SpotBugs, PMD, ESLint, Biome |
+| 66-06 Code Formatting | Prettier, Google Java Format, Spotless, EditorConfig |
+| 66-07 Pre-Commit Hooks | Husky, lint-staged, pre-commit, Lefthook |
+| 66-08 Code Generation | OpenAPI Generator, jOOQ Codegen, Protobuf, MapStruct |
+| 66-09 Release Automation | semantic-release, changesets, JReleaser, GoReleaser |
+
+**Project:** Enterprise Monorepo with Nx + Remote Cache + Release Automation
+
+---
+
+## 🎓 Senior Engineer Competency Matrix
+
+| Competency | Junior | Mid | Senior | Lead / Staff |
+|------------|--------|-----|--------|--------------|
+| Coding | Features | Modules | Systems | Platforms |
+| Design | Local | Component | System | Cross-Org |
+| Testing | Unit | Integration | Strategy | Culture |
+| Architecture | Patterns | Clean/Hex | DDD/MS | Enterprise |
+| System Design | Components | Scaling | Trade-offs | Strategy |
+| DevOps | Docker | CI/CD | K8s/Cloud | Platform |
+| Security | OWASP | Auth | Threat Model | Governance |
+| AI | Prompting | RAG | Agents/Prod | AI Strategy |
+| Leadership | Self | Mentor | Team Lead | Org Impact |
+| Communication | Tasks | Docs | RFCs/ADRs | Vision |
+
+---
+
+## 🎯 Capstone Projects
+
+| # | Project | Stack |
+|---|---------|-------|
+| 1 | E-Commerce Platform | React + Spring Boot + PostgreSQL + Kafka + Redis + Docker |
+| 2 | Project Management Tool | Next.js + Node.js + MongoDB + WebSocket + AWS |
+| 3 | Real-Time Analytics Dashboard | React + Spring Boot + Kafka + ClickHouse + Grafana |
+| 4 | AI-Powered HR System | React + Spring Boot + Spring AI + pgvector + OpenAI |
+| 5 | Microservices Banking System | Spring Cloud + Kafka + Kubernetes + PostgreSQL + Redis |
+| 6 | Multi-Tenant SaaS Platform | Next.js + NestJS + PostgreSQL + Stripe + Terraform |
+| 7 | System Design Portfolio | 10 Real-World System Designs with Diagrams + Trade-offs |
+
+---
+
+## 📖 Recommended Resources
+
+### Books
+
+| Category | Title |
+|----------|-------|
+| Design | "Don't Make Me Think" — Steve Krug |
+| Design | "The Design of Everyday Things" — Don Norman |
+| Clean Code | "Clean Code" — Robert C. Martin |
+| Architecture | "Clean Architecture" — Robert C. Martin |
+| Distributed | "Designing Data-Intensive Applications" — Kleppmann |
+| Java | "Effective Java" — Joshua Bloch |
+| Spring | "Spring in Action" — Craig Walls |
+| Microservices | "Building Microservices" — Sam Newman |
+| System Design | "System Design Interview" — Alex Xu (Vol 1 & 2) |
+| DDD | "Domain-Driven Design" — Eric Evans |
+| Patterns | "Design Patterns" — Gang of Four |
+| Refactoring | "Refactoring" — Martin Fowler |
+
+### Platforms
+
+| Platform | Focus |
+|----------|-------|
+| LeetCode | DSA |
+| Baeldung | Spring |
+| Frontend Masters | Frontend |
+| Figma Learn | Design |
+| Udemy / Coursera | Courses |
+| YouTube | FreeCodeCamp, Traversy, Amigoscode |
+| System Design Primer | GitHub |
+| Refactoring Guru | Design Patterns |
+
+---
+
+## 📅 Suggested Learning Path (Extended)
+
+| Phase | Duration | Focus |
+|-------|----------|-------|
+| 0 | 2 weeks | Design Thinking + Figma + UX |
+| 1 | 4 weeks | Web Fundamentals (HTML, CSS, JS, TS) |
+| 2 | 6 weeks | React + Next.js |
+| 3 | 4 weeks | Node.js + Express + MongoDB |
+| 4 | 8 weeks | Core Java + DSA |
+| 5 | 4 weeks | SQL + JDBC + Hibernate |
+| 6 | 8 weeks | Spring Ecosystem |
+| 7 | 4 weeks | WebSocket + Kafka + Redis |
+| 8 | 4 weeks | Design Patterns + System Design |
+| 9 | 6 weeks | Architecture + Microservices |
+| 10 | 3 weeks | Testing |
+| 11 | 4 weeks | Docker + K8s + CI/CD + Cloud |
+| 12 | 3 weeks | AI Integration |
+| 13 | 2 weeks | Agile & Project Management |
+| 14 | 2 weeks | Engineering Communication |
+| 15 | 3 weeks | Frontend Architecture + Tooling |
+| 16 | 3 weeks | Reactive Backend + Migrations |
+| 17 | 3 weeks | Advanced DB + Multi-Tenancy |
+| 18 | 3 weeks | SRE + Incident Management |
+| 19 | 3 weeks | DevOps Platform + Cloud Advanced |
+| 20 | 3 weeks | Security Advanced + Compliance |
+| 21 | 3 weeks | Testing + Messaging + Integrations |
+| 22 | 4 weeks | Architecture + AI Production |
+| 23 | 2 weeks | Observability + API + Search Advanced |
+| 24 | 3 weeks | Career & Interview Prep |
+| **Total** | **~100 weeks** | **Senior Full Stack Engineer (Cloud & AI)** |
+
+---
+
+## 🏆 Skills Matrix
+
+| Skill Area | Beginner | Intermediate | Advanced |
+|------------|----------|--------------|----------|
+| Design | Wireframes | Figma Prototypes | Design Systems |
+| Frontend | HTML/CSS/JS | React/TS | Next.js/Perf |
+| Backend | Node/Express | Spring Boot | Microservices |
+| Database | SQL CRUD | JPA/Indexing | Distributed/Sharding |
+| Architecture | MVC | Clean/Hexagonal | DDD/Microservices |
+| Design Patterns | Creational | Structural/Behavioral | Architectural |
+| System Design | Components | Scaling/Trade-offs | Real-World Case Studies |
+| DevOps | Git/Docker | CI/CD | Kubernetes/Cloud |
+| AI | Prompting | RAG | Agents/Production |
+| Security | OWASP basics | OAuth2/JWT | AppSec hardening |
+
+---
+
+## ✅ Master Coverage Checklist
+
+| # | Area | Covered |
+|---|------|---------|
+| 1 | Design Thinking + Figma + UX | ✅ |
+| 2 | Internet, HTML, CSS, JS, TS | ✅ |
+| 3 | React + Next.js + Frontend Arch | ✅ |
+| 4 | Node.js + Express + MongoDB | ✅ |
+| 5 | Core Java + DSA + J2EE | ✅ |
+| 6 | SQL + JDBC + Hibernate + JPA | ✅ |
+| 7 | Spring Ecosystem + Security | ✅ |
+| 8 | Testing (All Levels) | ✅ |
+| 9 | WebSocket + Kafka + RabbitMQ | ✅ |
+| 10 | Redis + Elasticsearch + Caching | ✅ |
+| 11 | Design Patterns + Principles | ✅ |
+| 12 | Clean + Hexagonal + DDD | ✅ |
+| 13 | System Design + Microservices | ✅ |
+| 14 | Distributed Systems | ✅ |
+| 15 | API Design (REST/GraphQL/gRPC) | ✅ |
+| 16 | Docker + Kubernetes | ✅ |
+| 17 | CI/CD + GitOps + Platform Eng | ✅ |
+| 18 | Cloud (AWS/GCP/Azure) | ✅ |
+| 19 | Observability + SRE | ✅ |
+| 20 | Performance Engineering | ✅ |
+| 21 | AppSec + Compliance | ✅ |
+| 22 | AI / LLM / RAG / Agents | ✅ |
+| 23 | Agile + Project Management | ✅ |
+| 24 | Engineering Communication | ✅ |
+| 25 | Career + Interview Prep | ✅ |
+| 26 | Frontend Advanced Tooling | ✅ |
+| 27 | Reactive Backend + Batch | ✅ |
+| 28 | DB Migrations + Advanced DBA | ✅ |
+| 29 | Multi-Tenancy | ✅ |
+| 30 | Payments + Notifications | ✅ |
+| 31 | Build & Tooling Deep Dive | ✅ |
+| 32 | Git Workflow (Fork→PR→Merge) | ✅ |
+
+---
+
+## 📝 License
+
+This syllabus is open-source and available under the MIT License.
+
+---
+
+**Happy Learning! 🚀**
+**Brijesh Nishad (Full Stack Engineer — Cloud & AI)**

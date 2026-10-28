@@ -1,0 +1,118 @@
+1.1. Introduction to JavaScript
+What is JavaScript?
+JavaScript vs. other programming languages
+Setting up the environment (Console, Browser, and Node.js)
+Writing and executing JavaScript
+Linking JavaScript to HTML
+=================================================
+1.2. JavaScript Basics
+Variables and Constants (var, let, const)
+Data Types (String, Number, Boolean, Undefined, Null, Symbol, BigInt)
+Operators (Arithmetic, Assignment, Comparison, Logical, Bitwise, Ternary)
+Type Conversion and Coercion
+Comments in JavaScript
+===================================================
+1.3. Control Flow (Conditionals & Loops)
+If-else statements
+Switch-case statement
+Loops: for, while, do-while
+break and continue statements
+======================================================
+2. Functions in JavaScript
+Function Declaration & Function Expression
+Arrow Functions (=>)
+Default Parameters
+Higher-Order Functions
+Callbacks and Closures
+======================================================
+3. JavaScript Arrays & Objects
+Creating and manipulating arrays
+Array methods: map(), filter(), reduce(), forEach(), find(), some(), every()
+Objects and properties
+Object methods (Object.keys(), Object.values(), Object.entries())
+Nested objects & arrays
+Destructuring
+==========================================================
+4. JavaScript DOM Manipulation
+Selecting Elements (getElementById, querySelector, querySelectorAll)
+Modifying Elements (innerHTML, textContent, classList, setAttribute)
+Event Listeners (click, mouseover, keydown, keyup)
+Creating and Removing Elements (appendChild, removeChild, createElement)
+============================================================
+5. JavaScript Events & Event Handling
+Event Propagation (Bubbling & Capturing)
+addEventListener() and removeEventListener()
+Preventing Default Actions (preventDefault())
+Debouncing and Throttling
+==============================================================
+6. Asynchronous JavaScript
+Callbacks
+Promises (resolve, reject, then, catch, finally)
+Async/Await
+Error Handling (try-catch)
+===============================================================
+7. JavaScript ES6+ Features
+Template Literals
+Spread and Rest Operators (...)
+Destructuring Arrays and Objects
+let, const, and Block Scope
+Modules (import & export)
+Optional Chaining (?.)
+=================================================================
+8. JavaScript Object-Oriented Programming (OOP)
+Prototypes and Prototype Inheritance
+Constructor Functions
+Classes and Objects (class, constructor, extends, super)
+Encapsulation, Abstraction, Inheritance, Polymorphism
+=================================================================
+9. JavaScript Error Handling & Debugging
+try, catch, finally
+Throwing Errors (throw new Error())
+Debugging with Browser DevTools
+Logging (console.log(), console.warn(), console.error())
+=================================================================
+10. JavaScript Fetch API & AJAX
+What is AJAX?
+Fetch API (fetch(), then(), catch())
+Making GET and POST requests
+Handling JSON data (JSON.stringify(), JSON.parse())
+================================================================
+11. Local Storage, Session Storage, and Cookies
+localStorage vs sessionStorage
+Storing and retrieving data (setItem(), getItem(), removeItem(), clear())
+Working with Cookies (document.cookie)
+=================================================================
+12. JavaScript Regular Expressions (Regex)
+Basic syntax (/pattern/flags)
+Common methods (test(), match(), replace(), search(), split())
+=====================================================================
+
+13. JavaScript Date & Time
+Working with Date objects
+Formatting dates (toDateString(), toISOString(), toLocaleString())
+Manipulating dates (getFullYear(), setFullYear(), getMonth(), setMonth())
+========================================================================
+14. JavaScript Functional Programming (Advanced)
+Pure Functions
+First-Class & Higher-Order Functions
+Recursion
+Currying
+Memoization
+============================================================
+15. JavaScript Design Patterns (Advanced)
+Singleton Pattern
+Factory Pattern
+Observer Pattern
+Module Pattern
+==============================================================
+12. JavaScript Project Development (Hands-On Practice)
+Building a To-Do List App
+Fetching Data from an API (Weather App, Movie App)
+Building a Simple Calculator
+Interactive Form Validation
+===============================================================
+13. JavaScript Frameworks & Libraries (Optional)
+Introduction to JavaScript frameworks (React.js, Vue.js, Angular.js)
+Basics of jQuery
+How to choose a framework
+=================================================================

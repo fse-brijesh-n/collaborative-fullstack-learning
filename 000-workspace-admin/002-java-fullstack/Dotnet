@@ -1,0 +1,48 @@
+
+## Advanced Java → .NET & C# Fundamentals
+
+- Collection : Collections & LINQ,
+- JDBC : ADO.NET,
+- J2EE : ASP.NET Core Basics,
+- Banking Web App : Banking Web App in ASP.NET Core
+
+
+## Hibernate Framework → Entity Framework Core
+
+- hbm & cfg file : DbContext & Fluent API Configuration,
+- CRUD Operation : CRUD Operation,
+- Association : Relationships (One-to-One, One-to-Many, Many-to-Many),
+- Inheritance : Table Per Hierarchy / Table Per Type,
+- Caching : Change Tracking & EF Caching
+
+## Spring Framework → ASP.NET Core Framework
+
+- IoC : Built-in IoC Container,
+- DI : DI (AddScoped/AddTransient/AddSingleton),
+- Autowiring : Constructor Injection,
+- Spring-JDBC : ADO.NET,
+- Spring-ORM : Entity Framework Core,
+- Spring-MVC : ASP.NET Core MVC)
+
+## Spring Boot → ASP.NET Core Advanced
+
+- @SpringBootApplication : Program.cs / Startup Initialization,
+- CLR : .NET CLR,
+- DI : .NET Dependency Injection,
+- Autowiring : Constructor Injection,
+- JSP : Razor Views,
+- JDBC : ADO.NET,
+- Hibernate : Entity Framework Core,
+- Data JPA : Repository Pattern / EF Core Repositories,
+- MVC : ASP.NET Core MVC,
+- Integrate JSP & Thymeleaf : Integrate Razor & View Components,
+- Rest API : ASP.NET Core Web API,
+- Web Services : gRPC / SOAP via WCF Core,
+- Microservices : .NET Microservices (Minimal API, gRPC, Docker),
+- Spring Security : .NET Identity + JWT Authentication,
+- AOP : Filters, Middleware, Attributes)
+
+```
+Designed by Mr.Brijesh(AI Enabled Java Developer)
+
+```

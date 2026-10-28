@@ -1,0 +1,111 @@
+# CI-CD Build and Deploy (Azure DevOps)
+#
+# "Single-click" deploy: use the "Run pipeline" button in Azure DevOps, or push to main.
+# Only runs its build/deploy steps when ci-pipeline.properties (repo root) sets
+# ci.pipeline=azure-devops - otherwise it no-ops so it never conflicts with the
+# GitHub Actions pipeline (.github/workflows/ci-cd.yml).
+#
+# Required pipeline variables (configure as secret variables in the Azure DevOps UI,
+# or in a variable group linked to this pipeline):
+#   GHCR_USERNAME - a GitHub username
+#   GHCR_TOKEN    - a GitHub Personal Access Token with `write:packages` scope
+#                   (images are pushed to ghcr.io so the same registry is used
+#                   regardless of which pipeline built them)
+#   IMAGE_OWNER   - e.g. "your-github-username/central-parent"
+
+trigger:
+  branches:
+    include:
+      - main
+
+pr: none
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  registry: ghcr.io
+
+stages:
+  - stage: SelectPipeline
+    jobs:
+      - job: CheckSelector
+        steps:
+          - checkout: self
+          - script: |
+              VALUE=$(grep -oP '(?<=^ci\.pipeline=).+' ci-pipeline.properties | tr -d '[:space:]')
+              echo "Configured ci.pipeline = $VALUE"
+              echo "##vso[task.setvariable variable=selectedPipeline;isOutput=true]$VALUE"
+            name: check
+            displayName: "Read ci.pipeline property from ci-pipeline.properties"
+
+  - stage: BuildTestDeploy
+    dependsOn: SelectPipeline
+    condition: eq(stageDependencies.SelectPipeline.CheckSelector.outputs['check.selectedPipeline'], 'azure-devops')
+    jobs:
+      - job: BuildAndDeploy
+        steps:
+          - checkout: self
+
+          - task: JavaToolInstaller@0
+            displayName: "Install JDK 17"
+            inputs:
+              versionSpec: '17'
+              jdkArchitectureOption: x64
+              jdkSourceOption: PreInstalled
+
+          # Single command builds AND tests the whole multi-module reactor. Every module
+          # has unit tests (mocked ports) and full Spring Boot integration tests (real
+          # embedded server + H2 + JWT filter) - a failing test fails this step and the
+          # whole pipeline. See docs/10-authentication-and-tokens.md and
+          # docs/09-troubleshooting.md.
+          - script: mvn -B clean install
+            displayName: "Build and test all modules (single command)"
+
+          - script: echo "$(GHCR_TOKEN)" | docker login ghcr.io -u "$(GHCR_USERNAME)" --password-stdin
+            displayName: "Log in to GitHub Container Registry"
+
+          - script: |
+              set -e
+              SHA_TAG=$(Build.SourceVersion)
+              SHA_TAG=${SHA_TAG:0:7}
+              for svc in eureka-server api-gateway auth-service batch-processing-service document-service logging-service; do
+                IMAGE="$(registry)/$(IMAGE_OWNER)/$svc"
+                echo "Building $IMAGE"
+                docker build -f "$svc/Dockerfile" -t "$IMAGE:latest" -t "$IMAGE:$SHA_TAG" .
+                docker push "$IMAGE:latest"
+                docker push "$IMAGE:$SHA_TAG"
+              done
+            displayName: "Build & push service images"
+
+          - script: docker compose up -d --build
+            displayName: "Deploy stack with Docker Compose (self-contained demo on agent)"
+
+          - script: |
+              for i in $(seq 1 20); do
+                if curl -sf http://localhost:8761/actuator/health > /dev/null; then
+                  echo "Eureka is up"
+                  exit 0
+                fi
+                echo "Waiting for Eureka... ($i/20)"
+                sleep 5
+              done
+              echo "Eureka did not become healthy in time" >&2
+              exit 1
+            displayName: "Wait for Eureka to become healthy"
+
+          - script: |
+              sleep 15
+              curl -sf http://localhost:8080/actuator/health
+              curl -sf -X POST http://localhost:8080/auth/api/auth/register \
+                -H "Content-Type: application/json" \
+                -d '{"username":"ci-demo-user","password":"ci-demo-pass"}'
+            displayName: "Smoke test through API Gateway"
+
+          - script: docker compose ps
+            displayName: "Show running containers"
+            condition: always()
+
+          - script: docker compose down -v
+            displayName: "Tear down demo stack"
+            condition: always()

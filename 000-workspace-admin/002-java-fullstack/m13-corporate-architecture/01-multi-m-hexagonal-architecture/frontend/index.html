@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hexagonal Microservices - Demo Console</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Hexagonal Microservices Demo Console</h1>
+    <div class="gateway-config">
+      <label for="gatewayUrl">API Gateway URL</label>
+      <input id="gatewayUrl" type="text" value="http://localhost:8080" />
+      <span id="sessionStatus" class="status-pill status-pill--anon">Not logged in</span>
+    </div>
+  </header>
+
+  <main>
+    <nav class="tabs">
+      <button class="tab-button active" data-tab="auth">1. Auth</button>
+      <button class="tab-button" data-tab="batch">2. Batch Jobs</button>
+      <button class="tab-button" data-tab="documents">3. Documents</button>
+      <button class="tab-button" data-tab="logs">4. Logs</button>
+    </nav>
+
+    <!-- AUTH TAB -->
+    <section id="tab-auth" class="tab-panel active">
+      <div class="grid">
+        <form id="registerForm" class="card">
+          <h2>Register</h2>
+          <label>Username <input name="username" required minlength="1" /></label>
+          <label>Password <input name="password" type="password" required minlength="4" /></label>
+          <button type="submit">Register</button>
+        </form>
+
+        <form id="loginForm" class="card">
+          <h2>Login</h2>
+          <label>Username <input name="username" required /></label>
+          <label>Password <input name="password" type="password" required /></label>
+          <button type="submit">Login (get JWT token)</button>
+        </form>
+      </div>
+      <pre id="authOutput" class="output"></pre>
+    </section>
+
+    <!-- BATCH TAB -->
+    <section id="tab-batch" class="tab-panel">
+      <div class="grid">
+        <form id="triggerJobForm" class="card">
+          <h2>Trigger a job</h2>
+          <label>Job name <input name="jobName" placeholder="nightly-import" required /></label>
+          <button type="submit">Trigger job</button>
+        </form>
+        <div class="card">
+          <h2>Job runs</h2>
+          <label>Filter by job name (optional) <input id="jobNameFilter" placeholder="nightly-import" /></label>
+          <button id="refreshJobs">Refresh list</button>
+        </div>
+      </div>
+      <pre id="batchOutput" class="output"></pre>
+    </section>
+
+    <!-- DOCUMENTS TAB -->
+    <section id="tab-documents" class="tab-panel">
+      <div class="grid">
+        <form id="uploadDocForm" class="card">
+          <h2>Upload a document</h2>
+          <label>File <input name="file" type="file" required /></label>
+          <button type="submit">Upload</button>
+        </form>
+        <div class="card">
+          <h2>Documents</h2>
+          <button id="refreshDocs">Refresh list</button>
+          <div id="documentsList" class="list"></div>
+        </div>
+      </div>
+      <pre id="documentsOutput" class="output"></pre>
+    </section>
+
+    <!-- LOGS TAB -->
+    <section id="tab-logs" class="tab-panel">
+      <div class="grid">
+        <form id="postLogForm" class="card">
+          <h2>Post a log entry</h2>
+          <label>Source service <input name="sourceService" placeholder="auth-service" required /></label>
+          <label>Level
+            <select name="level">
+              <option>DEBUG</option>
+              <option selected>INFO</option>
+              <option>WARN</option>
+              <option>ERROR</option>
+            </select>
+          </label>
+          <label>Message <input name="message" placeholder="Something happened" required /></label>
+          <button type="submit">Post log</button>
+        </form>
+        <div class="card">
+          <h2>Logs</h2>
+          <label>Filter by source service (optional) <input id="sourceServiceFilter" placeholder="auth-service" /></label>
+          <button id="refreshLogs">Refresh list</button>
+        </div>
+      </div>
+      <pre id="logsOutput" class="output"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Every call in this console goes through the API Gateway (StripPrefix routing) using the
+      JWT issued by <code>auth-service</code>. Register/login are the only public endpoints -
+      everything else requires <code>Authorization: Bearer &lt;token&gt;</code>.
+      See <code>docs/10-authentication-and-tokens.md</code> and <code>docs/12-frontend.md</code>.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

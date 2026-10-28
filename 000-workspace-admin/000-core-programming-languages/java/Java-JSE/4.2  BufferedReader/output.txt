@@ -1,0 +1,10 @@
+Content from 'input.txt':
+ok
+hello
+yes
+iam brijesh
+
+ASCII Value of the character: 49
+String entered: 3423
+Number entered using BufferedReader: 675
+Number entered using Scanner: 345
