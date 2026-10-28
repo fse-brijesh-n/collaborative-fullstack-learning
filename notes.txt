@@ -1,4 +1,4 @@
-# WELCOME TO MY CODE
+# WELCOME TO MY Workspace
 # Node.js Notes
 
 ## What is Node.js?
