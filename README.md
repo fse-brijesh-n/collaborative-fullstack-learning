@@ -22,6 +22,66 @@ Observability → Performance Engineering → AppSec → AI Integration
 
 This repository is a **comprehensive Full Stack Engineer training and development roadmap** designed to build production-grade skills across the entire software engineering lifecycle.
 
+## 🔧 Troubleshooting & Quick Fixes
+
+> These are the most common issues encountered in large learning repositories and the exact fixes that work in Windows-based Git setups.
+
+### 1) `git add .` fails with `Filename too long`
+
+This usually happens because generated folders such as `.metadata`, `target`, `node_modules`, or very deep project paths are being indexed.
+
+#### Fix
+
+Add these patterns to `.gitignore`:
+
+```gitignore
+START-COPY-THIS-FOLDER-AND-PASTE-RENAME-TO-YOUR-WORKSPACE/
+**/node_modules/
+**/target/
+**/.metadata/
+**/.settings/
+**/*.srt
+```
+
+Also enable Windows long-path support:
+
+```bash
+git config --global core.longpaths true
+```
+
+Then run:
+
+```bash
+git add .
+```
+
+### 2) Git push disconnects or hangs during upload
+
+Large repos can fail with errors like `RPC failed; curl 55 Send failure: Connection was aborted`.
+
+#### Fix
+
+Increase the HTTP post buffer:
+
+```bash
+git config --global http.postBuffer 524288000
+git push -u origin HEAD:<branch-name>
+```
+
+### 3) `LF will be replaced by CRLF` warnings
+
+These warnings are usually harmless on Windows and do not block the commit or push.
+
+#### Fix
+
+If needed, normalize line endings with:
+
+```bash
+git config core.autocrlf false
+```
+
+---
+
 | Domain | Focus Areas |
 |--------|-------------|
 | Design | Design Thinking, UX Research, Figma, Wireframing, Prototyping |
