@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color:aliceblue">
+    
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addlanguage(langName)
+    {
+     const li=document.createElement('li')
+     li.innerHTML=`${langName}`
+document.querySelector('.language').
+appendChild(li)
+    }
+    addlanguage("python")
+    addlanguage("c language")
+
+
+        function addoptilanguage(langName)
+    {
+     const li=document.createElement('li')
+     li.appendChild(document.createTextNode(langName))
+     document.querySelector('.language').appendChild(li)
+    }
+    addoptilanguage("go lang")
+    const secondlang=document.querySelector("li:nth-child(2)")
+    console.log(secondlang)
+    <!-- secondlang.innerHTML="mojo" -->
+    const newli=document.createElement('li')
+    newli.textContent="mojo"
+    secondlang.replaceWith(newli)//  it ios user to replace the value
+    const firstlang=document.querySelector("li:first-child")
+    firstlang.outerHTML='<li>typescript</li>'
+     const lastlang=document.querySelector("li:last-child")
+    lastlang.remove()// ot is use to select language and delete it fast+
+</script>
+</html>

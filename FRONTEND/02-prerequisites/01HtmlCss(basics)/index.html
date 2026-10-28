@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Design</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <div class="navbar">
+        <div class="logo">Admission</div>
+        <div class="navitem">
+          <a href="index.html" class="menu">Home</a>
+          <a href="About.html" class="menu">About</a>
+          <a href="#" class="menu">Contact</a>
+          <a href="service.html" class="menu">Services</a>
+          <a href="login.html" class="menu">Login</a>
+        </div>
+      </div>
+
+      <!-- Banner -->
+      <div class="banner">
+        <img src="Banner.jpg" alt="register" />
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <!-- Form section -->
+        <div class="form-section">
+          <h2>Registration Form</h2>
+          <form>
+            <label for="name">Full Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              minlength="6"
+              required
+            />
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1" max="120" />
+
+            <button type="submit">Register</button>
+          </form>
+        </div>
+
+        <!-- Table section -->
+        <div class="table-section">
+          <h2>Data Table</h2>
+          <table border="1">
+            <caption>
+              Employee List
+            </caption>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Years</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <td colspan="2">Total Employees</td>
+                <td>3</td>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td>Alice</td>
+                <td>Development</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>Bob</td>
+                <td>Design</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td rowspan="2">Charlie</td>
+                <td>Marketing</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <!-- rowspan continues, no cell here -->
+                <td>Management</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p>&copy; 2026 MySite</p>
+      </div>
+    </div>
+  </body>
+</html>

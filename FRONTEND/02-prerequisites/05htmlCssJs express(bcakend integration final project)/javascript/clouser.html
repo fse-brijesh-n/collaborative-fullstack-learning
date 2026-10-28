@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:darkslategray;">
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+<script>
+ // function init()
+       // {
+            //let name="Mozilla";
+           // function displayName()
+            //{
+            //console.log(name)
+            //}
+            //displayName();
+       // }
+        //init(); 
+        // function outer()
+       // {
+           // let username="khushi"
+            //function inner(){
+                //console.log("inner",username)
+            //}
+            //function innertwo(){
+               // console.log("innertwo",username)
+           //console.log(secret)
+           // }
+           // inner()
+           // innertwo()
+        //}
+       // outer()
+        //console.log("too outer",username) 
+        // function makefun()
+        //{
+          //  const name="mozilla";
+            //function dispalyname()
+            //{
+              //  console.log(name)
+            //}
+            //return dispalyname;
+        //}
+        //const myfunc=makefun()
+        //myfunc(); 
+    </script>
+<script>
+    
+    function clickHandler(color)
+    {
+        // document.body.style.backgroundcolor=`${color}` 
+       return function()
+        {
+document.body.style.backgroundColor=`${color}`
+        }
+    }
+    document.getElementById('orange').onclick=clickHandler("orange")
+    
+    document.getElementById('green').onclick=clickHandler("green")
+    
+</script>
+</html>

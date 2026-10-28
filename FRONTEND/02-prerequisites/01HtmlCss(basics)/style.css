@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f5f5f5;
+
+}
+.container {
+    width: 100%;
+    padding: 0px;
+    background: #eeebeb;
+   
+}
+
+/* Navbar */
+.navbar {
+    height: 70px;
+    background: rgb(209, 213, 209);/* @media query*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0px;
+
+  
+}
+    
+.navbar .navitem{
+display: flex;
+justify-content:center;
+flex-direction: row;
+gap: 40px;
+}
+.navbar .logo{
+   font-family:cursive;
+   font-size: large;
+   font-style: italic;
+   color: #8B0000;
+   opacity:0.7;
+}
+
+.menu {
+    width: 80px;
+    height: 30px;
+    background:transparent;
+    text-align: center;
+    line-height: 32px;
+    color: rgb(206, 62, 22);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Banner */
+.banner {
+    height: 150px;
+    background: rgb(255, 249, 250);
+    margin-bottom: 10px;
+    margin-top:0px;
+    width: 100%;
+}
+.banner img{
+    height: 150px;
+    width:100vw ;
+}
+
+/* Content – remove fixed height so it grows */
+.content {
+    background: #f1f0f0;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+/* Form section */
+
+.form-section {
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-section h2 {
+    margin-bottom: 15px;
+}
+
+.form-section label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-section button {
+    padding: 10px 20px;
+    background: #8B0000;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Table section */
+.table-section {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.table-section h2 {
+    margin-bottom: 15px;
+}
+
+.table-section table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.table-section th,
+.table-section td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #999;
+}
+
+.table-section th {
+    background: #eee;
+}
+
+/* Footer */
+.footer {
+    height: 60px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #333;
+}
+/* Tablet and larger: side‑by‑side layout */
+@media (max-width: 768px) {
+  .navbar   {
+    height: 150px;
+    background:rgb(218, 216, 216);
+
+    flex-direction: column;
+width:100%;
+gap: 0px;
+
+}
+.navbar .navitem{
+        height: 150px;
+    background:rgb(218, 216, 216);
+
+    flex-direction: column;
+width:100%;
+gap: 0px;
+}
+.navbar .logo{
+    display: none;
+}
+.menu {
+    width: 100%;
+    
+    background: rgba(39, 38, 38, 0.753);
+  
+    opacity: 0.8;
+}
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+body{
+    padding: 0;
+
+}
+.menu{
+    text-align: left;
+    padding: 5px;
+}
+}
+

@@ -1,0 +1,23 @@
+const date = new Date();
+// console.log(date);
+// console.log(date.toString());
+// console.log(date.toLocaleDateString());
+// console.log(date.toDateString());
+// console.log(typeof date);
+// const newdate = new Date(2026, 0, 12, 5, 3);
+// console.log(newdate);
+// console.log(newdate.toDateString());
+// console.log(newdate.toLocaleDateString());
+// const mycreateddate = new Date("01-14-2023");
+// let mytimestamp = Date.now();
+// console.log(mytimestamp);
+// console.log(Math.floor(Date.now()));
+// console.log(mycreateddate.getTime());
+// console.log(mycreateddate.toLocaleString());
+console.log(Math.floor(Date.now() / 1000));
+const newdate = new Date();
+console.log(newdate);
+
+console.log(newdate.getTime());
+console.log(newdate.getFullYear());
+console.log(newdate.getDay());

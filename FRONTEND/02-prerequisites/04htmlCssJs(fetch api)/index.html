@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch API Example</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <h1>User Search</h1>
+    <form id="searchForm">
+      <label class="sr-only" for="searchInput">Search users</label>
+      <input id="searchInput" type="search" placeholder="Search by name" required>
+      <button type="submit">Search</button>
+    </form>
+    <p id="status" aria-live="polite"></p>
+    <section id="results" aria-live="polite"></section>
+  </main>
+</body>
+</html>

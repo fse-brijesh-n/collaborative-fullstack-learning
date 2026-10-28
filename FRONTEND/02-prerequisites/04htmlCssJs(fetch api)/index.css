@@ -1,0 +1,12 @@
+* { box-sizing: border-box; }
+
+body { margin: 0; padding: 40px 16px; font-family: Arial, sans-serif; background: #ecfccb; color: #1a2e05; }
+.app { max-width: 700px; margin: 0 auto; padding: 28px; background: #fff; border: 1px solid #bef264; border-radius: 8px; }
+form { display: flex; gap: 8px; }
+input { min-width: 0; flex: 1; padding: 10px; border: 1px solid #65a30d; border-radius: 4px; }
+button { padding: 10px 14px; border: 0; border-radius: 4px; background: #3f6212; color: #fff; cursor: pointer; }
+#status { min-height: 24px; color: #4d7c0f; }
+.user { margin: 8px 0; padding: 12px; background: #f7fee7; border-left: 4px solid #65a30d; }
+.user strong { display: block; margin-bottom: 4px; }
+.error { color: #b91c1c !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }

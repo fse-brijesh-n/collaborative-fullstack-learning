@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body style="background-color: black;color:aliceblue">
+    <div class="parent">
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day">thrusday</div>
+    </div>
+</body>
+<script>
+    const parent=document.querySelector('.parent')
+    console.log(parent)
+    console.log(parent.children)
+    console.log(parent.children[1].innerHTML)
+for(i=0;i<parent.children.length;i++)
+{
+    console.log(parent.children[i].innerHTML)
+}
+parent.children[1].style.color="orange"
+// console.log(parent.firstElementChild)
+//console.log(parent.lastElementChild) 
+const dayone=document.querySelector('.day')
+console.log(dayone) // it is return first day monday
+// console.log(dayone.parentElement)//it provide parent node all node like mon-thru tak
+//console.log(dayone.nextElementSibling) //it probide next element 
+</script>
+</html>

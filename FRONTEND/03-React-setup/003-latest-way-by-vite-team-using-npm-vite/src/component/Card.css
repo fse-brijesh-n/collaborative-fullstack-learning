@@ -1,0 +1,74 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(
+    145deg,
+    #040404 10%,
+    #1d1d1e 50%,
+    #0d1f3a 100%
+  );
+}
+
+.card {
+  height: 153px;
+  width: 230px;
+  border: 0.5px solid #b9bcc1;
+  border-radius: 0.9rem;
+  background-color: transparent;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 1.5rem;
+  color: white;
+  gap: 0.1rem;
+}
+
+.bankname {
+  display: flex;
+  justify-content: flex-end;
+  font-size: small;
+}
+
+.cardno {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.validity {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.till {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sign {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  text-align: right;
+}
+
+.chip {
+  display: flex;
+  gap: 1rem;
+}
+
+.chip img {
+  height: 30px;
+  width: 40px;
+  object-fit: contain;
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>fetch api</h1>
+    <div class="navbar">
+      <div class="logo">
+        <p>Great House</p>
+      </div>
+      <div class="menu">
+        <li>About</li>
+        <li>Sectors</li>
+        <li>Service</li>
+        <li>Projects</li>
+        <li>Contacts</li>
+      </div>
+      <div class="contactno">+1[234]5678900</div>
+    </div>
+
+    <div class="hero">
+      <div class="left">
+        <div class="text">
+          We Deliver High-Quality <br />
+          Engineering Projects.
+        </div>
+        <div class="btn">
+          <button id="req" value="garib">Request A quote</button>
+          <button id="learn" value="tu sahi me garib hai mazak se hatke">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Quote Form -->
+      <form class="quote-form" id="quoteForm">
+        <h2>WELCOME</h2>
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required /><br />
+        <label for="email">Email_id</label>
+        <input type="email" name="email" placeholder="Enter your email-id" required /><br />
+        <label for="phone">Phone</label>
+        <input type="tel" name="phone" placeholder="Enter your phone" required maxlength="10" /><br />
+        <label for="permanentaddres">Permanent address</label>
+        <input type="text" name="permanentaddres" placeholder="Enter your permanent address" required /><br />
+        <label for="requirement">Requirement</label>
+        <textarea name="requirement" required></textarea><br />
+        <button type="submit" id="submit">Submit</button>
+      </form>
+
+      <!-- Table container to display submitted data -->
+      <div id="tableContainer" class="table-container" style="display: none;"></div>
+    </div>
+
+    <div class="footer">
+      <h1>@khushi sharma</h1>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

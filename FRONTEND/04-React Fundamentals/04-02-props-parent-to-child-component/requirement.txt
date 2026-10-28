@@ -1,0 +1,1 @@
+props :-props is manly use for pass the argument data 
