@@ -1,0 +1,298 @@
+# Mongoose Notes
+
+## What is Mongoose?
+Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a schema-based solution to model application data, enabling robust data validation, relationships, and query building.
+
+---
+
+## Key Features
+1. **Schemas**: Define the structure and validation of documents.
+2. **Models**: Interface for creating, reading, updating, and deleting documents.
+3. **Middleware**: Logic that runs before or after database operations.
+4. **Plugins**: Extend Mongoose functionality.
+5. **Built-in Validation**: Ensure data integrity.
+
+---
+
+## Installation
+
+```bash
+npm install mongoose
+```
+
+---
+
+## Connecting to MongoDB
+
+```javascript
+const mongoose = require('mongoose');
+
+const dbURI = 'mongodb://127.0.0.1:27017/moviesdb';
+
+mongoose.connect(dbURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Connection error:'));
+db.once('open', () => {
+  console.log('Connected to MongoDB');
+});
+```
+
+---
+
+## Schemas and Models
+
+### Defining a Schema
+
+```javascript
+const mongoose = require('mongoose');
+
+const movieSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  genre: { type: String },
+  releaseYear: { type: Number, min: 1900 },
+  director: { type: String },
+  isAvailable: { type: Boolean, default: true }
+});
+```
+
+### Creating a Model
+
+```javascript
+const Movie = mongoose.model('Movie', movieSchema);
+```
+
+---
+
+## CRUD Operations
+
+### Create
+
+```javascript
+const newMovie = new Movie({
+  title: 'Inception',
+  genre: 'Sci-Fi',
+  releaseYear: 2010,
+  director: 'Christopher Nolan'
+});
+
+newMovie.save()
+  .then(() => console.log('Movie saved'))
+  .catch(err => console.error(err));
+```
+
+### Read
+
+#### Find All
+```javascript
+Movie.find()
+  .then(movies => console.log(movies))
+  .catch(err => console.error(err));
+```
+
+#### Find by Condition
+```javascript
+Movie.findOne({ title: 'Inception' })
+  .then(movie => console.log(movie))
+  .catch(err => console.error(err));
+```
+
+### Update
+
+```javascript
+Movie.updateOne({ title: 'Inception' }, { $set: { genre: 'Thriller' } })
+  .then(result => console.log(result))
+  .catch(err => console.error(err));
+```
+
+### Delete
+
+```javascript
+Movie.deleteOne({ title: 'Inception' })
+  .then(result => console.log(result))
+  .catch(err => console.error(err));
+```
+
+---
+
+## Middleware
+
+### Pre-save Middleware
+
+```javascript
+movieSchema.pre('save', function(next) {
+  console.log('Before saving the movie');
+  next();
+});
+```
+
+### Post-save Middleware
+
+```javascript
+movieSchema.post('save', function(doc) {
+  console.log(`${doc.title} has been saved.`);
+});
+```
+
+---
+
+## Plugins
+
+Mongoose allows the use of plugins to extend its functionality.
+
+### Example
+
+```javascript
+function timestampPlugin(schema) {
+  schema.add({
+    createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now }
+  });
+
+  schema.pre('save', function(next) {
+    this.updatedAt = Date.now();
+    next();
+  });
+}
+
+movieSchema.plugin(timestampPlugin);
+```
+
+---
+
+## Relationships
+
+### Referencing Documents
+
+```javascript
+const actorSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  age: { type: Number }
+});
+
+const Actor = mongoose.model('Actor', actorSchema);
+
+const movieSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  cast: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Actor' }]
+});
+
+const Movie = mongoose.model('Movie', movieSchema);
+```
+
+### Populating References
+
+```javascript
+Movie.findOne({ title: 'Inception' }).populate('cast')
+  .then(movie => console.log(movie))
+  .catch(err => console.error(err));
+```
+
+---
+
+## Validation
+
+### Custom Validation
+
+```javascript
+const movieSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    validate: {
+      validator: function(value) {
+        return value.length > 2;
+      },
+      message: 'Title must be longer than 2 characters.'
+    }
+  }
+});
+```
+
+---
+
+## Error Handling
+
+### Handling Validation Errors
+
+```javascript
+const newMovie = new Movie({ title: 'A' });
+
+newMovie.save()
+  .catch(err => {
+    if (err.name === 'ValidationError') {
+      console.error('Validation Error:', err.message);
+    } else {
+      console.error('Error:', err);
+    }
+  });
+```
+
+---
+
+## Tips and Best Practices
+1. Always validate data at both the application and database levels.
+2. Use lean queries (`.lean()`) for performance when only reading data.
+3. Keep schemas and models modular and reusable.
+4. Use `mongoose.connect` with proper options for production environments (e.g., SSL).
+5. Regularly update Mongoose to benefit from new features and fixes.
+
+---
+
+## Theory Notes
+
+### Mongoose Overview:
+Mongoose is an Object Data Modeling (ODM) library specifically designed for MongoDB and Node.js applications. It simplifies data manipulation by providing schema-based models and seamless integration with MongoDB's features.
+
+#### Key Concepts:
+
+1. **Schema:**  
+   A blueprint defining the structure, data types, and validations of documents stored in MongoDB collections. It enforces consistency in data storage.
+
+2. **Model:**  
+   A constructor compiled from the schema. It provides an interface for interacting with the database, allowing CRUD operations and data validation.
+
+3. **Middleware:**  
+   Functions executed during specific stages of query execution or document lifecycle (e.g., pre-save, post-remove).
+
+4. **Relationships:**  
+   Mongoose supports relationships between documents using references (`ref`) or embedding sub-documents.
+
+5. **Plugins:**  
+   Extensions to add functionality to Mongoose schemas (e.g., timestamp plugins).
+
+---
+
+### Why Use Mongoose?
+
+- Simplifies database interactions.
+- Adds robust validation and type-checking at the application level.
+- Offers middleware to automate processes during database operations.
+- Handles relationships and population of referenced documents.
+- Provides methods and hooks for advanced customizations.
+
+---
+
+### Use Cases
+
+1. **Data Modeling:**  
+   Define structured and validated data models for applications.
+
+2. **API Development:**  
+   Use Mongoose models to streamline API endpoints with database operations.
+
+3. **Relationships Management:**  
+   Manage complex relationships between documents, such as user profiles and associated posts.
+
+4. **Validation:**  
+   Ensure data integrity by validating inputs at the schema level.
+
+---
+
+## Resources
+- [Mongoose Documentation](https://mongoosejs.com/docs/)
+- [Official GitHub Repository](https://github.com/Automattic/mongoose)
+- [Mongoose Plugins](https://plugins.mongoosejs.io/)
+

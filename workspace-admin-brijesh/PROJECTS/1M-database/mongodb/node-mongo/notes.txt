@@ -1,0 +1,188 @@
+MongoDB Notes
+
+What is MongoDB?
+
+MongoDB is a NoSQL database system that stores data in flexible, JSON-like documents, making it suitable for modern applications that require scalability and flexibility. Unlike traditional relational databases, MongoDB does not rely on predefined schemas and uses collections and documents instead of tables and rows.
+
+Key Concepts
+
+1. Database
+
+A container for collections. A MongoDB server can host multiple databases.
+
+2. Collection
+
+A grouping of MongoDB documents, equivalent to a table in a relational database.
+
+3. Document
+
+A record in a collection, represented as a JSON-like object with key-value pairs.
+
+4. Field
+
+A key-value pair in a document, similar to a column in a relational database.
+
+5. _id
+
+A unique identifier for each document. MongoDB automatically generates an ObjectId if not provided.
+
+Installation
+
+Installing MongoDB Locally
+
+Download: Visit the MongoDB Downloads page and select your OS.
+
+Install: Follow the installation instructions for your platform.
+
+Start MongoDB:
+
+Windows: Run mongod.exe from the installation directory.
+
+macOS/Linux: Run mongod in the terminal.
+
+Using MongoDB Atlas
+
+Sign up at MongoDB Atlas.
+
+Create a cluster.
+
+Connect to your cluster using the provided connection string.
+
+MongoDB Shell Commands
+
+Database Commands
+
+Show all databases:
+
+show dbs
+
+Use a database:
+
+use <database_name>
+
+Create or switch to a database:
+
+use <database_name>
+
+Collection Commands
+
+Show all collections:
+
+show collections
+
+Create a collection:
+
+db.createCollection("collection_name")
+
+CRUD Operations
+
+Insert
+
+Insert a single document:
+
+db.collection_name.insertOne({ key: "value" })
+
+Insert multiple documents:
+
+db.collection_name.insertMany([{ key1: "value1" }, { key2: "value2" }])
+
+Query
+
+Find all documents:
+
+db.collection_name.find()
+
+Find with a condition:
+
+db.collection_name.find({ key: "value" })
+
+Find a single document:
+
+db.collection_name.findOne({ key: "value" })
+
+Update
+
+Update a single document:
+
+db.collection_name.updateOne(
+  { key: "value" },
+  { $set: { key: "new_value" } }
+)
+
+Update multiple documents:
+
+db.collection_name.updateMany(
+  { key: "value" },
+  { $set: { key: "new_value" } }
+)
+
+Delete
+
+Delete a single document:
+
+db.collection_name.deleteOne({ key: "value" })
+
+Delete multiple documents:
+
+db.collection_name.deleteMany({ key: "value" })
+
+Indexes
+
+Indexes improve the performance of queries.
+
+Create an index:
+
+db.collection_name.createIndex({ key: 1 })
+
+View indexes:
+
+db.collection_name.getIndexes()
+
+Aggregation
+
+Aggregation processes data and returns computed results.
+
+Example:
+
+db.collection_name.aggregate([
+  { $match: { key: "value" } },
+  { $group: { _id: "$key", total: { $sum: 1 } } }
+])
+
+Backup and Restore
+
+Backup
+
+Export a collection:
+
+mongodump --db <database_name> --collection <collection_name> --out <path>
+
+Restore
+
+Import a collection:
+
+mongorestore --db <database_name> <path>
+
+MongoDB Compass
+
+A GUI tool for MongoDB to visualize data and manage collections easily. Download it from MongoDB Compass.
+
+Tips and Best Practices
+
+Use indexes to optimize query performance.
+
+Always validate and sanitize user inputs to prevent injection attacks.
+
+Use replica sets for high availability.
+
+Regularly back up your data.
+
+Use MongoDB's aggregation framework for complex queries and transformations.
+
+Resources
+
+MongoDB Documentation
+
+MongoDB University
+
+MongoDB Atlas
