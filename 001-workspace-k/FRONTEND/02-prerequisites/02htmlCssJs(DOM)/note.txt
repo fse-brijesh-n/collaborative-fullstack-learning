@@ -1,0 +1,94 @@
+HTML, CSS and JavaScript: DOM
+================================
+
+The DOM (Document Object Model) is the browser's JavaScript representation of
+an HTML document. JavaScript can select elements, read or change their content,
+change classes/styles, create elements, and remove elements.
+
+Important DOM methods and properties:
+- document.querySelector(".class")       Selects the first matching element.
+- document.querySelectorAll("li")         Selects all matching elements.
+- element.textContent                     Reads or changes text safely.
+- element.value                           Reads an input's value.
+- element.classList.add/remove/toggle    Changes CSS classes.
+- document.createElement("li")            Creates a new element.
+- element.appendChild(child)              Adds a child element.
+- element.remove()                        Removes an element.
+
+Complete example: dynamic task list
+-----------------------------------
+
+Save as index.html and open it in a browser.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM Task List</title>
+	<style>
+		body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 16px; }
+		form { display: flex; gap: 8px; }
+		input { flex: 1; padding: 10px; }
+		button { padding: 10px 14px; cursor: pointer; }
+		li { display: flex; justify-content: space-between; margin-top: 10px; padding: 10px; background: #f1f5f9; }
+		li.done span { text-decoration: line-through; color: #64748b; }
+		.delete { background: #fee2e2; border: 0; }
+	</style>
+</head>
+<body>
+	<h1>My Tasks</h1>
+	<form id="taskForm">
+		<input id="taskInput" type="text" placeholder="Enter a task" required>
+		<button type="submit">Add</button>
+	</form>
+	<p id="taskCount">0 tasks</p>
+	<ul id="taskList"></ul>
+
+	<script>
+		const taskForm = document.querySelector("#taskForm");
+		const taskInput = document.querySelector("#taskInput");
+		const taskList = document.querySelector("#taskList");
+		const taskCount = document.querySelector("#taskCount");
+
+		function updateCount() {
+			const count = taskList.children.length;
+			taskCount.textContent = `${count} task${count === 1 ? "" : "s"}`;
+		}
+
+		function createTask(text) {
+			const item = document.createElement("li");
+			const label = document.createElement("span");
+			const deleteButton = document.createElement("button");
+
+			label.textContent = text;
+			deleteButton.textContent = "Delete";
+			deleteButton.className = "delete";
+
+			label.addEventListener("click", () => item.classList.toggle("done"));
+			deleteButton.addEventListener("click", () => {
+				item.remove();
+				updateCount();
+			});
+
+			item.append(label, deleteButton);
+			taskList.appendChild(item);
+			updateCount();
+		}
+
+		taskForm.addEventListener("submit", (event) => {
+			event.preventDefault();
+			createTask(taskInput.value.trim());
+			taskInput.value = "";
+			taskInput.focus();
+		});
+	</script>
+</body>
+</html>
+```
+
+Practice:
+1. Add an edit button to each task.
+2. Add a button that removes all completed tasks.
+3. Store the task list in localStorage so it survives a page refresh.

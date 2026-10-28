@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Task List</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <h1>My Tasks</h1>
+    <form id="taskForm">
+      <label class="sr-only" for="taskInput">Task name</label>
+      <input id="taskInput" type="text" placeholder="Enter a task" required>
+      <button type="submit">Add</button>
+    </form>
+    <p id="taskCount">0 tasks</p>
+    <ul id="taskList"></ul>
+  </main>
+</body>
+</html>

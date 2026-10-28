@@ -1,0 +1,60 @@
+<!-- // in java scripts events are use for sequentially run the program -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body style="background-color: aqua;color:brown">
+     <h2>AMAZING IMAGE</h2>
+    <div>
+   
+    <ul id="images">
+        <li><img width="200px" id="photoshop" src="photo-1575936123452-b67c3203c357.avif"alt="photoshop"></li>
+         <li><img width="200px" id="photoclick" src="social-media-image-sizes.png"alt="photoclick"></li>
+          <li><img width="200px" id="engineer" src="10-Reasons-Why-You-Should-Become-A-Software-Engineer-(1).webp"alt="engineer"></li>
+  <li><a style="color:rgb(239, 239, 47);" href="https://www.youtube.com/watch?v=_ALUMTa8BAE&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=36" id="youtube">youtube</a></li>
+        </ul>
+        </div>
+</body>
+<script>
+   //document.getElementById('photoclick').onclick=function()
+   //{
+    //alert("photoclick onclick")
+   //}
+//document.getElementById('photoclick').addEventListener('click',function(){},false)
+// document.getElementById('photoclick').addEventListener('click',function(){
+  //  alert("photo on clicked")
+//}) 
+// document.getElementById('photoclick').addEventListener('click',function(e){
+   // alert("okay khushi")
+//console.log(e);
+//},false) 
+//document.getElementById('photoclick').addEventListener('click',function(e){
+    //alert("okay khushi")
+    //console.log("okay sucssefully clicked")
+//console.log(e);
+//},true)
+
+//document.getElementById('photoclick').addEventListener('click',function(e){
+    //alert("okay khushi")
+    //console.log("okay sucssefully clicked")
+//console.log(e);
+//e.stopPropagation()
+//},false)
+//document.getElementById('photoclick').addEventListener('click',function(e){
+//e.preventDefault()
+//e.stopPropagation()
+//console.log("okay clicked");
+//},false)
+document.querySelector('#images').addEventListener('click',function(e){
+    console.log(e.target.parentNode)
+console.log("ok")
+let removeit=e.target.parentNode
+//removeit.remove()
+console.log(e.target.tagName)
+removeit.parentNode.removeChild(removeit)
+})
+</script>
+</html>

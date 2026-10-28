@@ -1,0 +1,32 @@
+//operation check
+// let a = "khushi";
+// let b = "kumari";
+// let c = a + " " + b;
+// console.log(c);
+// let num1 = 4;
+// let num2 = 2;
+// console.log(num1 * num2);
+// console.log(num1 / num2);
+// console.log(num1 + num2);
+// console.log(num1 - num2);
+// console.log(num1 % num2);
+// console.log(num1 ** num2);
+// console.log("1" + 2);
+// console.log(1 + 2 + "2");
+// console.log("1" + "2" + 2);
+// comperision
+// console.log("2" > 1);
+// console.log("02" > 1);
+// console.log(2 == 2);
+// console.log("2" === 2);
+// console.log(3 >= 1);
+// console.log(null == 0);
+// console.log(null > 0);
+// console.log(null >= 0);
+// console.log(undefined == 0);
+// console.log(undefined >= 0);
+// console.log(undefined > 0);
+// console.log(3 > 1);
+console.log(null == 0);
+console.log(null > 0);
+console.log(null >= 0);

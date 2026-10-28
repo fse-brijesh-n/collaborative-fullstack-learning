@@ -1,0 +1,105 @@
+	const label = document.createElement("span");
+	const removeButton = document.createElement("button");
+	label.textContent = input.value.trim();
+	removeButton.textContent = "Remove";
+	removeButton.type = "button";
+	item.append(label, removeButton);
+-      item.innerHTML = `<span>${input.value.trim()}</span><button type="button">Remove</button>`;
+	list.appendChild(item);
+	input.value = "";
+	input.focus();
+HTML, CSS and JavaScript: Events
+================================
+
+An event is something that happens in the browser, such as a click, key press,
+form submission, mouse movement, or page load. Use addEventListener() to run a
+function when an event occurs.
+
+Common events:
+- click       A button or element is clicked.
+- submit      A form is submitted.
+- input       An input value changes.
+- keydown     A keyboard key is pressed.
+- mouseover   The pointer enters an element.
+
+The event object contains useful information. Use event.preventDefault() to
+stop a form's default page reload, and event.target to identify the element that
+triggered the event. Event delegation means listening on a parent and checking
+which child triggered the event.
+
+Complete example: event-driven shopping list
+---------------------------------------------
+
+Save as index.html and open it in a browser.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Event Example</title>
+	<style>
+		body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 16px; }
+		form { display: flex; gap: 8px; }
+		input, button { padding: 10px; }
+		input { flex: 1; }
+		ul { padding: 0; list-style: none; }
+		li { display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ddd; }
+		li.selected { background: #dcfce7; }
+	</style>
+</head>
+<body>
+	<h1>Shopping List</h1>
+	<form id="itemForm">
+		<input id="itemInput" placeholder="Add an item" required>
+		<button>Add item</button>
+	</form>
+	<ul id="itemList"></ul>
+	<p id="message">Click an item to mark it purchased.</p>
+
+	<script>
+		const form = document.querySelector("#itemForm");
+		const input = document.querySelector("#itemInput");
+		const list = document.querySelector("#itemList");
+		const message = document.querySelector("#message");
+
+		form.addEventListener("submit", (event) => {
+			event.preventDefault();
+
+			const item = document.createElement("li");
+			item.innerHTML = `<span>${input.value.trim()}</span><button type="button">Remove</button>`;
+			list.appendChild(item);
+			input.value = "";
+			input.focus();
+		});
+
+		// One listener handles clicks from every current and future list item.
+		list.addEventListener("click", (event) => {
+			const item = event.target.closest("li");
+			if (!item) return;
+
+			if (event.target.tagName === "BUTTON") {
+				item.remove();
+				message.textContent = "Item removed.";
+				return;
+			}
+
+			item.classList.toggle("selected");
+			message.textContent = item.classList.contains("selected")
+				? "Item marked as purchased."
+				: "Item marked as unpurchased.";
+		});
+
+		input.addEventListener("input", () => {
+			message.textContent = `${input.value.length} characters typed`;
+		});
+	</script>
+</body>
+</html>
+```
+
+Practice:
+1. Add a double-click event that deletes an item.
+2. Add keyboard support: pressing Escape clears the input.
+3. Replace the inline item HTML with createElement() and textContent.

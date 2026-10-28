@@ -1,0 +1,136 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    background-color: #464B71;
+    height: 3rem;
+    color: #F2F2ED;
+}
+.navbar .logo {
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.menu li {
+    list-style: none;
+}
+.hero {
+    background-color: #f6f5f4;
+    height: 30rem;
+    display: flex;
+    flex-direction: row;
+    padding: 3rem 8rem;
+    gap: 0.5rem;
+    font-size: large;
+    position: relative;
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.text {
+    font-size: larger;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(35, 39, 33);
+}
+.btn {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+button {
+    padding: 0.5rem;
+    background-color: transparent;
+    border-radius: 0.6rem;
+    border: 0.1rem solid white;
+}
+button:hover {
+    color: rgb(6, 6, 6);
+    background-color: #133458;
+    cursor: pointer;
+}
+#req {
+    background-color: rgb(236, 175, 22);
+}
+.footer {
+    background-color: #464B71;
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+}
+h1 {
+    color: #F2F2ED;
+}
+.quote-form {
+    display: none;
+    color: #10100f;
+    box-sizing: border-box;
+    text-align: left;
+    border: 0.2rem solid white;
+    padding: 0.3rem;
+    width: 18rem;
+    border-radius: 0.3rem;
+    background-color: transparent;
+    position: absolute;
+    right: 8rem;
+}
+h2 {
+    font-size: small;
+    text-align: center;
+    color: rgb(28, 28, 28);
+}
+.quote-form input,
+.quote-form textarea {
+    width: 100%;
+    padding: 0.3rem;
+    border-radius: 0.2rem;
+    border: 0.1rem solid white;
+}
+.quote-form label {
+    padding: 0rem;
+    font-size: small;
+}
+.quote-form #submit {
+    background-color: transparent;
+    padding-left: 0.3rem;
+    display: block;
+    margin: 0 auto;
+    border-radius: 0.2rem;
+}
+/* Style for the table container */
+.table-container {
+    position: absolute;
+    right: 8rem;
+    top: 0;
+    width: 18rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 0.2rem solid white;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-container th,
+.table-container td {
+    border: 1px solid #ccc;
+    padding: 0.4rem;
+    text-align: left;
+    font-size: 0.9rem;
+}
+.table-container th {
+    background-color: #f0f0f0;
+}

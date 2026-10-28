@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    
+    background-color: aliceblue;
+   
+}
+.container{
+    background-color:#D9D9D9;
+    height: 250px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.container .frame{
+    border: 5px solid black;
+    border-radius:10px;
+    width:250px;
+    height:200px;
+
+    
+}
+.container .frame img{
+    width: 100%;
+    height: 100%;
+   
+}
+.container .content{
+width: 321px;
+}
+.container .content p{
+   color: #6482D7;
+   padding-bottom: 10px;
+}
+.container .content .info{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-bottom: 10px;
+}
+.text{
+     text-align: center;
+    margin-top: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   padding-bottom: 20px;
+}
+.card-box{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    gap: 200px;
+    padding-bottom: 40px;
+}
+.card-box .box{
+
+   height: 200px;
+   width: 280px;
+    border: 5px solid #402D2D;
+
+    
+}
+.textbox{
+    display: flex;
+    justify-content: center;
+   
+    border: 5px solid #040202;
+    width: calc(100% - 286px);
+    margin-left: 143px;
+    margin-right: 143px;
+    background-color: #757881;
+    margin-bottom: 10px;
+}
+.textbox .text1{
+    width: 1100px;
+}
+.textbox .btn{
+    margin-top: 5px;
+    width: 100px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #241932;
+    color: white;
+    border: none;
+}
+.footer{
+    display: flex;
+    justify-content:center ;
+    border: 5px solid rgb(82, 76, 76) ;
+    text-align: center;
+    height: 100px;
+    background-color: rgb(161, 159, 159);
+    align-items: center;
+}

@@ -1,0 +1,103 @@
+you have to crate a admin dashboard where admin can manage users and user task 
+Admin Dashboard – Short Requirements
+Main Features
+Admin Authentication
+Admin Login
+Logout
+Protected Dashboard Routes
+Dashboard Overview
+Total Users
+Active Users
+Total Tasks
+Completed Tasks
+Pending Tasks
+User Management
+View all users
+Add new user
+Edit user details
+Delete user
+Search users
+Activate/Deactivate user
+Task Management
+View all tasks
+Create task
+Assign task to a user
+Edit task
+Delete task
+Update task status
+Task status: Pending, In Progress, Completed
+Filter tasks by user or status
+Profile & Settings
+Admin profile
+Change password
+Basic settings
+Suggested React Component Structure
+src/
+│
+├── components/
+│   ├── Sidebar.jsx
+│   ├── Navbar.jsx
+│   ├── DashboardCard.jsx
+│   ├── UserTable.jsx
+│   ├── UserForm.jsx
+│   ├── TaskTable.jsx
+│   ├── TaskForm.jsx
+│   ├── SearchBar.jsx
+│   ├── StatusBadge.jsx
+│   ├── Loader.jsx
+│   └── ConfirmModal.jsx
+│
+├── pages/
+│   ├── Login.jsx
+│   ├── Dashboard.jsx
+│   ├── Users.jsx
+│   ├── AddUser.jsx
+│   ├── EditUser.jsx
+│   ├── Tasks.jsx
+│   ├── AddTask.jsx
+│   ├── EditTask.jsx
+│   ├── Profile.jsx
+│   └── Settings.jsx
+│
+├── layouts/
+│   └── AdminLayout.jsx
+│
+├── services/
+│   ├── authService.js
+│   ├── userService.js
+│   └── taskService.js
+│
+├── context/
+│   └── AuthContext.jsx
+│
+├── routes/
+│   └── AppRoutes.jsx
+│
+├── App.jsx
+└── main.jsx
+Main Pages Flow
+
+Login → Dashboard → Users Management → Task Management → Profile/Settings
+
+For the backend, you can use:
+
+React + Node.js + Express.js + MongoDB
+
+Main database collections:
+
+Admin
+Users
+Tasks
+
+Each Task should contain:
+
+title
+description
+assignedUser
+status
+priority
+dueDate
+createdAt
+updatedAt
+
+This structure is clean and suitable for a full Admin User & Task Management Dashboard project.

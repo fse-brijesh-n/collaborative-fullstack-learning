@@ -1,0 +1,23 @@
+HTML, CSS, JavaScript and Express Integration
+==============================================
+
+This lesson connects the browser frontend to API-style backend requests.
+
+Study sequence:
+1. JavaScript fundamentals in the javascript/ folder.
+2. DOM selection and manipulation.
+3. Browser events and form submission.
+4. Promises and async/await.
+5. Fetch API methods: GET, POST, PUT, PATCH and DELETE.
+6. The integrated example in javascriptwebpage/.
+
+The javascriptwebpage/ folder contains index.html, index.css, index.js and
+sample data.json. Run it with a local server so fetch("data.json") works.
+
+Next Express step:
+- Create an Express route such as GET /api/users.
+- Replace the JSONPlaceholder URL in index.js with that route.
+- Use response.ok and response.json() to process the server response.
+- Add CORS configuration when frontend and backend use different ports.
+
+See README.md in this folder and in each child folder for the file map.
