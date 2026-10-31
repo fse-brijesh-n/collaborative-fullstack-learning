@@ -1,7 +1,7 @@
 # Fullstack Engineer Collaborative Learning Resources
 
 <div align="center">
-  <h3>Software Engineer: [Your Name]</h3>
+  <h3>Software Engineer: [khushi kumari]</h3>
   <p><strong>Designed By:</strong> Fullstack Engineer and Hardware Application Engineer Brijesh Nishad</p>
 </div>
 
